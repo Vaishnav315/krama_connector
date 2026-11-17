@@ -136,7 +136,7 @@ krama_onshape_connector/
   - Handling of missing properties (never default to 0).
 
 ### Module 5: Deterministic Snapshot Diff Engine
-- [ ] Diff engine (`app/services/diff_service.py`):
+- [x] Diff engine (`app/services/diff_service.py`):
   - Added / removed / changed instances.
   - Quantity modifications.
   - Material, part number, revision changes.
