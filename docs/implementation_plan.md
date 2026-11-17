@@ -96,7 +96,7 @@ krama_onshape_connector/
 - [x] Test runner setup (`pytest.ini` in `pyproject.toml`).
 
 ### Module 2: Core Domain Schemas & Ingestion Interface
-- [ ] Canonical snapshot schema (`app/schemas/snapshot.py`):
+- [x] Canonical snapshot schema (`app/schemas/snapshot.py`):
   - Document & exact version identity (`document_id`, `version_id`, `version_name`, `microversion_id`, `element_id`, `extracted_at`).
   - Units specification (`length`, `mass`, `inertia`).
   - Assembly tree hierarchy (`children`, instance counts, occurrences).
@@ -105,8 +105,8 @@ krama_onshape_connector/
   - Spatial extents / bounding box (local vs world-space).
   - Custom properties (name, value, type, source).
   - Warnings & missing value explanations.
-- [ ] Snapshot Diff schema (`app/schemas/diff.py`).
-- [ ] KRAMA Intake stub (`app/ingestion/intake.py`) with exact signature:
+- [x] Snapshot Diff schema (`app/schemas/diff.py`).
+- [x] KRAMA Intake stub (`app/ingestion/intake.py`) with exact signature:
   `intake_files(*, project_id: uuid.UUID, files: list[tuple[str, bytes]], source: Literal["connector"], metadata_by_source_file: dict[str, dict[str, Any]] | None = None) -> IngestionRun`
 
 ### Module 3: CAD Connector Abstraction & Onshape Client
