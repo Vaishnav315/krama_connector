@@ -146,35 +146,35 @@ krama_onshape_connector/
   - Comprehensive warnings when source data is missing.
 
 ### Module 6: Persistence Layer (SQLAlchemy Models & Database)
-- [ ] `app/database.py`: Session engine supporting SQLite (local/test) and PostgreSQL (production).
-- [ ] Models (`app/models/`):
+- [x] `app/database.py`: Session engine supporting SQLite (local/test) and PostgreSQL (production).
+- [x] Models (`app/models/`):
   - `Connection`: Stored credentials reference (no raw secrets logged).
   - `Project`: KRAMA project linking.
   - `Document`: Linked Onshape document & element.
   - `SyncRun`: Status, duration, records synced, error logs.
-  - `Snapshot`: Versioned snapshot record and file references.
+  - `SnapshotRecord`: Versioned snapshot record and file references.
 
 ### Module 7: Sync Orchestration & Change Detection
-- [ ] Change detection service (`app/services/change_detection.py`):
+- [x] Change detection service (`app/services/change_detection.py`):
   - Microversion and version tracking.
   - Polling mechanism to detect changes without unnecessary syncs.
   - Webhook payload validator and event handling structure.
-- [ ] Sync service (`app/services/sync_service.py`):
+- [x] Sync service (`app/services/sync_service.py`):
   - Orchestrates fetching from connector adapter.
-  - Generates canonical snapshot JSON & partitioned files (`assembly_snapshot.json`, `components.json`, `properties.json`, `provenance.json`, `diff.json`).
+  - Generates canonical snapshot JSON & partitioned files (`assembly_snapshot.json`, `components.json`, `properties.json`, `provenance.json`).
   - Calls `intake_files` stub with strict contract.
   - Persists snapshot and updates sync status.
 
 ### Module 8: FastAPI Application & Endpoints
-- [ ] `GET /health`
-- [ ] `POST /connections/onshape`
-- [ ] `POST /projects/{project_id}/documents`
-- [ ] `POST /projects/{project_id}/sync`
-- [ ] `GET /projects/{project_id}/snapshots`
-- [ ] `GET /snapshots/{snapshot_id}`
-- [ ] `GET /snapshots/{snapshot_id}/diff/{other_snapshot_id}`
-- [ ] `GET /projects/{project_id}/changes`
-- [ ] Interactive Swagger UI at `/docs`.
+- [x] `GET /health`
+- [x] `POST /connections/onshape`
+- [x] `POST /projects/{project_id}/documents`
+- [x] `POST /projects/{project_id}/sync`
+- [x] `GET /projects/{project_id}/snapshots`
+- [x] `GET /snapshots/{snapshot_id}`
+- [x] `GET /snapshots/{snapshot_id}/diff/{other_snapshot_id}`
+- [x] `GET /projects/{project_id}/changes`
+- [x] Interactive Swagger UI at `/docs`.
 
 ### Module 9: Comprehensive Test Suite
 - [ ] Snapshot schema validation tests.
