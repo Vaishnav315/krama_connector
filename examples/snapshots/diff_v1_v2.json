@@ -1,0 +1,620 @@
+{
+  "added_instances": [
+    {
+      "change_type": "added",
+      "component_id": "part_part_ft_sensor",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_ft_sensor_1",
+      "name": "6-Axis Force Torque Sensor <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.365,
+        0.0,
+        0.0,
+        1.0,
+        0.54,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": null,
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    }
+  ],
+  "assembly_delta": {
+    "center_of_mass_classification": "snapshot_inferred",
+    "center_of_mass_shift_distance": 0.01682260384126073,
+    "extents_changed": true,
+    "mass_classification": "snapshot_inferred",
+    "mass_delta": 0.5700000000000003,
+    "mass_explanation": null,
+    "new_center_of_mass": [
+      -0.012,
+      0.092,
+      0.195
+    ],
+    "new_extents": {
+      "coordinate_system": "world_space",
+      "dimensions": [
+        0.5,
+        0.6900000000000001,
+        0.74
+      ],
+      "max_point": [
+        0.25,
+        0.54,
+        0.74
+      ],
+      "min_point": [
+        -0.25,
+        -0.15,
+        0.0
+      ],
+      "units": "meter"
+    },
+    "new_total_mass": 15.42,
+    "old_center_of_mass": [
+      -0.015,
+      0.085,
+      0.18
+    ],
+    "old_extents": {
+      "coordinate_system": "world_space",
+      "dimensions": [
+        0.5,
+        0.67,
+        0.72
+      ],
+      "max_point": [
+        0.25,
+        0.52,
+        0.72
+      ],
+      "min_point": [
+        -0.25,
+        -0.15,
+        0.0
+      ],
+      "units": "meter"
+    },
+    "old_total_mass": 14.85
+  },
+  "base_extracted_at": "2026-11-17T12:23:40.564358Z",
+  "base_snapshot_id": "ea3c810b-485c-4a48-9cd3-0e89cee42e39",
+  "base_version_name": "Release v1.0",
+  "changed_components": [
+    {
+      "bounding_box_change": null,
+      "center_of_mass_change": null,
+      "component_id": "part_part_bicep_tube",
+      "custom_property_changes": [],
+      "mass_change": {
+        "classification": "snapshot_inferred",
+        "delta": -0.03999999999999998,
+        "explanation": null,
+        "new_value": 0.38,
+        "old_value": 0.42,
+        "property_name": "mass"
+      },
+      "material_change": null,
+      "name": "Carbon Bicep Tube",
+      "part_number_change": null,
+      "property_changes": [],
+      "revision_change": {
+        "classification": "source_detected",
+        "delta": null,
+        "explanation": null,
+        "new_value": "B",
+        "old_value": "A",
+        "property_name": "revision"
+      }
+    },
+    {
+      "bounding_box_change": null,
+      "center_of_mass_change": null,
+      "component_id": "part_part_elbow_joint",
+      "custom_property_changes": [],
+      "mass_change": {
+        "classification": "snapshot_inferred",
+        "delta": 0.54,
+        "explanation": null,
+        "new_value": 1.48,
+        "old_value": 0.94,
+        "property_name": "mass"
+      },
+      "material_change": {
+        "classification": "source_detected",
+        "delta": null,
+        "explanation": null,
+        "new_value": "Titanium Ti-6Al-4V",
+        "old_value": "Aluminum 7075-T6",
+        "property_name": "material"
+      },
+      "name": "Elbow Joint Housing",
+      "part_number_change": null,
+      "property_changes": [],
+      "revision_change": {
+        "classification": "source_detected",
+        "delta": null,
+        "explanation": null,
+        "new_value": "B",
+        "old_value": "A",
+        "property_name": "revision"
+      }
+    },
+    {
+      "bounding_box_change": null,
+      "center_of_mass_change": {
+        "classification": "snapshot_inferred",
+        "delta": 0.025000000000000022,
+        "explanation": null,
+        "new_value": [
+          0.0,
+          0.435,
+          0.64
+        ],
+        "old_value": [
+          0.0,
+          0.42,
+          0.62
+        ],
+        "property_name": "center_of_mass"
+      },
+      "component_id": "part_part_gripper_finger",
+      "custom_property_changes": [],
+      "mass_change": null,
+      "material_change": null,
+      "name": "Gripper Finger",
+      "part_number_change": null,
+      "property_changes": [],
+      "revision_change": null
+    },
+    {
+      "bounding_box_change": null,
+      "center_of_mass_change": {
+        "classification": "snapshot_inferred",
+        "delta": 0.02499999999999999,
+        "explanation": null,
+        "new_value": [
+          0.0,
+          0.415,
+          0.6
+        ],
+        "old_value": [
+          0.0,
+          0.4,
+          0.58
+        ],
+        "property_name": "center_of_mass"
+      },
+      "component_id": "part_part_m4_screw",
+      "custom_property_changes": [],
+      "mass_change": null,
+      "material_change": null,
+      "name": "Button Head M4x10",
+      "part_number_change": null,
+      "property_changes": [],
+      "revision_change": null
+    },
+    {
+      "bounding_box_change": null,
+      "center_of_mass_change": {
+        "classification": "snapshot_inferred",
+        "delta": 0.025000000000000022,
+        "explanation": null,
+        "new_value": [
+          0.0,
+          0.445,
+          0.66
+        ],
+        "old_value": [
+          0.0,
+          0.43,
+          0.64
+        ],
+        "property_name": "center_of_mass"
+      },
+      "component_id": "part_part_rubber_pad",
+      "custom_property_changes": [],
+      "mass_change": null,
+      "material_change": null,
+      "name": "Silicone Finger Pad",
+      "part_number_change": null,
+      "property_changes": [],
+      "revision_change": null
+    }
+  ],
+  "generated_at": "2026-11-17T12:23:40.565360Z",
+  "indeterminate_properties": [],
+  "moved_instances": [
+    {
+      "change_type": "moved",
+      "component_id": "part_part_gripper_finger",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_finger_left_1",
+      "name": "Gripper Finger Left <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.03,
+        0.0,
+        1.0,
+        0.0,
+        0.435,
+        0.0,
+        0.0,
+        1.0,
+        0.64,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.03,
+        0.0,
+        1.0,
+        0.0,
+        0.42,
+        0.0,
+        0.0,
+        1.0,
+        0.62,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_gripper_finger",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_finger_right_1",
+      "name": "Gripper Finger Right <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.03,
+        0.0,
+        1.0,
+        0.0,
+        0.435,
+        0.0,
+        0.0,
+        1.0,
+        0.64,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.03,
+        0.0,
+        1.0,
+        0.0,
+        0.42,
+        0.0,
+        0.0,
+        1.0,
+        0.62,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_gripper_servo",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_servo_1",
+      "name": "Dynamixel Servo Actuator <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.395,
+        0.0,
+        0.0,
+        1.0,
+        0.58,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.38,
+        0.0,
+        0.0,
+        1.0,
+        0.56,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_m4_screw",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_m4_screw_1",
+      "name": "Button Head M4x10 <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        1.0,
+        0.0,
+        0.415,
+        0.0,
+        0.0,
+        1.0,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        1.0,
+        0.0,
+        0.4,
+        0.0,
+        0.0,
+        1.0,
+        0.58,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_m4_screw",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_m4_screw_2",
+      "name": "Button Head M4x10 <2>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.02,
+        0.0,
+        1.0,
+        0.0,
+        0.415,
+        0.0,
+        0.0,
+        1.0,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.02,
+        0.0,
+        1.0,
+        0.0,
+        0.4,
+        0.0,
+        0.0,
+        1.0,
+        0.58,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_rubber_pad",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_rubber_pad_1",
+      "name": "Silicone Finger Pad <1>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.028,
+        0.0,
+        1.0,
+        0.0,
+        0.445,
+        0.0,
+        0.0,
+        1.0,
+        0.66,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.028,
+        0.0,
+        1.0,
+        0.0,
+        0.43,
+        0.0,
+        0.0,
+        1.0,
+        0.64,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    },
+    {
+      "change_type": "moved",
+      "component_id": "part_part_rubber_pad",
+      "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_rubber_pad_2",
+      "name": "Silicone Finger Pad <2>",
+      "new_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.028,
+        0.0,
+        1.0,
+        0.0,
+        0.445,
+        0.0,
+        0.0,
+        1.0,
+        0.66,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.028,
+        0.0,
+        1.0,
+        0.0,
+        0.43,
+        0.0,
+        0.0,
+        1.0,
+        0.64,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1"
+    }
+  ],
+  "quantity_changes": [
+    {
+      "component_id": "part_part_ft_sensor",
+      "component_name": "6-Axis Force Torque Sensor",
+      "delta": 1,
+      "new_quantity": 1,
+      "old_quantity": 0
+    },
+    {
+      "component_id": "part_part_m8_screw",
+      "component_name": "Hex Cap Screw M8x25",
+      "delta": -2,
+      "new_quantity": 2,
+      "old_quantity": 4
+    }
+  ],
+  "removed_instances": [
+    {
+      "change_type": "removed",
+      "component_id": "part_part_m8_screw",
+      "instance_id": "inst_m8_bolt_3",
+      "name": "Hex Cap Screw M8x25 <3>",
+      "new_transform": null,
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        -0.05,
+        0.0,
+        0.0,
+        1.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": null
+    },
+    {
+      "change_type": "removed",
+      "component_id": "part_part_m8_screw",
+      "instance_id": "inst_m8_bolt_4",
+      "name": "Hex Cap Screw M8x25 <4>",
+      "new_transform": null,
+      "old_transform": [
+        1.0,
+        0.0,
+        0.0,
+        -0.05,
+        0.0,
+        1.0,
+        0.0,
+        -0.05,
+        0.0,
+        0.0,
+        1.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parent_instance_id": null
+    }
+  ],
+  "summary": {
+    "added_instances": 1,
+    "changed_components": 5,
+    "indeterminate_properties": 0,
+    "moved_instances": 7,
+    "quantity_changes": 2,
+    "removed_instances": 2
+  },
+  "target_extracted_at": "2026-11-17T12:23:40.565041Z",
+  "target_snapshot_id": "08644010-85c4-45c6-b501-dd743c7086e7",
+  "target_version_name": "Release v2.0",
+  "warnings": []
+}

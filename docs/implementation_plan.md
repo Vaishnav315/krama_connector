@@ -177,26 +177,26 @@ krama_onshape_connector/
 - [x] Interactive Swagger UI at `/docs`.
 
 ### Module 9: Comprehensive Test Suite
-- [ ] Snapshot schema validation tests.
-- [ ] Hierarchy parsing & repeated instance preservation tests.
-- [ ] Missing property tests (unavailable mass property remains missing, NOT zero).
-- [ ] Diff engine tests (additions, removals, property changes, unchanged snapshots).
-- [ ] KRAMA intake stub contract tests.
-- [ ] SQLAlchemy persistence & CRUD tests.
-- [ ] FastAPI endpoint integration tests.
-- [ ] Mocked Onshape API tests (error handling, 429 rate limit, HMAC signing).
-- [ ] Single test command `pytest` passes with 100% green without credentials.
+- [x] Snapshot schema validation tests.
+- [x] Hierarchy parsing & repeated instance preservation tests.
+- [x] Missing property tests (unavailable mass property remains missing, NOT zero).
+- [x] Diff engine tests (additions, removals, property changes, unchanged snapshots).
+- [x] KRAMA intake stub contract tests.
+- [x] SQLAlchemy persistence & CRUD tests.
+- [x] FastAPI endpoint integration tests.
+- [x] Mocked Onshape API tests (error handling, 429 rate limit, HMAC signing).
+- [x] Single test command `pytest` passes with 100% green without credentials.
 
 ### Module 10: CI/CD Workflow & Engineering Hygiene
-- [ ] GitHub Actions workflow (`.github/workflows/ci.yml`).
-- [ ] Ruff linting passing with zero errors.
-- [ ] `.env.example` verified with safe placeholders.
-- [ ] Verification that no secrets exist in Git.
+- [x] GitHub Actions workflow (`.github/workflows/ci.yml`).
+- [x] Ruff linting passing with zero errors.
+- [x] `.env.example` verified with safe placeholders.
+- [x] Verification that no secrets exist in Git.
 
 ### Module 11: Documentation & Design Note
-- [ ] `examples/snapshots/`: Realistic example snapshots generated and committed.
-- [ ] `README.md`: Comprehensive documentation covering setup, architecture, endpoints, testing, live vs mocked status, and limitations.
-- [ ] `docs/design_note.md`: 3-page rigorous engineering design note addressing Flow Engineering research, Onshape API evaluation, alternatives, risks & mitigations, production monitoring, and heavier CAD/PLM systems.
+- [x] `examples/snapshots/`: Realistic example snapshots generated and committed.
+- [x] `README.md`: Comprehensive documentation covering setup, architecture, endpoints, testing, live vs mocked status, and limitations.
+- [x] `docs/design_note.md`: 3-page rigorous engineering design note addressing Flow Engineering research, Onshape API evaluation, alternatives, risks & mitigations, production monitoring, and heavier CAD/PLM systems.
 
 ---
 

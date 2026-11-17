@@ -1,0 +1,1253 @@
+{
+  "assembly": {
+    "assembly_id": "elem-asm-top-001",
+    "instance_counts": {
+      "part_part_base_pedestal": 1,
+      "part_part_bicep_tube": 1,
+      "part_part_counterweight": 1,
+      "part_part_dowel_pin": 2,
+      "part_part_elbow_joint": 1,
+      "part_part_ft_sensor": 1,
+      "part_part_gripper_finger": 2,
+      "part_part_gripper_servo": 1,
+      "part_part_m4_screw": 2,
+      "part_part_m8_screw": 2,
+      "part_part_rubber_pad": 2,
+      "part_part_shoulder_bracket": 1,
+      "part_part_turntable_plate": 1,
+      "part_part_wrist_flange": 1
+    },
+    "instances": [
+      {
+        "component_id": "part_part_base_pedestal",
+        "instance_id": "inst_base_pedestal_1",
+        "is_subassembly": false,
+        "name": "Base Pedestal Cast <1>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_turntable_plate",
+        "instance_id": "inst_turntable_plate_1",
+        "is_subassembly": false,
+        "name": "Turntable Bearing Plate <1>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.05,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "asm_elem-subasm-arm-002",
+        "instance_id": "inst_arm_module_subasm_1",
+        "is_subassembly": true,
+        "name": "Articulated Arm Module <1>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.07,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_shoulder_bracket",
+        "instance_id": "inst_arm_module_subasm_1/inst_shoulder_bracket_1",
+        "is_subassembly": false,
+        "name": "Shoulder Pivot Bracket <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.08,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_bicep_tube",
+        "instance_id": "inst_arm_module_subasm_1/inst_bicep_tube_1",
+        "is_subassembly": false,
+        "name": "Carbon Bicep Tube <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.866,
+          -0.5,
+          0.1,
+          0.0,
+          0.5,
+          0.866,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_elbow_joint",
+        "instance_id": "inst_arm_module_subasm_1/inst_elbow_joint_1",
+        "is_subassembly": false,
+        "name": "Elbow Joint Housing <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.22,
+          0.0,
+          0.0,
+          1.0,
+          0.45,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "asm_elem-subasm-wrist-003",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "is_subassembly": true,
+        "name": "Wrist & End Effector Subassembly <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.35,
+          0.0,
+          0.0,
+          1.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_wrist_flange",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_wrist_flange_1",
+        "is_subassembly": false,
+        "name": "Wrist Mounting Flange <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.35,
+          0.0,
+          0.0,
+          1.0,
+          0.52,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_ft_sensor",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_ft_sensor_1",
+        "is_subassembly": false,
+        "name": "6-Axis Force Torque Sensor <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.365,
+          0.0,
+          0.0,
+          1.0,
+          0.54,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_gripper_servo",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_servo_1",
+        "is_subassembly": false,
+        "name": "Dynamixel Servo Actuator <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.395,
+          0.0,
+          0.0,
+          1.0,
+          0.58,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_gripper_finger",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_finger_left_1",
+        "is_subassembly": false,
+        "name": "Gripper Finger Left <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.03,
+          0.0,
+          1.0,
+          0.0,
+          0.435,
+          0.0,
+          0.0,
+          1.0,
+          0.64,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_gripper_finger",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_gripper_finger_right_1",
+        "is_subassembly": false,
+        "name": "Gripper Finger Right <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.03,
+          0.0,
+          1.0,
+          0.0,
+          0.435,
+          0.0,
+          0.0,
+          1.0,
+          0.64,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_rubber_pad",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_rubber_pad_1",
+        "is_subassembly": false,
+        "name": "Silicone Finger Pad <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.028,
+          0.0,
+          1.0,
+          0.0,
+          0.445,
+          0.0,
+          0.0,
+          1.0,
+          0.66,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_rubber_pad",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_rubber_pad_2",
+        "is_subassembly": false,
+        "name": "Silicone Finger Pad <2>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.028,
+          0.0,
+          1.0,
+          0.0,
+          0.445,
+          0.0,
+          0.0,
+          1.0,
+          0.66,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_m4_screw",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_m4_screw_1",
+        "is_subassembly": false,
+        "name": "Button Head M4x10 <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.02,
+          0.0,
+          1.0,
+          0.0,
+          0.415,
+          0.0,
+          0.0,
+          1.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_m4_screw",
+        "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1/inst_m4_screw_2",
+        "is_subassembly": false,
+        "name": "Button Head M4x10 <2>",
+        "parent_instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.02,
+          0.0,
+          1.0,
+          0.0,
+          0.415,
+          0.0,
+          0.0,
+          1.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_dowel_pin",
+        "instance_id": "inst_arm_module_subasm_1/inst_pin_pivot_1",
+        "is_subassembly": false,
+        "name": "Dowel Pin 12x40 <1>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.02,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.08,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_dowel_pin",
+        "instance_id": "inst_arm_module_subasm_1/inst_pin_pivot_2",
+        "is_subassembly": false,
+        "name": "Dowel Pin 12x40 <2>",
+        "parent_instance_id": "inst_arm_module_subasm_1",
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.02,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.08,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_counterweight",
+        "instance_id": "inst_counterweight_1",
+        "is_subassembly": false,
+        "name": "Steel Counterweight <1>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.15,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.08,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_m8_screw",
+        "instance_id": "inst_m8_bolt_1",
+        "is_subassembly": false,
+        "name": "Hex Cap Screw M8x25 <1>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.05,
+          0.0,
+          1.0,
+          0.0,
+          0.05,
+          0.0,
+          0.0,
+          1.0,
+          0.02,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "component_id": "part_part_m8_screw",
+        "instance_id": "inst_m8_bolt_2",
+        "is_subassembly": false,
+        "name": "Hex Cap Screw M8x25 <2>",
+        "parent_instance_id": null,
+        "suppressed": false,
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          -0.05,
+          0.0,
+          1.0,
+          0.0,
+          0.05,
+          0.0,
+          0.0,
+          1.0,
+          0.02,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "name": "Assembly elem-asm-top-001 (Doc: doc-robot-arm-001)",
+    "overall_extents": {
+      "coordinate_system": "world_space",
+      "dimensions": [
+        0.5,
+        0.6900000000000001,
+        0.74
+      ],
+      "max_point": [
+        0.25,
+        0.54,
+        0.74
+      ],
+      "min_point": [
+        -0.25,
+        -0.15,
+        0.0
+      ],
+      "units": "meter"
+    },
+    "root_instances": [
+      "inst_base_pedestal_1",
+      "inst_turntable_plate_1",
+      "inst_arm_module_subasm_1",
+      "inst_counterweight_1",
+      "inst_m8_bolt_1",
+      "inst_m8_bolt_2"
+    ]
+  },
+  "assembly_mass_properties": {
+    "center_of_mass": [
+      -0.012,
+      0.092,
+      0.195
+    ],
+    "inertia_tensor": {
+      "ixx": 0.138,
+      "ixy": 0.003,
+      "ixz": -0.004,
+      "iyy": 0.198,
+      "iyz": 0.014,
+      "izz": 0.104
+    },
+    "mass": 15.42,
+    "principal_moments": [
+      0.136,
+      0.2,
+      0.103
+    ],
+    "provenance": {
+      "confidence": 1.0,
+      "description": "Computed from Onshape solid geometry and assigned material density",
+      "raw_source_field": "massproperties",
+      "recorded_at": "2026-11-17T12:23:40.564963Z",
+      "source": "computed_from_geometry"
+    },
+    "surface_area": 0.468,
+    "volume": 0.00288
+  },
+  "assembly_properties": {
+    "assembly_element_id": "elem-asm-top-001"
+  },
+  "components": [
+    {
+      "component_id": "part_part_base_pedestal",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.0,
+          0.025
+        ],
+        "inertia_tensor": {
+          "ixx": 0.045,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.045,
+          "iyz": 0.0,
+          "izz": 0.065
+        },
+        "mass": 6.25,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564808Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000874
+      },
+      "material": "Cast Iron Class 30",
+      "material_density": 7150.0,
+      "name": "Base Pedestal Cast",
+      "part_number": "ARM-001-BASE",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_base_pedestal",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_turntable_plate",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.0,
+          0.05
+        ],
+        "inertia_tensor": {
+          "ixx": 0.008,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.008,
+          "iyz": 0.0,
+          "izz": 0.015
+        },
+        "mass": 1.12,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564825Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000415
+      },
+      "material": "Aluminum 6061-T6",
+      "material_density": 2700.0,
+      "name": "Turntable Bearing Plate",
+      "part_number": "ARM-002-TTB",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_turntable_plate",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_counterweight",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          -0.15,
+          0.0,
+          0.08
+        ],
+        "inertia_tensor": {
+          "ixx": 0.015,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.02,
+          "iyz": 0.0,
+          "izz": 0.022
+        },
+        "mass": 3.5,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564835Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000446
+      },
+      "material": "Structural Steel A36",
+      "material_density": 7850.0,
+      "name": "Steel Counterweight",
+      "part_number": "ARM-003-CW",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_counterweight",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_shoulder_bracket",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.0,
+          0.08
+        ],
+        "inertia_tensor": {
+          "ixx": 0.005,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.006,
+          "iyz": 0.0,
+          "izz": 0.004
+        },
+        "mass": 0.85,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564843Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000315
+      },
+      "material": "Aluminum 6061-T6",
+      "material_density": 2700.0,
+      "name": "Shoulder Pivot Bracket",
+      "part_number": "ARM-004-SHB",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_shoulder_bracket",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_bicep_tube",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.1,
+          0.25
+        ],
+        "inertia_tensor": {
+          "ixx": 0.011,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.003,
+          "iyz": 0.0,
+          "izz": 0.011
+        },
+        "mass": 0.38,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564854Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000245
+      },
+      "material": "Carbon Fiber Composite",
+      "material_density": 1550.0,
+      "name": "Carbon Bicep Tube",
+      "part_number": "ARM-005-BCT",
+      "revision": "B",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_bicep_tube",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_elbow_joint",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.22,
+          0.45
+        ],
+        "inertia_tensor": {
+          "ixx": 0.011,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.012,
+          "iyz": 0.0,
+          "izz": 0.009
+        },
+        "mass": 1.48,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564862Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000334
+      },
+      "material": "Titanium Ti-6Al-4V",
+      "material_density": 4430.0,
+      "name": "Elbow Joint Housing",
+      "part_number": "ARM-006-ELB",
+      "revision": "B",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_elbow_joint",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_ft_sensor",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.365,
+          0.54
+        ],
+        "inertia_tensor": {
+          "ixx": 0.0005,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.0005,
+          "iyz": 0.0,
+          "izz": 0.0008
+        },
+        "mass": 0.22,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564872Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 6.8e-05
+      },
+      "material": "Anodized Aluminum / Stainless",
+      "material_density": 3200.0,
+      "name": "6-Axis Force Torque Sensor",
+      "part_number": "COTS-ATI-AXIA80",
+      "revision": "1.0",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_ft_sensor",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_wrist_flange",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.35,
+          0.52
+        ],
+        "inertia_tensor": {
+          "ixx": 0.001,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.001,
+          "iyz": 0.0,
+          "izz": 0.001
+        },
+        "mass": 0.28,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564885Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 0.000104
+      },
+      "material": "Aluminum 6061-T6",
+      "material_density": 2700.0,
+      "name": "Wrist Mounting Flange",
+      "part_number": "ARM-007-WFL",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_wrist_flange",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_gripper_servo",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": null,
+        "inertia_tensor": null,
+        "mass": null,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Mass properties unavailable for part part_part_gripper_servo in source CAD system",
+          "raw_source_field": null,
+          "recorded_at": "2026-11-17T12:23:40.564897Z",
+          "source": "source_unavailable"
+        },
+        "surface_area": null,
+        "volume": null
+      },
+      "material": null,
+      "material_density": null,
+      "name": "Dynamixel Servo Actuator",
+      "part_number": "COTS-SERVO-XM430",
+      "revision": null,
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_gripper_servo",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_gripper_finger",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.435,
+          0.64
+        ],
+        "inertia_tensor": {
+          "ixx": 0.0001,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.0002,
+          "iyz": 0.0,
+          "izz": 0.0002
+        },
+        "mass": 0.085,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564909Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 6e-05
+      },
+      "material": "POM / Acetal (Delrin)",
+      "material_density": 1420.0,
+      "name": "Gripper Finger",
+      "part_number": "ARM-008-FNG",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_gripper_finger",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_rubber_pad",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.445,
+          0.66
+        ],
+        "inertia_tensor": {
+          "ixx": 1e-05,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 1e-05,
+          "iyz": 0.0,
+          "izz": 1e-05
+        },
+        "mass": 0.015,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564917Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 1.3e-05
+      },
+      "material": "Silicone Rubber (Shore 50A)",
+      "material_density": 1150.0,
+      "name": "Silicone Finger Pad",
+      "part_number": "ARM-009-RPD",
+      "revision": "A",
+      "source_element_id": "elem-parts-001",
+      "source_part_id": "part_rubber_pad",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_m8_screw",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.0,
+          0.02
+        ],
+        "inertia_tensor": {
+          "ixx": 1e-05,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 1e-05,
+          "iyz": 0.0,
+          "izz": 1e-05
+        },
+        "mass": 0.045,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564927Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 5.7e-06
+      },
+      "material": "Steel Grade 8.8 Galvanized",
+      "material_density": 7850.0,
+      "name": "Hex Cap Screw M8x25",
+      "part_number": "ISO-4017-M8x25-8.8",
+      "revision": null,
+      "source_element_id": "elem-hardware-001",
+      "source_part_id": "part_m8_screw",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_m4_screw",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.415,
+          0.6
+        ],
+        "inertia_tensor": {
+          "ixx": 1e-06,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 1e-06,
+          "iyz": 0.0,
+          "izz": 1e-06
+        },
+        "mass": 0.008,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564937Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 1e-06
+      },
+      "material": "Stainless Steel A2-70",
+      "material_density": 7900.0,
+      "name": "Button Head M4x10",
+      "part_number": "ISO-7380-M4x10-A2",
+      "revision": null,
+      "source_element_id": "elem-hardware-001",
+      "source_part_id": "part_m4_screw",
+      "world_bounding_box": null
+    },
+    {
+      "component_id": "part_part_dowel_pin",
+      "custom_properties": {},
+      "is_standard_content": false,
+      "local_bounding_box": null,
+      "mass_properties": {
+        "center_of_mass": [
+          0.0,
+          0.0,
+          0.08
+        ],
+        "inertia_tensor": {
+          "ixx": 1e-05,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 1e-05,
+          "iyz": 0.0,
+          "izz": 1e-05
+        },
+        "mass": 0.035,
+        "principal_moments": null,
+        "provenance": {
+          "confidence": 1.0,
+          "description": "Computed from Onshape solid geometry and assigned material density",
+          "raw_source_field": "massproperties",
+          "recorded_at": "2026-11-17T12:23:40.564949Z",
+          "source": "computed_from_geometry"
+        },
+        "surface_area": null,
+        "volume": 4.5e-06
+      },
+      "material": "Hardened Tool Steel",
+      "material_density": 7850.0,
+      "name": "Dowel Pin 12x40",
+      "part_number": "DIN-6325-12x40-m6",
+      "revision": null,
+      "source_element_id": "elem-hardware-001",
+      "source_part_id": "part_dowel_pin",
+      "world_bounding_box": null
+    }
+  ],
+  "document": {
+    "document_id": "doc-robot-arm-001",
+    "document_name": "Document doc-robot-arm-001",
+    "element_id": "elem-asm-top-001",
+    "element_name": "Assembly elem-asm-top-001 (Doc: doc-robot-arm-001)",
+    "microversion_id": "mver-002",
+    "version_id": "ver-release-2.0",
+    "version_name": "Release v2.0",
+    "workspace_id": null
+  },
+  "extracted_at": "2026-11-17T12:23:40.565041Z",
+  "missing_values": [
+    {
+      "entity_id": "part_part_gripper_servo",
+      "entity_type": "part",
+      "property_name": "revision",
+      "reason": "Revision not released or tracked in Onshape release management",
+      "recorded_at": "2026-11-17T12:23:40.564892Z"
+    },
+    {
+      "entity_id": "part_part_gripper_servo",
+      "entity_type": "part",
+      "property_name": "material",
+      "reason": "No material assigned to part definition in Onshape Part Studio",
+      "recorded_at": "2026-11-17T12:23:40.564894Z"
+    },
+    {
+      "entity_id": "part_part_gripper_servo",
+      "entity_type": "part",
+      "property_name": "mass",
+      "reason": "Mass calculation unavailable because part definition lacks density or volume",
+      "recorded_at": "2026-11-17T12:23:40.564901Z"
+    },
+    {
+      "entity_id": "part_part_m8_screw",
+      "entity_type": "part",
+      "property_name": "revision",
+      "reason": "Revision not released or tracked in Onshape release management",
+      "recorded_at": "2026-11-17T12:23:40.564923Z"
+    },
+    {
+      "entity_id": "part_part_m4_screw",
+      "entity_type": "part",
+      "property_name": "revision",
+      "reason": "Revision not released or tracked in Onshape release management",
+      "recorded_at": "2026-11-17T12:23:40.564933Z"
+    },
+    {
+      "entity_id": "part_part_dowel_pin",
+      "entity_type": "part",
+      "property_name": "revision",
+      "reason": "Revision not released or tracked in Onshape release management",
+      "recorded_at": "2026-11-17T12:23:40.564945Z"
+    }
+  ],
+  "provenance": {
+    "adapter": "OnshapeConnector",
+    "extracted_from": "Onshape REST API",
+    "uses_fixtures": true
+  },
+  "snapshot_id": "08644010-85c4-45c6-b501-dd743c7086e7",
+  "source": "onshape",
+  "units": {
+    "angle": "radian",
+    "inertia": "kilogram * meter^2",
+    "length": "meter",
+    "mass": "kilogram",
+    "surface_area": "meter^2",
+    "time": "second",
+    "volume": "meter^3"
+  },
+  "warnings": []
+}
