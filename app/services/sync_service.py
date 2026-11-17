@@ -13,7 +13,9 @@ from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
 
+from app.config import get_settings
 from app.connectors.onshape.adapter import OnshapeConnector
+from app.connectors.onshape.client import OnshapeClient
 from app.ingestion.intake import intake_files
 from app.models.document import LinkedDocument
 from app.models.snapshot import SnapshotRecord
@@ -29,7 +31,21 @@ class SyncService:
 
     def __init__(self, db: Session, connector: OnshapeConnector | None = None):
         self.db = db
-        self.connector = connector or OnshapeConnector(use_fixtures=True)
+        if connector is not None:
+            self.connector = connector
+        else:
+            settings = get_settings()
+            # In test environments or when explicitly flagged, use recorded fixtures
+            if settings.ENVIRONMENT == "test" or settings.USE_MOCK_ONSHAPE or not (settings.ONSHAPE_ACCESS_KEY and settings.ONSHAPE_SECRET_KEY):
+                self.connector = OnshapeConnector(use_fixtures=True)
+            else:
+                live_client = OnshapeClient(
+                    base_url=settings.ONSHAPE_BASE_URL,
+                    access_key=settings.ONSHAPE_ACCESS_KEY,
+                    secret_key=settings.ONSHAPE_SECRET_KEY,
+                    oauth_token=settings.ONSHAPE_OAUTH_TOKEN,
+                )
+                self.connector = OnshapeConnector(client=live_client, use_fixtures=False)
         self.change_detector = ChangeDetectionService(self.connector)
 
     def execute_sync(

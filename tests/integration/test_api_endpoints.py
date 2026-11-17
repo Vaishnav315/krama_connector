@@ -34,11 +34,17 @@ app.dependency_overrides[get_db] = override_get_db
 
 
 @pytest.fixture(autouse=True)
-def setup_test_db():
+def setup_test_db(monkeypatch):
+    monkeypatch.setenv("ENVIRONMENT", "test")
+    monkeypatch.setenv("USE_MOCK_ONSHAPE", "true")
+    # Clear settings cache so ENVIRONMENT='test' takes effect
+    from app.config import get_settings
+    get_settings.cache_clear()
     Base.metadata.create_all(bind=test_engine)
     reset_ingestion_cache()
     yield
     Base.metadata.drop_all(bind=test_engine)
+    get_settings.cache_clear()
 
 
 @pytest.fixture

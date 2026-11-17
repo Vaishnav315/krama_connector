@@ -5,13 +5,12 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.connectors.onshape.adapter import OnshapeConnector
 from app.database import get_db
 from app.models.document import LinkedDocument
 from app.schemas.api import ChangeCheckResponse
 from app.schemas.diff import SnapshotDiff
-from app.services.change_detection import ChangeDetectionService
 from app.services.snapshot_service import SnapshotService
+from app.services.sync_service import SyncService
 
 router = APIRouter(tags=["Diffs & Changes"])
 
@@ -49,8 +48,8 @@ def check_project_changes(
 ) -> ChangeCheckResponse:
     """Check whether any linked documents in the project have newer source versions available."""
     docs = db.query(LinkedDocument).filter(LinkedDocument.project_id == project_id).all()
-    connector = OnshapeConnector(use_fixtures=True)
-    change_detector = ChangeDetectionService(connector=connector)
+    sync_service = SyncService(db=db)
+    change_detector = sync_service.change_detector
 
     results = []
     for d in docs:
