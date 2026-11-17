@@ -1,0 +1,16 @@
+{
+  "documentId": "doc-robot-arm-001",
+  "name": "6-DOF Modular Robotic Arm",
+  "description": "High-precision articulated robotic arm for light industrial automation",
+  "defaultWorkspace": {
+    "id": "wsp-main-001",
+    "name": "Main"
+  },
+  "properties": {
+    "ProjectCode": "KRAMA-ROBOT-01",
+    "DesignLead": "Senior Mechanical Engineer",
+    "TargetPayloadKg": 3.0,
+    "ReachRadiusMm": 650.0,
+    "ComplianceStandard": "ISO 10218-1"
+  }
+}

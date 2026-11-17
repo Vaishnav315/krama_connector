@@ -1,0 +1,107 @@
+{
+  "hasMass": true,
+  "mass": [14.850],
+  "volume": [0.00285],
+  "surfaceArea": [0.452],
+  "centroid": [-0.015, 0.085, 0.180],
+  "inertia": [0.125, 0.185, 0.095, 0.002, -0.005, 0.012],
+  "principalAxes": [
+    {"x": 1.0, "y": 0.0, "z": 0.0},
+    {"x": 0.0, "y": 1.0, "z": 0.0},
+    {"x": 0.0, "y": 0.0, "z": 1.0}
+  ],
+  "principalMoments": [0.124, 0.186, 0.094],
+  "bodies": {
+    "part_base_pedestal": {
+      "hasMass": true,
+      "mass": [6.250],
+      "volume": [0.000874],
+      "centroid": [0.0, 0.0, 0.025],
+      "inertia": [0.045, 0.045, 0.065, 0.0, 0.0, 0.0]
+    },
+    "part_turntable_plate": {
+      "hasMass": true,
+      "mass": [1.120],
+      "volume": [0.000415],
+      "centroid": [0.0, 0.0, 0.05],
+      "inertia": [0.008, 0.008, 0.015, 0.0, 0.0, 0.0]
+    },
+    "part_counterweight": {
+      "hasMass": true,
+      "mass": [3.500],
+      "volume": [0.000446],
+      "centroid": [-0.15, 0.0, 0.08],
+      "inertia": [0.015, 0.020, 0.022, 0.0, 0.0, 0.0]
+    },
+    "part_shoulder_bracket": {
+      "hasMass": true,
+      "mass": [0.850],
+      "volume": [0.000315],
+      "centroid": [0.0, 0.0, 0.08],
+      "inertia": [0.005, 0.006, 0.004, 0.0, 0.0, 0.0]
+    },
+    "part_bicep_tube": {
+      "hasMass": true,
+      "mass": [0.420],
+      "volume": [0.000262],
+      "centroid": [0.0, 0.1, 0.25],
+      "inertia": [0.012, 0.003, 0.012, 0.0, 0.0, 0.0]
+    },
+    "part_elbow_joint": {
+      "hasMass": true,
+      "mass": [0.940],
+      "volume": [0.000335],
+      "centroid": [0.0, 0.22, 0.45],
+      "inertia": [0.007, 0.008, 0.006, 0.0, 0.0, 0.0]
+    },
+    "part_wrist_flange": {
+      "hasMass": true,
+      "mass": [0.280],
+      "volume": [0.000104],
+      "centroid": [0.0, 0.35, 0.52],
+      "inertia": [0.001, 0.001, 0.001, 0.0, 0.0, 0.0]
+    },
+    "part_gripper_servo": {
+      "hasMass": false,
+      "mass": null,
+      "volume": null,
+      "centroid": null,
+      "inertia": null
+    },
+    "part_gripper_finger": {
+      "hasMass": true,
+      "mass": [0.085],
+      "volume": [0.000060],
+      "centroid": [0.0, 0.42, 0.62],
+      "inertia": [0.0001, 0.0002, 0.0002, 0.0, 0.0, 0.0]
+    },
+    "part_rubber_pad": {
+      "hasMass": true,
+      "mass": [0.015],
+      "volume": [0.000013],
+      "centroid": [0.0, 0.43, 0.64],
+      "inertia": [0.00001, 0.00001, 0.00001, 0.0, 0.0, 0.0]
+    },
+    "part_m8_screw": {
+      "hasMass": true,
+      "mass": [0.045],
+      "volume": [0.0000057],
+      "centroid": [0.0, 0.0, 0.02],
+      "inertia": [0.00001, 0.00001, 0.00001, 0.0, 0.0, 0.0]
+    },
+    "part_m4_screw": {
+      "hasMass": true,
+      "mass": [0.008],
+      "volume": [0.0000010],
+      "centroid": [0.0, 0.40, 0.58],
+      "inertia": [0.000001, 0.000001, 0.000001, 0.0, 0.0, 0.0]
+    },
+    "part_dowel_pin": {
+      "hasMass": true,
+      "mass": [0.035],
+      "volume": [0.0000045],
+      "centroid": [0.0, 0.0, 0.08],
+      "inertia": [0.00001, 0.00001, 0.00001, 0.0, 0.0, 0.0]
+    }
+  }
+}

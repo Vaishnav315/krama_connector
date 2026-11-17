@@ -1,0 +1,473 @@
+{
+  "documentId": "doc-robot-arm-001",
+  "elementId": "elem-asm-top-001",
+  "documentVersion": "ver-release-2.0",
+  "rootAssembly": {
+    "documentId": "doc-robot-arm-001",
+    "elementId": "elem-asm-top-001",
+    "fullConfiguration": "default",
+    "instances": [
+      {
+        "id": "inst_base_pedestal_1",
+        "name": "Base Pedestal Cast <1>",
+        "type": "Part",
+        "partId": "part_base_pedestal",
+        "elementId": "elem-parts-001",
+        "documentId": "doc-robot-arm-001",
+        "suppressed": false
+      },
+      {
+        "id": "inst_turntable_plate_1",
+        "name": "Turntable Bearing Plate <1>",
+        "type": "Part",
+        "partId": "part_turntable_plate",
+        "elementId": "elem-parts-001",
+        "documentId": "doc-robot-arm-001",
+        "suppressed": false
+      },
+      {
+        "id": "inst_arm_module_subasm_1",
+        "name": "Articulated Arm Module <1>",
+        "type": "Assembly",
+        "elementId": "elem-subasm-arm-002",
+        "documentId": "doc-robot-arm-001",
+        "suppressed": false
+      },
+      {
+        "id": "inst_counterweight_1",
+        "name": "Steel Counterweight <1>",
+        "type": "Part",
+        "partId": "part_counterweight",
+        "elementId": "elem-parts-001",
+        "documentId": "doc-robot-arm-001",
+        "suppressed": false
+      },
+      {
+        "id": "inst_m8_bolt_1",
+        "name": "Hex Cap Screw M8x25 <1>",
+        "type": "Part",
+        "partId": "part_m8_screw",
+        "elementId": "elem-hardware-001",
+        "documentId": "doc-robot-arm-001",
+        "isStandardContent": true,
+        "suppressed": false
+      },
+      {
+        "id": "inst_m8_bolt_2",
+        "name": "Hex Cap Screw M8x25 <2>",
+        "type": "Part",
+        "partId": "part_m8_screw",
+        "elementId": "elem-hardware-001",
+        "documentId": "doc-robot-arm-001",
+        "isStandardContent": true,
+        "suppressed": false
+      }
+    ],
+    "subAssemblies": [
+      {
+        "documentId": "doc-robot-arm-001",
+        "elementId": "elem-subasm-arm-002",
+        "instances": [
+          {
+            "id": "inst_shoulder_bracket_1",
+            "name": "Shoulder Pivot Bracket <1>",
+            "type": "Part",
+            "partId": "part_shoulder_bracket",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_bicep_tube_1",
+            "name": "Carbon Bicep Tube <1>",
+            "type": "Part",
+            "partId": "part_bicep_tube",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_elbow_joint_1",
+            "name": "Elbow Joint Housing <1>",
+            "type": "Part",
+            "partId": "part_elbow_joint",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_wrist_effector_subasm_1",
+            "name": "Wrist & End Effector Subassembly <1>",
+            "type": "Assembly",
+            "elementId": "elem-subasm-wrist-003",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_pin_pivot_1",
+            "name": "Dowel Pin 12x40 <1>",
+            "type": "Part",
+            "partId": "part_dowel_pin",
+            "elementId": "elem-hardware-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_pin_pivot_2",
+            "name": "Dowel Pin 12x40 <2>",
+            "type": "Part",
+            "partId": "part_dowel_pin",
+            "elementId": "elem-hardware-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          }
+        ]
+      },
+      {
+        "documentId": "doc-robot-arm-001",
+        "elementId": "elem-subasm-wrist-003",
+        "instances": [
+          {
+            "id": "inst_wrist_flange_1",
+            "name": "Wrist Mounting Flange <1>",
+            "type": "Part",
+            "partId": "part_wrist_flange",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_ft_sensor_1",
+            "name": "6-Axis Force Torque Sensor <1>",
+            "type": "Part",
+            "partId": "part_ft_sensor",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_gripper_servo_1",
+            "name": "Dynamixel Servo Actuator <1>",
+            "type": "Part",
+            "partId": "part_gripper_servo",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_gripper_finger_left_1",
+            "name": "Gripper Finger Left <1>",
+            "type": "Part",
+            "partId": "part_gripper_finger",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_gripper_finger_right_1",
+            "name": "Gripper Finger Right <1>",
+            "type": "Part",
+            "partId": "part_gripper_finger",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_rubber_pad_1",
+            "name": "Silicone Finger Pad <1>",
+            "type": "Part",
+            "partId": "part_rubber_pad",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_rubber_pad_2",
+            "name": "Silicone Finger Pad <2>",
+            "type": "Part",
+            "partId": "part_rubber_pad",
+            "elementId": "elem-parts-001",
+            "documentId": "doc-robot-arm-001",
+            "suppressed": false
+          },
+          {
+            "id": "inst_m4_screw_1",
+            "name": "Button Head M4x10 <1>",
+            "type": "Part",
+            "partId": "part_m4_screw",
+            "elementId": "elem-hardware-001",
+            "documentId": "doc-robot-arm-001",
+            "isStandardContent": true,
+            "suppressed": false
+          },
+          {
+            "id": "inst_m4_screw_2",
+            "name": "Button Head M4x10 <2>",
+            "type": "Part",
+            "partId": "part_m4_screw",
+            "elementId": "elem-hardware-001",
+            "documentId": "doc-robot-arm-001",
+            "isStandardContent": true,
+            "suppressed": false
+          }
+        ]
+      }
+    ],
+    "occurrences": [
+      {
+        "path": ["inst_base_pedestal_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+        "fixed": true,
+        "hidden": false
+      },
+      {
+        "path": ["inst_turntable_plate_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.05, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_counterweight_1"],
+        "transform": [1.0, 0.0, 0.0, -0.15, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.08, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_m8_bolt_1"],
+        "transform": [1.0, 0.0, 0.0, 0.05, 0.0, 1.0, 0.0, 0.05, 0.0, 0.0, 1.0, 0.02, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_m8_bolt_2"],
+        "transform": [1.0, 0.0, 0.0, -0.05, 0.0, 1.0, 0.0, 0.05, 0.0, 0.0, 1.0, 0.02, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.07, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_shoulder_bracket_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.08, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_bicep_tube_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 0.866, -0.5, 0.1, 0.0, 0.5, 0.866, 0.25, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_elbow_joint_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.22, 0.0, 0.0, 1.0, 0.45, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_pin_pivot_1"],
+        "transform": [1.0, 0.0, 0.0, 0.02, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.08, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_pin_pivot_2"],
+        "transform": [1.0, 0.0, 0.0, -0.02, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.08, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.35, 0.0, 0.0, 1.0, 0.50, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_wrist_flange_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.35, 0.0, 0.0, 1.0, 0.52, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_ft_sensor_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.365, 0.0, 0.0, 1.0, 0.54, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_gripper_servo_1"],
+        "transform": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.395, 0.0, 0.0, 1.0, 0.58, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_gripper_finger_left_1"],
+        "transform": [1.0, 0.0, 0.0, -0.03, 0.0, 1.0, 0.0, 0.435, 0.0, 0.0, 1.0, 0.64, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_gripper_finger_right_1"],
+        "transform": [1.0, 0.0, 0.0, 0.03, 0.0, 1.0, 0.0, 0.435, 0.0, 0.0, 1.0, 0.64, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_rubber_pad_1"],
+        "transform": [1.0, 0.0, 0.0, -0.028, 0.0, 1.0, 0.0, 0.445, 0.0, 0.0, 1.0, 0.66, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_rubber_pad_2"],
+        "transform": [1.0, 0.0, 0.0, 0.028, 0.0, 1.0, 0.0, 0.445, 0.0, 0.0, 1.0, 0.66, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_m4_screw_1"],
+        "transform": [1.0, 0.0, 0.0, -0.02, 0.0, 1.0, 0.0, 0.415, 0.0, 0.0, 1.0, 0.60, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      },
+      {
+        "path": ["inst_arm_module_subasm_1", "inst_wrist_effector_subasm_1", "inst_m4_screw_2"],
+        "transform": [1.0, 0.0, 0.0, 0.02, 0.0, 1.0, 0.0, 0.415, 0.0, 0.0, 1.0, 0.60, 0.0, 0.0, 0.0, 1.0],
+        "fixed": false,
+        "hidden": false
+      }
+    ]
+  },
+  "parts": [
+    {
+      "partId": "part_base_pedestal",
+      "name": "Base Pedestal Cast",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-001-BASE",
+      "revision": "A",
+      "material": "Cast Iron Class 30",
+      "density": 7150.0
+    },
+    {
+      "partId": "part_turntable_plate",
+      "name": "Turntable Bearing Plate",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-002-TTB",
+      "revision": "A",
+      "material": "Aluminum 6061-T6",
+      "density": 2700.0
+    },
+    {
+      "partId": "part_counterweight",
+      "name": "Steel Counterweight",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-003-CW",
+      "revision": "A",
+      "material": "Structural Steel A36",
+      "density": 7850.0
+    },
+    {
+      "partId": "part_shoulder_bracket",
+      "name": "Shoulder Pivot Bracket",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-004-SHB",
+      "revision": "A",
+      "material": "Aluminum 6061-T6",
+      "density": 2700.0
+    },
+    {
+      "partId": "part_bicep_tube",
+      "name": "Carbon Bicep Tube",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-005-BCT",
+      "revision": "B",
+      "material": "Carbon Fiber Composite",
+      "density": 1550.0
+    },
+    {
+      "partId": "part_elbow_joint",
+      "name": "Elbow Joint Housing",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-006-ELB",
+      "revision": "B",
+      "material": "Titanium Ti-6Al-4V",
+      "density": 4430.0
+    },
+    {
+      "partId": "part_ft_sensor",
+      "name": "6-Axis Force Torque Sensor",
+      "elementId": "elem-parts-001",
+      "partNumber": "COTS-ATI-AXIA80",
+      "revision": "1.0",
+      "material": "Anodized Aluminum / Stainless",
+      "density": 3200.0
+    },
+    {
+      "partId": "part_wrist_flange",
+      "name": "Wrist Mounting Flange",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-007-WFL",
+      "revision": "A",
+      "material": "Aluminum 6061-T6",
+      "density": 2700.0
+    },
+    {
+      "partId": "part_gripper_servo",
+      "name": "Dynamixel Servo Actuator",
+      "elementId": "elem-parts-001",
+      "partNumber": "COTS-SERVO-XM430",
+      "revision": null,
+      "material": null,
+      "density": null
+    },
+    {
+      "partId": "part_gripper_finger",
+      "name": "Gripper Finger",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-008-FNG",
+      "revision": "A",
+      "material": "POM / Acetal (Delrin)",
+      "density": 1420.0
+    },
+    {
+      "partId": "part_rubber_pad",
+      "name": "Silicone Finger Pad",
+      "elementId": "elem-parts-001",
+      "partNumber": "ARM-009-RPD",
+      "revision": "A",
+      "material": "Silicone Rubber (Shore 50A)",
+      "density": 1150.0
+    },
+    {
+      "partId": "part_m8_screw",
+      "name": "Hex Cap Screw M8x25",
+      "elementId": "elem-hardware-001",
+      "partNumber": "ISO-4017-M8x25-8.8",
+      "revision": null,
+      "material": "Steel Grade 8.8 Galvanized",
+      "density": 7850.0
+    },
+    {
+      "partId": "part_m4_screw",
+      "name": "Button Head M4x10",
+      "elementId": "elem-hardware-001",
+      "partNumber": "ISO-7380-M4x10-A2",
+      "revision": null,
+      "material": "Stainless Steel A2-70",
+      "density": 7900.0
+    },
+    {
+      "partId": "part_dowel_pin",
+      "name": "Dowel Pin 12x40",
+      "elementId": "elem-hardware-001",
+      "partNumber": "DIN-6325-12x40-m6",
+      "revision": null,
+      "material": "Hardened Tool Steel",
+      "density": 7850.0
+    }
+  ]
+}

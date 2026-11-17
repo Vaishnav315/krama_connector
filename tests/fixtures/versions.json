@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ver-release-1.0",
+    "name": "Release v1.0",
+    "description": "Baseline production release of 6-DOF robotic manipulator",
+    "microversion": "mver-001",
+    "createdAt": "2026-11-01T10:00:00Z",
+    "type": "version"
+  },
+  {
+    "id": "ver-release-2.0",
+    "name": "Release v2.0",
+    "description": "Upgraded titanium elbow joint, integrated 6-axis F/T sensor, optimized base bolting",
+    "microversion": "mver-002",
+    "createdAt": "2026-11-10T14:30:00Z",
+    "type": "version"
+  },
+  {
+    "id": "ver-release-3.0",
+    "name": "Release v3.0",
+    "description": "Hardened industrial revision with ingress protection sealing",
+    "microversion": "mver-003",
+    "createdAt": "2026-11-15T09:15:00Z",
+    "type": "version"
+  }
+]

@@ -110,11 +110,11 @@ krama_onshape_connector/
   `intake_files(*, project_id: uuid.UUID, files: list[tuple[str, bytes]], source: Literal["connector"], metadata_by_source_file: dict[str, dict[str, Any]] | None = None) -> IngestionRun`
 
 ### Module 3: CAD Connector Abstraction & Onshape Client
-- [ ] Abstract base class `CADConnector` (`app/connectors/base.py`).
-- [ ] Onshape Authentication (`app/connectors/onshape/auth.py`):
+- [x] Abstract base class `CADConnector` (`app/connectors/base.py`).
+- [x] Onshape Authentication (`app/connectors/onshape/auth.py`):
   - HMAC-SHA256 request signing per Onshape specifications (`On-Nonce`, `Date`, Authorization header).
   - OAuth2 bearer token support.
-- [ ] Onshape REST Client (`app/connectors/onshape/client.py`):
+- [x] Onshape REST Client (`app/connectors/onshape/client.py`):
   - Base URL, timeout handling, error handling, rate limiting (HTTP 429 backoff).
   - Document and version metadata retrieval.
   - Assembly definition retrieval (`/api/assemblies/d/...`).
@@ -123,12 +123,12 @@ krama_onshape_connector/
   - Bounding box retrieval (`/api/assemblies/d/.../boundingboxes`).
 
 ### Module 4: Realistic Onshape Assembly Fixtures & Parsing
-- [ ] Recorded fixtures for an authentic public Onshape assembly:
+- [x] Recorded fixtures for an authentic public Onshape assembly:
   - Nested subassemblies (at least 2 levels).
-  - At least 15 part instances.
+  - At least 15 part instances (22 instances implemented).
   - Realistic materials, part numbers, bounding boxes, mass properties.
-- [ ] Version 1, Version 2 (modified mass, parts, subassemblies), Version 3 fixtures.
-- [ ] Assembly tree transformer:
+- [x] Version 1, Version 2 (modified mass, parts, subassemblies), Version 3 fixtures.
+- [x] Assembly tree transformer:
   - Distinction between part definitions and instances.
   - Correct parent-child occurrence path resolution.
   - Aggregated instance counts alongside separate individual instances.
