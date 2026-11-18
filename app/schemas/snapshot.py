@@ -36,7 +36,7 @@ class Snapshot(BaseModel):
     """Canonical versioned CAD snapshot representing an Onshape assembly."""
 
     snapshot_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    source: Literal["onshape"] = "onshape"
+    source: Literal["onshape", "freecad"] = "onshape"
     document: DocumentReference
     extracted_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     units: UnitsSchema = Field(default_factory=UnitsSchema)

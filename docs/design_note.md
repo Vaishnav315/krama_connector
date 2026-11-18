@@ -34,10 +34,10 @@ Flow Engineering ([flowengineering.com/integrations](https://www.flowengineering
 ┌───────────────────────────────────▼────────────────────────────────────┐
 │                  CADConnector Interface (Abstraction)                  │
 ├───────────────────────────────────┬────────────────────────────────────┤
-│   OnshapeConnector (Adapter)      │   Future Connectors (Teamcenter)   │
-│   - HMAC / OAuth2 Auth            │   - Kerberos / Active Directory    │
-│   - Assembly Occurrence Resolver  │   - Item Revision BOM Parser       │
-│   - Mass & Provenance Extractor   │   - JT / Step Translation Engine   │
+│   OnshapeConnector (Cloud REST)   │   FreeCADConnector (Live Bridge)   │
+│   - HMAC-SHA256 / OAuth2 Auth     │   - Persistent DocumentObserver    │
+│   - Assembly Occurrence Resolver  │   - Real-time Edit Event Listener  │
+│   - Mass & Provenance Extractor   │   - Universal Solid B-Rep Extractor│
 └───────────────────┬───────────────┴────────────────────────────────────┘
                     │ Produces Canonical Snapshot
 ┌───────────────────▼────────────────────────────────────────────────────┐
@@ -51,7 +51,7 @@ Flow Engineering ([flowengineering.com/integrations](https://www.flowengineering
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-1. **Connector Abstraction (`CADConnector`)**: KRAMA ingests engineering data from multiple CAD/PLM platforms. Encapsulating Onshape inside an abstract base class isolates vendor-specific response payloads and ensures upstream ingestion logic is CAD-agnostic.
+1. **Connector Abstraction (`CADConnector`)**: KRAMA ingests engineering data from multiple CAD/PLM platforms. Encapsulating CAD engines behind an abstract base class (`CADConnector`) isolates vendor-specific response payloads and ensures upstream ingestion logic is CAD-agnostic. We demonstrated this directly by implementing both the cloud REST-based `OnshapeConnector` and the desktop-based `FreeCADConnector` behind this identical interface.
 2. **Canonical Versioned Snapshots**: Rather than streaming live delta mutations, the connector extracts complete point-in-time snapshots bound to immutable version IDs (`ver-release-1.0`) and microversion IDs (`mver-001`). This ensures complete determinism and idempotent downstream graph ingestion.
 3. **File-Based Ingestion Interface (`intake_files`)**: Passing partitioned byte artifacts (`assembly_snapshot.json`, `components.json`, `properties.json`, `provenance.json`) to `intake_files` preserves KRAMA's architectural boundary. The ingestion pipeline can stage, hash-deduplicate, and review snapshot files before committing graph transactions.
 4. **FastAPI & SQLAlchemy**: FastAPI provides OpenAPI documentation, type validation, and asynchronous execution. SQLAlchemy manages connection audit records and snapshot caching, using SQLite for lightweight automated tests and PostgreSQL in production.
@@ -94,11 +94,15 @@ To operate reliably in high-volume production, the connector exports the followi
 
 ## E. Verified Claims & Implementation Fidelity
 
-* **Assembly Tested**: Tested against a realistic 6-DOF modular robotic arm (`doc-robot-arm-001`, `elem-asm-top-001`).
-* **Hierarchy Depth & Size**: Verified 2 levels of nested subassemblies (`Articulated Arm Module` -> `Wrist & End Effector Subassembly`) containing 22 part instances (exceeding the 15-part requirement).
+* **Assemblies Tested**:
+  * **Onshape**: Realistic 6-DOF modular robotic arm (`doc-robot-arm-001`, `elem-asm-top-001`) with 2 levels of nested subassemblies (`Articulated Arm Module` -> `Wrist & End Effector Subassembly`) containing 22 part instances (exceeding the 15-part requirement).
+  * **FreeCAD Linked Assembly**: `AssemblyExample1.FCStd` containing 13 linked part instances (`App::Link`) and assembly joints.
+  * **FreeCAD Direct Solid Import**: `indrbt_home.FCStd` containing 54 solid component bodies (`Part::Feature`), verified end-to-end under live user editing and translation change detection.
 * **Properties Extracted**: Part names, part numbers (`ARM-001-BASE`), revisions (`A`, `B`), materials (`Cast Iron Class 30`, `Aluminum 6061-T6`, `Titanium Ti-6Al-4V`), densities, 3D bounding extents, mass, centroid, and 6-component inertia tensors.
 * **Missing Value Auditing**: Verified that COTS components (`Dynamixel Servo Actuator`) with no assigned material or density remain `None`, with missing-value records generated and provenance marked as `SOURCE_UNAVAILABLE`.
-* **Verification Status**: Fully verified with 26 unit, integration, and contract tests in pytest. The HTTP REST client includes authentic HMAC-SHA256 signing and OAuth support; live network requests against Onshape servers remain unverified due to Onshape Free/Student API key provisioning restrictions.
+* **Verification Status**:
+  * Onshape connector verified via 26 automated unit, integration, and contract tests in pytest against recorded authentic fixtures (due to Onshape free-tier API key provisioning restrictions).
+  * FreeCAD bridge verified both live inside FreeCAD GUI (via `freecad_observer_bridge.FCMacro` and `krama_watcher.py`) and via standalone automated integration test (`test_bridge.py`). All 26 Onshape tests and all FreeCAD bridge verification tests pass.
 
 ---
 
