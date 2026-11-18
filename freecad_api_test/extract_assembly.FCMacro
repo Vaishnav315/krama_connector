@@ -1,0 +1,298 @@
+# -*- coding: utf-8 -*-
+"""FreeCAD Assembly Extraction Macro.
+
+Extracts assembly hierarchy, component instances, source definitions, placements,
+joint definitions and kinematics, geometric properties (volume, geometric center of mass,
+bounding boxes), and custom properties from FreeCAD assemblies.
+
+Works both headlessly via `freecadcmd` and inside the FreeCAD GUI Macro runner.
+"""
+
+import json
+import math
+import os
+import sys
+
+import FreeCAD
+
+def placement_to_dict(plm):
+    """Convert a FreeCAD.Placement to serializable dictionary."""
+    if not plm:
+        return None
+    pos = plm.Base
+    rot = plm.Rotation
+    q = rot.Q  # (x, y, z, w)
+    mat = plm.toMatrix().A  # 16-element tuple
+
+    return {
+        "position": [round(pos.x, 6), round(pos.y, 6), round(pos.z, 6)],
+        "rotation_quaternion": [round(q[0], 6), round(q[1], 6), round(q[2], 6), round(q[3], 6)],
+        "rotation_euler_yaw_pitch_roll_deg": [
+            round(rot.toEuler()[0], 6),
+            round(rot.toEuler()[1], 6),
+            round(rot.toEuler()[2], 6),
+        ],
+        "transform_matrix_4x4": [round(v, 6) for v in mat],
+    }
+
+def bound_box_to_dict(bbox):
+    """Convert a FreeCAD.BoundBox to serializable dictionary."""
+    if not bbox or not bbox.isValid():
+        return None
+    return {
+        "min": [round(bbox.XMin, 6), round(bbox.YMin, 6), round(bbox.ZMin, 6)],
+        "max": [round(bbox.XMax, 6), round(bbox.YMax, 6), round(bbox.ZMax, 6)],
+        "dimensions": [round(bbox.XLength, 6), round(bbox.YLength, 6), round(bbox.ZLength, 6)],
+    }
+
+def vector_to_list(vec):
+    """Convert a FreeCAD.Vector to serializable list."""
+    if not vec:
+        return None
+    return [round(vec.x, 6), round(vec.y, 6), round(vec.z, 6)]
+
+def extract_custom_properties(obj):
+    """Extract custom/user-added properties, metadata, and materials."""
+    custom_props = {}
+    standard_ignore = {
+        "Content", "ExpressionEngine", "FullName", "ID", "Id", "InList", "InListRecursive",
+        "Label2", "License", "LicenseURL", "MemSize", "Meta", "Module", "MustExecute",
+        "NoTouch", "OldLabel", "OutList", "OutListRecursive", "Parents", "Placement",
+        "PropertiesList", "Removing", "State", "Type", "TypeId", "Uid", "ViewObject",
+        "Visibility", "_ElementMapVersion", "_GroupTouched", "Shape", "Group"
+    }
+
+    for prop_name in obj.PropertiesList:
+        if prop_name in standard_ignore:
+            continue
+        try:
+            val = getattr(obj, prop_name)
+            # Handle primitive types
+            if isinstance(val, (int, float, str, bool)):
+                custom_props[prop_name] = val
+            elif hasattr(val, "Value"):  # FreeCAD Quantity
+                custom_props[prop_name] = {
+                    "value": round(float(val.Value), 6),
+                    "unit": str(val.Unit),
+                    "string": str(val),
+                }
+            elif isinstance(val, dict):
+                custom_props[prop_name] = str(val)
+        except Exception:
+            pass
+    return custom_props
+
+def extract_assembly(fcstd_path=None, output_json_path=None):
+    """Main extraction routine."""
+    # Determine input path
+    base_dir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
+    if not fcstd_path:
+        candidate_paths = [
+            os.path.join(base_dir, "AssemblyExample1.FCStd"),
+            os.path.join(base_dir, "AssemblyExample.FCStd"),
+            "/Users/vaishnav/Desktop/freecad_api_test/AssemblyExample1.FCStd",
+        ]
+        for p in candidate_paths:
+            if os.path.exists(p):
+                fcstd_path = p
+                break
+
+    if not fcstd_path or not os.path.exists(fcstd_path):
+        raise FileNotFoundError(f"Input FreeCAD assembly file not found: {fcstd_path}")
+
+    if not output_json_path:
+        output_json_path = os.path.join(os.path.dirname(fcstd_path), "assembly_snapshot.json")
+
+    print(f"[FreeCAD Extractor] Opening document: {fcstd_path}")
+    doc = FreeCAD.openDocument(fcstd_path)
+
+    # 1. Identify Assembly Roots
+    assembly_roots = []
+    for obj in doc.Objects:
+        if obj.TypeId in ("Assembly::AssemblyObject", "App::Part"):
+            assembly_roots.append(obj)
+
+    # 2. Extract Components / Instances
+    instances = []
+    part_definitions = {}
+    overall_bbox = None
+    total_volume = 0.0
+    weighted_centroid_sum = [0.0, 0.0, 0.0]
+
+    # Map part definitions (e.g. from CAD group)
+    for obj in doc.Objects:
+        if obj.TypeId in ("Part::Feature", "PartDesign::Body") and not hasattr(obj, "LinkedObject"):
+            shape = getattr(obj, "Shape", None)
+            has_valid_shape = shape is not None and not shape.isNull()
+            part_definitions[obj.Name] = {
+                "name": obj.Name,
+                "label": obj.Label,
+                "type_id": obj.TypeId,
+                "has_geometry": has_valid_shape,
+                "volume_mm3": round(shape.Volume, 6) if has_valid_shape else None,
+                "geometric_center_of_mass_mm": vector_to_list(shape.CenterOfMass) if has_valid_shape else None,
+                "bounding_box_mm": bound_box_to_dict(shape.BoundBox) if has_valid_shape else None,
+            }
+
+    # Extract all instance links (App::Link)
+    for obj in doc.Objects:
+        if obj.TypeId == "App::Link":
+            linked = getattr(obj, "LinkedObject", None)
+            shape = getattr(obj, "Shape", None)
+            has_shape = shape is not None and not shape.isNull()
+
+            geom_vol = round(shape.Volume, 6) if has_shape else None
+            geom_com = vector_to_list(shape.CenterOfMass) if has_shape else None
+            bbox_dict = bound_box_to_dict(shape.BoundBox) if has_shape else None
+
+            # Accumulate overall geometry
+            if has_shape and shape.Volume > 0:
+                total_volume += shape.Volume
+                com = shape.CenterOfMass
+                weighted_centroid_sum[0] += com.x * shape.Volume
+                weighted_centroid_sum[1] += com.y * shape.Volume
+                weighted_centroid_sum[2] += com.z * shape.Volume
+
+                if overall_bbox is None:
+                    overall_bbox = FreeCAD.BoundBox(shape.BoundBox)
+                else:
+                    overall_bbox.add(shape.BoundBox)
+
+            missing_reasons = []
+            if not hasattr(obj, "Material") or not getattr(obj, "Material"):
+                missing_reasons.append(
+                    "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. "
+                    "Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+                )
+
+            instance_data = {
+                "instance_name": obj.Name,
+                "instance_label": obj.Label,
+                "type_id": obj.TypeId,
+                "source_object": {
+                    "name": linked.Name if linked else None,
+                    "label": linked.Label if linked else None,
+                    "type_id": linked.TypeId if linked else None,
+                },
+                "placement": placement_to_dict(obj.Placement),
+                "geometry": {
+                    "has_shape": has_shape,
+                    "volume_mm3": geom_vol,
+                    "geometric_center_of_mass_mm": geom_com,
+                    "bounding_box_mm": bbox_dict,
+                },
+                "physical_mass_properties": {
+                    "physical_mass_kg": None,
+                    "physical_center_of_mass_mm": None,
+                    "status": "unavailable",
+                    "missing_reasons": missing_reasons,
+                },
+                "custom_properties": extract_custom_properties(obj),
+            }
+            instances.append(instance_data)
+
+    # 3. Extract Joints & Kinematics
+    joints = []
+    for obj in doc.Objects:
+        is_joint = "Joint" in obj.TypeId or hasattr(obj, "JointType") or hasattr(obj, "Reference1")
+        if is_joint and obj.TypeId != "Assembly::JointGroup":
+            joint_type = getattr(obj, "JointType", "Unknown")
+            ref1 = getattr(obj, "Reference1", None)
+            ref2 = getattr(obj, "Reference2", None)
+
+            def format_ref(ref):
+                if not ref:
+                    return None
+                part_obj = ref[0] if isinstance(ref, (list, tuple)) and len(ref) > 0 else ref
+                sub_elems = ref[1] if isinstance(ref, (list, tuple)) and len(ref) > 1 else []
+                return {
+                    "object_name": getattr(part_obj, "Name", str(part_obj)),
+                    "object_label": getattr(part_obj, "Label", str(part_obj)),
+                    "sub_elements": list(sub_elems) if isinstance(sub_elems, (list, tuple)) else [str(sub_elems)],
+                }
+
+            joint_data = {
+                "name": obj.Name,
+                "label": obj.Label,
+                "joint_type": str(joint_type),
+                "type_id": obj.TypeId,
+                "connected_parts": {
+                    "part1": format_ref(ref1),
+                    "part2": format_ref(ref2),
+                },
+                "kinematic_limits": {
+                    "distance_mm": round(float(getattr(obj, "Distance", 0.0)), 6) if hasattr(obj, "Distance") else None,
+                    "angle_deg": round(float(getattr(obj, "Angle", 0.0)), 6) if hasattr(obj, "Angle") else None,
+                    "length_min_mm": round(float(getattr(obj, "LengthMin", 0.0)), 6) if hasattr(obj, "LengthMin") and getattr(obj, "EnableLengthMin", False) else None,
+                    "length_max_mm": round(float(getattr(obj, "LengthMax", 0.0)), 6) if hasattr(obj, "LengthMax") and getattr(obj, "EnableLengthMax", False) else None,
+                    "angle_min_deg": round(float(getattr(obj, "AngleMin", 0.0)), 6) if hasattr(obj, "AngleMin") and getattr(obj, "EnableAngleMin", False) else None,
+                    "angle_max_deg": round(float(getattr(obj, "AngleMax", 0.0)), 6) if hasattr(obj, "AngleMax") and getattr(obj, "EnableAngleMax", False) else None,
+                },
+                "offsets": {
+                    "offset1": placement_to_dict(getattr(obj, "Offset1", None)),
+                    "offset2": placement_to_dict(getattr(obj, "Offset2", None)),
+                },
+                "custom_properties": extract_custom_properties(obj),
+            }
+            joints.append(joint_data)
+
+    # 4. Overall Assembly Geometric Centroid
+    overall_centroid = None
+    if total_volume > 0:
+        overall_centroid = [
+            round(weighted_centroid_sum[0] / total_volume, 6),
+            round(weighted_centroid_sum[1] / total_volume, 6),
+            round(weighted_centroid_sum[2] / total_volume, 6),
+        ]
+
+    # 5. Compile Canonical Snapshot Payload
+    snapshot = {
+        "metadata": {
+            "source": "FreeCAD",
+            "freecad_version": ".".join(FreeCAD.Version()[:3]),
+            "freecad_revision": FreeCAD.Version()[3],
+            "document_name": doc.Name,
+            "document_label": doc.Label,
+            "file_path": fcstd_path,
+            "units": {
+                "length": "millimeter",
+                "volume": "millimeter^3",
+                "area": "millimeter^2",
+                "angle": "degree",
+                "mass": "kilogram (unavailable without assigned density)",
+            },
+        },
+        "assembly": {
+            "root_name": assembly_roots[0].Name if assembly_roots else "Root",
+            "root_label": assembly_roots[0].Label if assembly_roots else "Root",
+            "root_type": assembly_roots[0].TypeId if assembly_roots else None,
+            "overall_geometry": {
+                "total_volume_mm3": round(total_volume, 6),
+                "geometric_center_of_mass_mm": overall_centroid,
+                "bounding_box_mm": bound_box_to_dict(overall_bbox),
+                "note_on_mass": (
+                    "Geometric center of mass represents the volumetric centroid of all assembly solid bodies. "
+                    "Physical center of mass and physical mass are unavailable because no density is assigned."
+                ),
+            },
+            "instance_count": len(instances),
+            "joint_count": len(joints),
+            "instances": instances,
+            "joints": joints,
+            "part_definitions": part_definitions,
+        },
+    }
+
+    # Write output JSON
+    with open(output_json_path, "w", encoding="utf-8") as f:
+        json.dump(snapshot, f, indent=2, sort_keys=True)
+
+    print(f"\n[FreeCAD Extractor] SUCCESS!")
+    print(f"Extracted {len(instances)} component instances and {len(joints)} joints.")
+    print(f"Total assembly volume: {round(total_volume, 2)} mm^3")
+    print(f"Overall geometric center of mass: {overall_centroid}")
+    print(f"Snapshot exported to: {output_json_path}")
+    return snapshot
+
+if __name__ == "__main__" or "FreeCAD" in sys.modules:
+    extract_assembly()

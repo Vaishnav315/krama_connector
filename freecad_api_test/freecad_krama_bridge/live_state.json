@@ -1,0 +1,4667 @@
+{
+  "assembly": {
+    "instance_count": 53,
+    "instances": [
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "base_mounting_plate",
+          "Label": "base_mounting_plate",
+          "RepresentationRole": "structure",
+          "RigidGroup": "base"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              220.0,
+              220.0,
+              20.0
+            ],
+            "max": [
+              110.0,
+              110.0,
+              20.0
+            ],
+            "min": [
+              -110.0,
+              -110.0,
+              0.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -0.0,
+            9.927836
+          ],
+          "has_shape": true,
+          "volume_mm3": 708138.546064
+        },
+        "instance_label": "base_mounting_plate",
+        "instance_name": "Component01",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "base_mounting_plate",
+          "name": "Component01",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "fixed_base_riser",
+          "Label": "fixed_base_riser",
+          "RepresentationRole": "structure",
+          "RigidGroup": "base"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              152.0,
+              151.74284,
+              96.0
+            ],
+            "max": [
+              76.0,
+              75.87142,
+              116.0
+            ],
+            "min": [
+              -76.0,
+              -75.87142,
+              20.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -0.0,
+            68.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 743595.377567
+        },
+        "instance_label": "fixed_base_riser",
+        "instance_name": "Component02",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "fixed_base_riser",
+          "name": "Component02",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j1_slew_bearing_envelope",
+          "Label": "j1_slew_bearing_envelope",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "base"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              136.0,
+              136.0,
+              14.0
+            ],
+            "max": [
+              68.0,
+              68.0,
+              123.0
+            ],
+            "min": [
+              -68.0,
+              -68.0,
+              109.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            0.0,
+            116.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 70327.693143
+        },
+        "instance_label": "j1_slew_bearing_envelope",
+        "instance_name": "Component03",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j1_slew_bearing_envelope",
+          "name": "Component03",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "base_electronics_cover",
+          "Label": "base_electronics_cover",
+          "RepresentationRole": "removable cover",
+          "RigidGroup": "base"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              157.732689,
+              158.0,
+              87.0
+            ],
+            "max": [
+              78.866345,
+              79.0,
+              111.0
+            ],
+            "min": [
+              -78.866345,
+              -79.0,
+              24.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            0.0,
+            67.5
+          ],
+          "has_shape": true,
+          "volume_mm3": 97878.10983
+        },
+        "instance_label": "base_electronics_cover",
+        "instance_name": "Component04",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            50.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.422618,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.766044,
+            0.0,
+            0.0,
+            0.766044,
+            0.642788,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "base_electronics_cover",
+          "name": "Component04",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "turret_neck",
+          "Label": "turret_neck",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              110.0,
+              109.838676,
+              30.0
+            ],
+            "max": [
+              55.0,
+              54.919338,
+              140.0
+            ],
+            "min": [
+              -55.0,
+              -54.919338,
+              110.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            0.0,
+            125.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 226194.671058
+        },
+        "instance_label": "turret_neck",
+        "instance_name": "Component05",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "turret_neck",
+          "name": "Component05",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "turret_bridge",
+          "Label": "turret_bridge",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              110.0,
+              118.0,
+              12.0
+            ],
+            "max": [
+              55.0,
+              59.0,
+              139.0
+            ],
+            "min": [
+              -55.0,
+              -59.0,
+              127.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            0.0,
+            133.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 154249.20307
+        },
+        "instance_label": "turret_bridge",
+        "instance_name": "Component06",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            133.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            133.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "turret_bridge",
+          "name": "Component06",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "shoulder_fork_-1",
+          "Label": "shoulder_fork_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              119.914962,
+              18.0,
+              119.957473
+            ],
+            "max": [
+              60.0,
+              -51.0,
+              249.978737
+            ],
+            "min": [
+              -59.914962,
+              -69.0,
+              130.021263
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -60.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 122862.159479
+        },
+        "instance_label": "shoulder_fork_-1",
+        "instance_name": "Component07",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_fork_-1",
+          "name": "Component07",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "shoulder_bearing_-1",
+          "Label": "shoulder_bearing_-1",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              73.94756,
+              12.0,
+              73.973775
+            ],
+            "max": [
+              37.0,
+              -48.0,
+              226.986888
+            ],
+            "min": [
+              -36.94756,
+              -60.0,
+              153.013112
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -54.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 22053.980428
+        },
+        "instance_label": "shoulder_bearing_-1",
+        "instance_name": "Component08",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_bearing_-1",
+          "name": "Component08",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "shoulder_fork_+1",
+          "Label": "shoulder_fork_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              119.914962,
+              18.0,
+              119.957473
+            ],
+            "max": [
+              60.0,
+              69.0,
+              249.978737
+            ],
+            "min": [
+              -59.914962,
+              51.0,
+              130.021263
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            60.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 122862.159479
+        },
+        "instance_label": "shoulder_fork_+1",
+        "instance_name": "Component09",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_fork_+1",
+          "name": "Component09",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "shoulder_bearing_+1",
+          "Label": "shoulder_bearing_+1",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              73.94756,
+              12.0,
+              73.973775
+            ],
+            "max": [
+              37.0,
+              60.0,
+              226.986888
+            ],
+            "min": [
+              -36.94756,
+              48.0,
+              153.013112
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            54.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 22053.980428
+        },
+        "instance_label": "shoulder_bearing_+1",
+        "instance_name": "Component10",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_bearing_+1",
+          "name": "Component10",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j2_gearbox_envelope",
+          "Label": "j2_gearbox_envelope",
+          "RepresentationRole": "gearbox envelope",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              91.934804,
+              18.0,
+              91.967396
+            ],
+            "max": [
+              46.0,
+              -71.0,
+              235.983698
+            ],
+            "min": [
+              -45.934804,
+              -89.0,
+              144.016302
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -0.0,
+            -80.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 119656.98099
+        },
+        "instance_label": "j2_gearbox_envelope",
+        "instance_name": "Component11",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            -80.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.707107,
+            0.0,
+            0.0,
+            0.707107
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            -80.0,
+            0.0,
+            1.0,
+            0.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j2_gearbox_envelope",
+          "name": "Component11",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "j2_motor_envelope",
+          "Label": "j2_motor_envelope",
+          "RepresentationRole": "motor envelope",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              63.0,
+              60.0,
+              63.0
+            ],
+            "max": [
+              31.5,
+              -89.0,
+              221.5
+            ],
+            "min": [
+              -31.5,
+              -149.0,
+              158.5
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -119.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 235616.282402
+        },
+        "instance_label": "j2_motor_envelope",
+        "instance_name": "Component12",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            -119.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            -119.0,
+            0.0,
+            0.0,
+            1.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j2_motor_envelope",
+          "name": "Component12",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j2_motor_endcap",
+          "Label": "j2_motor_endcap",
+          "RepresentationRole": "motor end cap",
+          "RigidGroup": "j1"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              58.0,
+              5.0,
+              58.0
+            ],
+            "max": [
+              29.0,
+              -149.0,
+              219.0
+            ],
+            "min": [
+              -29.0,
+              -154.0,
+              161.0
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -0.0,
+            -151.5,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 13210.397108
+        },
+        "instance_label": "j2_motor_endcap",
+        "instance_name": "Component13",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            -151.5,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.707107,
+            0.0,
+            0.0,
+            0.707107
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            -151.5,
+            0.0,
+            1.0,
+            0.0,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j2_motor_endcap",
+          "name": "Component13",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "shoulder_rotor",
+          "Label": "shoulder_rotor",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              91.997758,
+              96.0,
+              91.85655
+            ],
+            "max": [
+              45.998879,
+              48.0,
+              235.928275
+            ],
+            "min": [
+              -45.998879,
+              -48.0,
+              144.071725
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 400029.79966
+        },
+        "instance_label": "shoulder_rotor",
+        "instance_name": "Component14",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_rotor",
+          "name": "Component14",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "shoulder_output_shaft",
+          "Label": "shoulder_output_shaft",
+          "RepresentationRole": "hollow output shaft",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              55.982594,
+              128.0,
+              55.930388
+            ],
+            "max": [
+              27.991297,
+              64.0,
+              217.965194
+            ],
+            "min": [
+              -27.991297,
+              -64.0,
+              162.034806
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            0.0,
+            -0.0,
+            190.0
+          ],
+          "has_shape": true,
+          "volume_mm3": 199051.310531
+        },
+        "instance_label": "shoulder_output_shaft",
+        "instance_name": "Component15",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "shoulder_output_shaft",
+          "name": "Component15",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "upper_arm_hollow_link",
+          "Label": "upper_arm_hollow_link",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              191.020639,
+              80.0,
+              200.634672
+            ],
+            "max": [
+              173.28762,
+              40.0,
+              383.008714
+            ],
+            "min": [
+              -17.733019,
+              -40.0,
+              182.374042
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            77.777301,
+            -0.0,
+            282.691378
+          ],
+          "has_shape": true,
+          "volume_mm3": 185978.700274
+        },
+        "instance_label": "upper_arm_hollow_link",
+        "instance_name": "Component16",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "upper_arm_hollow_link",
+          "name": "Component16",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "elbow_fork_bridge_-1",
+          "Label": "elbow_fork_bridge_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              123.223752,
+              12.0,
+              126.181916
+            ],
+            "max": [
+              217.809265,
+              -39.0,
+              439.239758
+            ],
+            "min": [
+              94.585513,
+              -51.0,
+              313.057841
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            156.197389,
+            -45.0,
+            376.1488
+          ],
+          "has_shape": true,
+          "volume_mm3": 99469.168026
+        },
+        "instance_label": "elbow_fork_bridge_-1",
+        "instance_name": "Component17",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            156.197389,
+            -45.0,
+            376.1488
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            156.197389,
+            0.0,
+            1.0,
+            -0.0,
+            -45.0,
+            0.766044,
+            0.0,
+            0.642788,
+            376.1488,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_fork_bridge_-1",
+          "name": "Component17",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "elbow_fork_bridge_+1",
+          "Label": "elbow_fork_bridge_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              123.223752,
+              12.0,
+              126.181916
+            ],
+            "max": [
+              217.809265,
+              51.0,
+              439.239758
+            ],
+            "min": [
+              94.585513,
+              39.0,
+              313.057841
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            156.197389,
+            45.0,
+            376.1488
+          ],
+          "has_shape": true,
+          "volume_mm3": 99469.168026
+        },
+        "instance_label": "elbow_fork_bridge_+1",
+        "instance_name": "Component18",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            156.197389,
+            45.0,
+            376.1488
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            156.197389,
+            0.0,
+            1.0,
+            -0.0,
+            45.0,
+            0.766044,
+            0.0,
+            0.642788,
+            376.1488,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_fork_bridge_+1",
+          "name": "Component18",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "upper_service_cover_-1",
+          "Label": "upper_service_cover_-1",
+          "RepresentationRole": "service cover",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              138.614638,
+              2.5,
+              150.693807
+            ],
+            "max": [
+              147.08462,
+              -40.0,
+              358.038281
+            ],
+            "min": [
+              8.469982,
+              -42.5,
+              207.344474
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            77.777301,
+            -41.25,
+            282.691378
+          ],
+          "has_shape": true,
+          "volume_mm3": 21525.663706
+        },
+        "instance_label": "upper_service_cover_-1",
+        "instance_name": "Component19",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            77.777301,
+            -41.25,
+            282.691378
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            77.777301,
+            0.0,
+            1.0,
+            -0.0,
+            -41.25,
+            0.766044,
+            0.0,
+            0.642788,
+            282.691378,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "upper_service_cover_-1",
+          "name": "Component19",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "elbow_fork_-1",
+          "Label": "elbow_fork_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              103.936646,
+              12.0,
+              103.936646
+            ],
+            "max": [
+              257.660358,
+              -41.0,
+              487.102545
+            ],
+            "min": [
+              153.723712,
+              -53.0,
+              383.165899
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            -47.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 68773.735753
+        },
+        "instance_label": "elbow_fork_-1",
+        "instance_name": "Component20",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_fork_-1",
+          "name": "Component20",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "elbow_bearing_-1",
+          "Label": "elbow_bearing_-1",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              57.978431,
+              10.0,
+              57.967015
+            ],
+            "max": [
+              234.685818,
+              -34.0,
+              464.101745
+            ],
+            "min": [
+              176.707387,
+              -44.0,
+              406.134729
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            -39.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 13854.423602
+        },
+        "instance_label": "elbow_bearing_-1",
+        "instance_name": "Component21",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_bearing_-1",
+          "name": "Component21",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "upper_service_cover_+1",
+          "Label": "upper_service_cover_+1",
+          "RepresentationRole": "service cover",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              138.614638,
+              2.5,
+              150.693807
+            ],
+            "max": [
+              147.08462,
+              42.5,
+              358.038281
+            ],
+            "min": [
+              8.469982,
+              40.0,
+              207.344474
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            77.777301,
+            41.25,
+            282.691378
+          ],
+          "has_shape": true,
+          "volume_mm3": 21525.663706
+        },
+        "instance_label": "upper_service_cover_+1",
+        "instance_name": "Component22",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            77.777301,
+            41.25,
+            282.691378
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            77.777301,
+            0.0,
+            1.0,
+            -0.0,
+            41.25,
+            0.766044,
+            0.0,
+            0.642788,
+            282.691378,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "upper_service_cover_+1",
+          "name": "Component22",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "elbow_fork_+1",
+          "Label": "elbow_fork_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              103.936646,
+              12.0,
+              103.936646
+            ],
+            "max": [
+              257.660358,
+              53.0,
+              487.102545
+            ],
+            "min": [
+              153.723712,
+              41.0,
+              383.165899
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            47.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 68773.735753
+        },
+        "instance_label": "elbow_fork_+1",
+        "instance_name": "Component23",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_fork_+1",
+          "name": "Component23",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "elbow_bearing_+1",
+          "Label": "elbow_bearing_+1",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              57.978431,
+              10.0,
+              57.967015
+            ],
+            "max": [
+              234.685818,
+              44.0,
+              464.101745
+            ],
+            "min": [
+              176.707387,
+              34.0,
+              406.134729
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            39.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 13854.423602
+        },
+        "instance_label": "elbow_bearing_+1",
+        "instance_name": "Component24",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            0.0,
+            0.0,
+            190.0
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            -0.422618,
+            0.0,
+            0.906308
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.0,
+            -0.766044,
+            0.0,
+            0.0,
+            1.0,
+            -0.0,
+            0.0,
+            0.766044,
+            0.0,
+            0.642788,
+            190.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_bearing_+1",
+          "name": "Component24",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j3_gearbox_envelope",
+          "Label": "j3_gearbox_envelope",
+          "RepresentationRole": "gearbox envelope",
+          "RigidGroup": "j2"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              75.998624,
+              16.0,
+              75.911928
+            ],
+            "max": [
+              243.691347,
+              -53.0,
+              473.090186
+            ],
+            "min": [
+              167.692723,
+              -69.0,
+              397.178258
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            -61.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 72583.356669
+        },
+        "instance_label": "j3_gearbox_envelope",
+        "instance_name": "Component25",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            -61.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            -50.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.640856,
+            -0.298836,
+            0.298836,
+            0.640856
+          ],
+          "transform_matrix_4x4": [
+            0.642788,
+            -0.766044,
+            -0.0,
+            205.692035,
+            0.0,
+            -0.0,
+            -1.0,
+            -61.0,
+            0.766044,
+            0.642788,
+            -0.0,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j3_gearbox_envelope",
+          "name": "Component25",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "elbow_rotor",
+          "Label": "elbow_rotor",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              75.972604,
+              64.0,
+              75.972604
+            ],
+            "max": [
+              243.678337,
+              32.0,
+              473.120524
+            ],
+            "min": [
+              167.705733,
+              -32.0,
+              397.14792
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 209908.654742
+        },
+        "instance_label": "elbow_rotor",
+        "instance_name": "Component27",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.692035,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_rotor",
+          "name": "Component27",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "elbow_output_shaft",
+          "Label": "elbow_output_shaft",
+          "RepresentationRole": "hollow output shaft",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              39.550774,
+              92.0,
+              39.587692
+            ],
+            "max": [
+              225.467422,
+              46.0,
+              454.928068
+            ],
+            "min": [
+              185.916648,
+              -46.0,
+              415.340376
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            205.692035,
+            -0.0,
+            435.134222
+          ],
+          "has_shape": true,
+          "volume_mm3": 84407.306107
+        },
+        "instance_label": "elbow_output_shaft",
+        "instance_name": "Component28",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.692035,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "elbow_output_shaft",
+          "name": "Component28",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "Aluminium",
+          "ComponentName": "forearm_hollow_link",
+          "Label": "forearm_hollow_link",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              227.613231,
+              65.0,
+              209.124706
+            ],
+            "max": [
+              427.508882,
+              32.5,
+              449.063522
+            ],
+            "min": [
+              199.895651,
+              -32.5,
+              239.938816
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            313.702266,
+            -0.0,
+            344.501169
+          ],
+          "has_shape": true,
+          "volume_mm3": 186452.050514
+        },
+        "instance_label": "forearm_hollow_link",
+        "instance_name": "Component29",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.69,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.69,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "forearm_hollow_link",
+          "name": "Component29",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "forearm_service_cover_-1",
+          "Label": "forearm_service_cover_-1",
+          "RepresentationRole": "service cover",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              182.300437,
+              2.5,
+              162.234225
+            ],
+            "max": [
+              404.85452,
+              -32.5,
+              425.618281
+            ],
+            "min": [
+              222.554083,
+              -35.0,
+              263.384057
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            313.704302,
+            -33.75,
+            344.501169
+          ],
+          "has_shape": true,
+          "volume_mm3": 22213.663706
+        },
+        "instance_label": "forearm_service_cover_-1",
+        "instance_name": "Component30",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            313.704302,
+            -33.75,
+            344.501169
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            313.704302,
+            0.0,
+            1.0,
+            0.0,
+            -33.75,
+            -0.642788,
+            0.0,
+            0.766044,
+            344.501169,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "forearm_service_cover_-1",
+          "name": "Component30",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "forearm_service_cover_+1",
+          "Label": "forearm_service_cover_+1",
+          "RepresentationRole": "service cover",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              182.300437,
+              2.5,
+              162.234225
+            ],
+            "max": [
+              404.85452,
+              35.0,
+              425.618281
+            ],
+            "min": [
+              222.554083,
+              32.5,
+              263.384057
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            313.704302,
+            33.75,
+            344.501169
+          ],
+          "has_shape": true,
+          "volume_mm3": 22213.663706
+        },
+        "instance_label": "forearm_service_cover_+1",
+        "instance_name": "Component31",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            313.704302,
+            33.75,
+            344.501169
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            313.704302,
+            0.0,
+            1.0,
+            0.0,
+            33.75,
+            -0.642788,
+            0.0,
+            0.766044,
+            344.501169,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "forearm_service_cover_+1",
+          "name": "Component31",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_roll_stator",
+          "Label": "wrist_roll_stator",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              80.975539,
+              75.960952,
+              85.156648
+            ],
+            "max": [
+              455.284845,
+              37.980476,
+              302.201624
+            ],
+            "min": [
+              374.309306,
+              -37.980476,
+              217.044976
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            414.822168,
+            -0.0,
+            259.653204
+          ],
+          "has_shape": true,
+          "volume_mm3": 90510.28966
+        },
+        "instance_label": "wrist_roll_stator",
+        "instance_name": "Component32",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.692035,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_roll_stator",
+          "name": "Component32",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j4_bearing_envelope",
+          "Label": "j4_bearing_envelope",
+          "RepresentationRole": "bearing envelope",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              43.872584,
+              53.976285,
+              49.043526
+            ],
+            "max": [
+              446.701797,
+              26.988143,
+              275.800566
+            ],
+            "min": [
+              402.829214,
+              -26.988143,
+              226.75704
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            424.780746,
+            0.0,
+            251.296965
+          ],
+          "has_shape": true,
+          "volume_mm3": 5767.964112
+        },
+        "instance_label": "j4_bearing_envelope",
+        "instance_name": "Component33",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.692035,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j4_bearing_envelope",
+          "name": "Component33",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_roll_rotor",
+          "Label": "wrist_roll_rotor",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j4"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              52.15792,
+              69.881571,
+              56.982712
+            ],
+            "max": [
+              457.23689,
+              34.940786,
+              273.111883
+            ],
+            "min": [
+              405.07897,
+              -34.940786,
+              216.129171
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            428.882301,
+            0.0,
+            247.855352
+          ],
+          "has_shape": true,
+          "volume_mm3": 34195.450636
+        },
+        "instance_label": "wrist_roll_rotor",
+        "instance_name": "Component34",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            420.184479,
+            0.0,
+            255.153691
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            420.184479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            255.153691,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_roll_rotor",
+          "name": "Component34",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "wrist_roll_cover",
+          "Label": "wrist_roll_cover",
+          "RepresentationRole": "cover",
+          "RigidGroup": "j3"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              83.544048,
+              79.958897,
+              88.217678
+            ],
+            "max": [
+              456.567779,
+              39.979449,
+              303.730565
+            ],
+            "min": [
+              373.02373,
+              -39.979449,
+              215.512887
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            414.822168,
+            0.0,
+            259.653204
+          ],
+          "has_shape": true,
+          "volume_mm3": 18572.844441
+        },
+        "instance_label": "wrist_roll_cover",
+        "instance_name": "Component35",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            205.692035,
+            0.0,
+            435.134222
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            205.692035,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            435.134222,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_roll_cover",
+          "name": "Component35",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_pitch_fork_-1",
+          "Label": "wrist_pitch_fork_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j4"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              59.965878,
+              8.0,
+              59.977687
+            ],
+            "max": [
+              484.622882,
+              -26.0,
+              256.212367
+            ],
+            "min": [
+              424.657004,
+              -34.0,
+              196.23468
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            454.656479,
+            -30.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 14867.524401
+        },
+        "instance_label": "wrist_pitch_fork_-1",
+        "instance_name": "Component36",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            420.184479,
+            0.0,
+            255.153691
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            420.184479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            255.153691,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_pitch_fork_-1",
+          "name": "Component36",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_pitch_fork_+1",
+          "Label": "wrist_pitch_fork_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j4"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              59.965878,
+              8.0,
+              59.977687
+            ],
+            "max": [
+              484.622882,
+              34.0,
+              256.212367
+            ],
+            "min": [
+              424.657004,
+              26.0,
+              196.23468
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            454.656479,
+            30.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 14867.524401
+        },
+        "instance_label": "wrist_pitch_fork_+1",
+        "instance_name": "Component37",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            420.184479,
+            0.0,
+            255.153691
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            40.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.34202,
+            0.0,
+            0.939693
+          ],
+          "transform_matrix_4x4": [
+            0.766044,
+            0.0,
+            0.642788,
+            420.184479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            -0.642788,
+            0.0,
+            0.766044,
+            255.153691,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_pitch_fork_+1",
+          "name": "Component37",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_pitch_rotor",
+          "Label": "wrist_pitch_rotor",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j5"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              48.0,
+              48.0,
+              47.905283
+            ],
+            "max": [
+              478.656479,
+              24.0,
+              250.18089
+            ],
+            "min": [
+              430.656479,
+              -24.0,
+              202.275607
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            454.656479,
+            -0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 65144.065265
+        },
+        "instance_label": "wrist_pitch_rotor",
+        "instance_name": "Component38",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            454.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            454.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_pitch_rotor",
+          "name": "Component38",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "wrist_pitch_neck",
+          "Label": "wrist_pitch_neck",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j5"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              23.0,
+              37.93571,
+              38.0
+            ],
+            "max": [
+              489.656479,
+              18.967855,
+              245.228249
+            ],
+            "min": [
+              466.656479,
+              -18.967855,
+              207.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            478.156479,
+            0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 18858.980699
+        },
+        "instance_label": "wrist_pitch_neck",
+        "instance_name": "Component39",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            454.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            454.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "wrist_pitch_neck",
+          "name": "Component39",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "j6_stator_envelope",
+          "Label": "j6_stator_envelope",
+          "RepresentationRole": "gearbox envelope",
+          "RigidGroup": "j5"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              12.0,
+              47.929604,
+              48.0
+            ],
+            "max": [
+              489.656479,
+              23.964802,
+              250.228249
+            ],
+            "min": [
+              477.656479,
+              -23.964802,
+              202.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            483.656479,
+            -0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 13232.388257
+        },
+        "instance_label": "j6_stator_envelope",
+        "instance_name": "Component40",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            454.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            454.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "j6_stator_envelope",
+          "name": "Component40",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "tool_flange_6xM5_PCD46",
+          "Label": "tool_flange_6xM5_PCD46",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              12.0,
+              59.912005,
+              60.0
+            ],
+            "max": [
+              501.656479,
+              29.956002,
+              256.228249
+            ],
+            "min": [
+              489.656479,
+              -29.956002,
+              196.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            494.210935,
+            -0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 21893.759203
+        },
+        "instance_label": "tool_flange_6xM5_PCD46",
+        "instance_name": "Component41",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "tool_flange_6xM5_PCD46",
+          "name": "Component41",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "interchangeable_gripper_adapter",
+          "Label": "interchangeable_gripper_adapter",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              8.0,
+              59.978737,
+              59.957481
+            ],
+            "max": [
+              505.656479,
+              29.989368,
+              256.18573
+            ],
+            "min": [
+              497.656479,
+              -29.989368,
+              196.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            501.656479,
+            -0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 15748.552645
+        },
+        "instance_label": "interchangeable_gripper_adapter",
+        "instance_name": "Component42",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "interchangeable_gripper_adapter",
+          "name": "Component42",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "gripper_pocketed_body",
+          "Label": "gripper_pocketed_body",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              25.0,
+              146.0,
+              48.0
+            ],
+            "max": [
+              530.656479,
+              73.0,
+              250.228249
+            ],
+            "min": [
+              505.656479,
+              -73.0,
+              202.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            514.724027,
+            -1e-06,
+            224.672305
+          ],
+          "has_shape": true,
+          "volume_mm3": 63389.361078
+        },
+        "instance_label": "gripper_pocketed_body",
+        "instance_name": "Component43",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_pocketed_body",
+          "name": "Component43",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "gripper_top_service_cover",
+          "Label": "gripper_top_service_cover",
+          "RepresentationRole": "service cover",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              16.0,
+              100.0,
+              2.0
+            ],
+            "max": [
+              526.656479,
+              50.0,
+              252.228249
+            ],
+            "min": [
+              510.656479,
+              -50.0,
+              250.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            518.656479,
+            0.0,
+            251.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 3120.499119
+        },
+        "instance_label": "gripper_top_service_cover",
+        "instance_name": "Component44",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_top_service_cover",
+          "name": "Component44",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "gripper_guide_rod_-14",
+          "Label": "gripper_guide_rod_-14",
+          "RepresentationRole": "linear guide",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              7.0,
+              136.0,
+              6.948962
+            ],
+            "max": [
+              536.156479,
+              68.0,
+              215.70273
+            ],
+            "min": [
+              529.156479,
+              -68.0,
+              208.753768
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            532.656479,
+            0.0,
+            212.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 5233.893361
+        },
+        "instance_label": "gripper_guide_rod_-14",
+        "instance_name": "Component45",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            532.656479,
+            0.0,
+            212.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.707107,
+            0.0,
+            0.0,
+            0.707107
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            532.656479,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            212.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_guide_rod_-14",
+          "name": "Component45",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "gripper_guide_rod_+14",
+          "Label": "gripper_guide_rod_+14",
+          "RepresentationRole": "linear guide",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              7.0,
+              136.0,
+              6.948962
+            ],
+            "max": [
+              536.156479,
+              68.0,
+              243.70273
+            ],
+            "min": [
+              529.156479,
+              -68.0,
+              236.753768
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            532.656479,
+            0.0,
+            240.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 5233.893361
+        },
+        "instance_label": "gripper_guide_rod_+14",
+        "instance_name": "Component46",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            532.656479,
+            0.0,
+            240.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.707107,
+            0.0,
+            0.0,
+            0.707107
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            532.656479,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            240.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_guide_rod_+14",
+          "name": "Component46",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "steel",
+          "ComponentName": "opposite_hand_screw_envelope",
+          "Label": "opposite_hand_screw_envelope",
+          "RepresentationRole": "opposite hand screw envelope",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              8.0,
+              154.0,
+              7.941671
+            ],
+            "max": [
+              521.656479,
+              77.0,
+              230.199084
+            ],
+            "min": [
+              513.656479,
+              -77.0,
+              222.257413
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            517.656479,
+            0.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 7740.884298
+        },
+        "instance_label": "opposite_hand_screw_envelope",
+        "instance_name": "Component47",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            517.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "rotation_quaternion": [
+            0.707107,
+            0.0,
+            0.0,
+            0.707107
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            517.656479,
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "opposite_hand_screw_envelope",
+          "name": "Component47",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "gripper_actuator_envelope",
+          "Label": "gripper_actuator_envelope",
+          "RepresentationRole": "motor envelope",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              30.0,
+              28.0,
+              30.0
+            ],
+            "max": [
+              532.656479,
+              106.0,
+              241.228249
+            ],
+            "min": [
+              502.656479,
+              78.0,
+              211.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            517.656479,
+            92.0,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 24815.433509
+        },
+        "instance_label": "gripper_actuator_envelope",
+        "instance_name": "Component48",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            517.656479,
+            92.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            517.656479,
+            0.0,
+            1.0,
+            0.0,
+            92.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_actuator_envelope",
+          "name": "Component48",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "gripper_jaw_carriage_-1",
+          "Label": "gripper_jaw_carriage_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              46.970386,
+              10.0,
+              36.0
+            ],
+            "max": [
+              558.656479,
+              -46.5,
+              244.228249
+            ],
+            "min": [
+              511.686093,
+              -56.5,
+              208.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            534.135121,
+            -51.5,
+            223.780526
+          ],
+          "has_shape": true,
+          "volume_mm3": 6120.990151
+        },
+        "instance_label": "gripper_jaw_carriage_-1",
+        "instance_name": "Component49",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_jaw_carriage_-1",
+          "name": "Component49",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "gripper_finger_-1",
+          "Label": "gripper_finger_-1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              60.0,
+              10.0,
+              18.0
+            ],
+            "max": [
+              599.656479,
+              -46.5,
+              235.228249
+            ],
+            "min": [
+              539.656479,
+              -56.5,
+              217.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            570.287633,
+            -51.5,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 10357.263709
+        },
+        "instance_label": "gripper_finger_-1",
+        "instance_name": "Component50",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_finger_-1",
+          "name": "Component50",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "gripper_contact_pad_-1",
+          "Label": "gripper_contact_pad_-1",
+          "RepresentationRole": "replaceable contact pad",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              22.0,
+              1.5,
+              15.0
+            ],
+            "max": [
+              599.656479,
+              -45.0,
+              233.728249
+            ],
+            "min": [
+              577.656479,
+              -46.5,
+              218.728249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            588.656479,
+            -45.75,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 488.201414
+        },
+        "instance_label": "gripper_contact_pad_-1",
+        "instance_name": "Component51",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            588.656479,
+            -45.75,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            588.656479,
+            0.0,
+            1.0,
+            0.0,
+            -45.75,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_contact_pad_-1",
+          "name": "Component51",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "gripper_jaw_carriage_+1",
+          "Label": "gripper_jaw_carriage_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              46.970386,
+              10.0,
+              36.0
+            ],
+            "max": [
+              558.656479,
+              56.5,
+              244.228249
+            ],
+            "min": [
+              511.686093,
+              46.5,
+              208.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            534.135121,
+            51.5,
+            223.780526
+          ],
+          "has_shape": true,
+          "volume_mm3": 6120.990151
+        },
+        "instance_label": "gripper_jaw_carriage_+1",
+        "instance_name": "Component52",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_jaw_carriage_+1",
+          "name": "Component52",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "aluminum",
+          "ComponentName": "gripper_finger_+1",
+          "Label": "gripper_finger_+1",
+          "RepresentationRole": "structure",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              60.0,
+              10.0,
+              18.0
+            ],
+            "max": [
+              599.656479,
+              56.5,
+              235.228249
+            ],
+            "min": [
+              539.656479,
+              46.5,
+              217.228249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            570.287633,
+            51.5,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 10357.263709
+        },
+        "instance_label": "gripper_finger_+1",
+        "instance_name": "Component53",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            489.656479,
+            0.0,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            489.656479,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_finger_+1",
+          "name": "Component53",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      },
+      {
+        "custom_properties": {
+          "AssumedMaterial": "polymer",
+          "ComponentName": "gripper_contact_pad_+1",
+          "Label": "gripper_contact_pad_+1",
+          "RepresentationRole": "replaceable contact pad",
+          "RigidGroup": "j6"
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              22.0,
+              1.5,
+              15.0
+            ],
+            "max": [
+              599.656479,
+              46.5,
+              233.728249
+            ],
+            "min": [
+              577.656479,
+              45.0,
+              218.728249
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            588.656479,
+            45.75,
+            226.228249
+          ],
+          "has_shape": true,
+          "volume_mm3": 488.201414
+        },
+        "instance_label": "gripper_contact_pad_+1",
+        "instance_name": "Component54",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            588.656479,
+            45.75,
+            226.228249
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            588.656479,
+            0.0,
+            1.0,
+            0.0,
+            45.75,
+            0.0,
+            0.0,
+            1.0,
+            226.228249,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "gripper_contact_pad_+1",
+          "name": "Component54",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "Part::Feature"
+      }
+    ],
+    "joint_count": 0,
+    "joints": [],
+    "overall_geometry": {
+      "bounding_box_mm": {
+        "dimensions": [
+          709.656479,
+          264.0,
+          487.102545
+        ],
+        "max": [
+          599.656479,
+          110.0,
+          487.102545
+        ],
+        "min": [
+          -110.0,
+          -154.0,
+          0.0
+        ]
+      },
+      "geometric_center_of_mass_mm": [
+        90.914454,
+        -8.511537,
+        187.247936
+      ],
+      "note_on_mass": "Geometric center of mass is the volume-weighted centroid of all solid bodies. Physical center of mass and mass are unavailable because no material density is assigned in FreeCAD.",
+      "total_volume_mm3": 4905910.248123
+    },
+    "part_definitions": {},
+    "root_label": "indrbt_home",
+    "root_name": "indrbt_home",
+    "root_type": "Document"
+  },
+  "metadata": {
+    "document_label": "indrbt_home",
+    "document_name": "indrbt_home",
+    "extracted_at_epoch": 1795002027.0156329,
+    "file_path": "/Users/vaishnav/Downloads/freecad_projects/indrbt_home.FCStd",
+    "freecad_revision": "20260928 (Git shallow)",
+    "freecad_version": "1.1.4",
+    "model_type": "direct_parts",
+    "source": "FreeCAD",
+    "units": {
+      "angle": "degree",
+      "area": "millimeter^2",
+      "length": "millimeter",
+      "mass": "kilogram (unavailable without assigned density)",
+      "volume": "millimeter^3"
+    }
+  }
+}

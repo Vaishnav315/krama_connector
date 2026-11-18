@@ -1,0 +1,579 @@
+# -*- coding: utf-8 -*-
+"""FreeCAD → KRAMA Live Observer Bridge Macro.
+
+PURPOSE
+-------
+Run this macro ONCE inside FreeCAD (Macro → Execute Macro).
+It registers a persistent DocumentObserver on the active document.
+Whenever you move, modify, add or delete a component the observer fires
+automatically, re-extracts the full assembly state, and writes an atomic
+JSON snapshot to the bridge watch-file.
+
+The external `krama_watcher.py` process (running in a normal terminal)
+reads that file, maps it to a KRAMA Snapshot, calls SnapshotDiffEngine,
+and prints the detected changes.
+
+NO MANUAL RE-RUNNING: Once started the observer lives for the entire
+FreeCAD session. To stop it run the macro a second time (it will
+unregister and cleanly shut down).
+
+WATCH FILE
+----------
+  freecad_api_test/freecad_krama_bridge/live_state.json
+
+Written atomically: written to live_state.json.tmp then os.replace()
+to guarantee the watcher never reads a partial file.
+
+OBSERVER EVENTS HANDLED
+-----------------------
+  slotChangedObject  - property change (placement, geometry, name…)
+  slotCreatedObject  - new object added to document
+  slotDeletedObject  - object removed from document
+  slotRecomputedDocument - recompute cycle finished (batch changes)
+"""
+
+import json
+import os
+import sys
+import threading
+import time
+
+import FreeCAD  # noqa: F401 — always available inside FreeCAD
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+_BRIDGE_DIR = os.path.dirname(os.path.abspath(__file__))
+_WATCH_FILE = os.path.join(_BRIDGE_DIR, "live_state.json")
+_WATCH_FILE_TMP = _WATCH_FILE + ".tmp"
+
+# Debounce: coalesce rapid successive events into one extraction.
+# FreeCAD fires many sub-events during a single drag operation.
+_DEBOUNCE_SECONDS = 0.35
+
+# ---------------------------------------------------------------------------
+# Global observer registry (survives macro re-runs for toggle behaviour)
+# ---------------------------------------------------------------------------
+
+if not hasattr(FreeCAD, "_krama_bridge_observer"):
+    FreeCAD._krama_bridge_observer = None
+
+
+# ---------------------------------------------------------------------------
+# Extraction helpers (identical logic to extract_assembly.FCMacro)
+# ---------------------------------------------------------------------------
+
+def _placement_to_dict(plm):
+    if not plm:
+        return None
+    pos = plm.Base
+    rot = plm.Rotation
+    q = rot.Q  # (x, y, z, w)
+    mat = plm.toMatrix().A  # 16-element row-major tuple
+    return {
+        "position": [round(pos.x, 6), round(pos.y, 6), round(pos.z, 6)],
+        "rotation_quaternion": [round(q[0], 6), round(q[1], 6), round(q[2], 6), round(q[3], 6)],
+        "rotation_euler_yaw_pitch_roll_deg": [
+            round(rot.toEuler()[0], 6),
+            round(rot.toEuler()[1], 6),
+            round(rot.toEuler()[2], 6),
+        ],
+        # Row-major 4×4 as flat 16-element list (KRAMA InstanceNode.transform format)
+        "transform_matrix_4x4": [round(v, 6) for v in mat],
+    }
+
+
+def _bbox_to_dict(bbox):
+    if not bbox or not bbox.isValid():
+        return None
+    return {
+        "min": [round(bbox.XMin, 6), round(bbox.YMin, 6), round(bbox.ZMin, 6)],
+        "max": [round(bbox.XMax, 6), round(bbox.YMax, 6), round(bbox.ZMax, 6)],
+        "dimensions": [round(bbox.XLength, 6), round(bbox.YLength, 6), round(bbox.ZLength, 6)],
+    }
+
+
+def _extract_custom_properties(obj):
+    """Return a dict of non-standard serialisable properties."""
+    skip = {
+        "Content", "ExpressionEngine", "FullName", "ID", "Id", "InList",
+        "InListRecursive", "Label2", "License", "LicenseURL", "MemSize",
+        "Meta", "Module", "MustExecute", "NoTouch", "OldLabel", "OutList",
+        "OutListRecursive", "Parents", "Placement", "PropertiesList",
+        "Removing", "State", "Type", "TypeId", "Uid", "ViewObject",
+        "Visibility", "_ElementMapVersion", "_GroupTouched", "Shape", "Group",
+    }
+    result = {}
+    for name in obj.PropertiesList:
+        if name in skip:
+            continue
+        try:
+            val = getattr(obj, name)
+            if isinstance(val, (int, float, str, bool)):
+                result[name] = val
+            elif hasattr(val, "Value"):
+                result[name] = {"value": round(float(val.Value), 6),
+                                "unit": str(val.Unit), "string": str(val)}
+        except Exception:
+            pass
+    return result
+
+
+def _extract_instance(obj):
+    """Extract one component instance record.
+
+    Works universally for:
+      - App::Link objects (FreeCAD Assembly workbench): geometry comes from LinkedObject.Shape
+      - Part::Feature / PartDesign::Body (imported STEP/IGES, etc.): geometry comes from obj.Shape
+    No hardcoding to a specific model type.
+    """
+    linked = getattr(obj, "LinkedObject", None)
+
+    # For App::Link: source is the linked target object.
+    # For standalone Part::Feature: source IS the object itself.
+    source_obj = linked if linked is not None else obj
+    source_info = {
+        "name": source_obj.Name,
+        "label": source_obj.Label,
+        "type_id": source_obj.TypeId,
+    }
+
+    geom = {"has_shape": False, "volume_mm3": None, "geometric_center_of_mass_mm": None,
+            "bounding_box_mm": None}
+    phys = {"status": "unavailable", "physical_mass_kg": None,
+            "physical_center_of_mass_mm": None,
+            "missing_reasons": [
+                "Physical mass is not defined because no material density property "
+                "was assigned to this object in FreeCAD. Only geometric volume and "
+                "geometric centroid (geometric center of mass) are available from "
+                "the CAD B-Rep shape."
+            ]}
+
+    # Prefer shape from obj directly (captures world placement for both link and direct part),
+    # fall back to source_obj shape if obj has no valid shape.
+    shape = getattr(obj, "Shape", None)
+    if shape is None or shape.isNull():
+        shape = getattr(source_obj, "Shape", None)
+
+    if shape and not shape.isNull():
+        geom["has_shape"] = True
+        try:
+            vol = shape.Volume
+            geom["volume_mm3"] = round(vol, 6) if vol else None
+        except Exception:
+            pass
+        try:
+            com = shape.CenterOfGravity
+            geom["geometric_center_of_mass_mm"] = [
+                round(com.x, 6), round(com.y, 6), round(com.z, 6)]
+        except Exception:
+            pass
+        try:
+            bb = shape.BoundBox
+            geom["bounding_box_mm"] = _bbox_to_dict(bb)
+        except Exception:
+            pass
+
+    placement = getattr(obj, "Placement", None)
+    return {
+        "instance_name": obj.Name,
+        "instance_label": obj.Label,
+        "type_id": obj.TypeId,
+        "source_object": source_info,
+        "placement": _placement_to_dict(placement),
+        "geometry": geom,
+        "physical_mass_properties": phys,
+        "custom_properties": _extract_custom_properties(obj),
+    }
+
+
+def _extract_joint(obj):
+    """Extract one Assembly joint record."""
+    joint_type = "unknown"
+    for attr in ("JointType", "Type", "Label2"):
+        val = getattr(obj, attr, None)
+        if val:
+            joint_type = str(val)
+            break
+
+    def _fmt_ref(ref):
+        if not ref:
+            return None
+        part_obj = ref[0] if isinstance(ref, (list, tuple)) and len(ref) > 0 else ref
+        sub = ref[1] if isinstance(ref, (list, tuple)) and len(ref) > 1 else []
+        return {
+            "object_name": getattr(part_obj, "Name", str(part_obj)),
+            "object_label": getattr(part_obj, "Label", str(part_obj)),
+            "sub_elements": list(sub) if isinstance(sub, (list, tuple)) else [str(sub)],
+        }
+
+    return {
+        "name": obj.Name,
+        "label": obj.Label,
+        "joint_type": joint_type,
+        "type_id": obj.TypeId,
+        "connected_parts": {
+            "part1": _fmt_ref(getattr(obj, "Reference1", None)),
+            "part2": _fmt_ref(getattr(obj, "Reference2", None)),
+        },
+    }
+
+
+def _extract_part_definition(obj):
+    """Extract a Part::Feature source definition."""
+    geom = {"has_geometry": False}
+    shape = getattr(obj, "Shape", None)
+    if shape and not shape.isNull():
+        geom["has_geometry"] = True
+        try:
+            geom["volume_mm3"] = round(shape.Volume, 6)
+        except Exception:
+            pass
+        try:
+            com = shape.CenterOfGravity
+            geom["geometric_center_of_mass_mm"] = [
+                round(com.x, 6), round(com.y, 6), round(com.z, 6)]
+        except Exception:
+            pass
+        try:
+            geom["bounding_box_mm"] = _bbox_to_dict(shape.BoundBox)
+        except Exception:
+            pass
+    return {
+        "name": obj.Name,
+        "label": obj.Label,
+        "type_id": obj.TypeId,
+        **geom,
+    }
+
+
+def run_extraction(doc):
+    """Full extraction of the given FreeCAD Document. Returns a dict.
+
+    Universal: handles ANY FreeCAD model type —
+      - Linked assemblies (App::Link objects in Assembly workbench)
+      - Imported direct-part models (Part::Feature, PartDesign::Body — STEP/IGES/etc.)
+      - Mixed models containing both
+    No hardcoding to specific model names, file paths, or object counts.
+    """
+    instances = []
+    part_definitions = {}
+    joints = []
+    overall_bbox = None
+    total_volume = 0.0
+    weighted_cx = weighted_cy = weighted_cz = 0.0
+
+    # ---- Pass 1: collect App::Link objects and assembly roots ----
+    links = []
+    assembly_roots = []
+    for obj in doc.Objects:
+        tid = obj.TypeId
+        if tid in ("Assembly::AssemblyObject", "App::Part"):
+            assembly_roots.append(obj)
+        if tid == "App::Link":
+            links.append(obj)
+        if ("Joint" in tid or tid.startswith("Assembly::Joint")):
+            joints.append(_extract_joint(obj))
+
+    # Build set of Part::Feature names that are targets of App::Link objects.
+    # These are "source definitions", not independent instances — avoid double-counting.
+    linked_target_names = set()
+    for lnk in links:
+        target = getattr(lnk, "LinkedObject", None)
+        if target is not None:
+            linked_target_names.add(target.Name)
+
+    # Determine model type for diagnostics
+    has_links = len(links) > 0
+    has_direct_parts = False  # will be set True if we find standalone Part::Feature
+
+    def _accumulate(rec):
+        """Update overall bounding box and volume-weighted centroid from one instance record."""
+        nonlocal overall_bbox, total_volume, weighted_cx, weighted_cy, weighted_cz
+        bb = rec["geometry"].get("bounding_box_mm")
+        vol = rec["geometry"].get("volume_mm3") or 0.0
+        com = rec["geometry"].get("geometric_center_of_mass_mm")
+        if bb:
+            mn, mx = bb["min"], bb["max"]
+            if overall_bbox is None:
+                overall_bbox = {"min": list(mn), "max": list(mx)}
+            else:
+                overall_bbox["min"] = [min(overall_bbox["min"][i], mn[i]) for i in range(3)]
+                overall_bbox["max"] = [max(overall_bbox["max"][i], mx[i]) for i in range(3)]
+        if com and vol > 0:
+            total_volume += vol
+            weighted_cx += com[0] * vol
+            weighted_cy += com[1] * vol
+            weighted_cz += com[2] * vol
+
+    # ---- Pass 2a: App::Link instances ----
+    for lnk in links:
+        rec = _extract_instance(lnk)
+        instances.append(rec)
+        _accumulate(rec)
+
+    # ---- Pass 2b: Direct Part::Feature / PartDesign::Body instances ----
+    # Include any solid-geometry object that is NOT already a link target.
+    # This covers imported STEP/IGES models where every part is a standalone Part::Feature.
+    _DIRECT_PART_TYPES = (
+        "Part::Feature",
+        "PartDesign::Body",
+        "Part::FeaturePython",
+        "Part::Compound",
+        "Part::MultiCommon",
+        "Part::MultiFuse",
+        "Part::Cut",
+        "Part::Boolean",
+        "Part::Fuse",
+        "Part::Common",
+    )
+    for obj in doc.Objects:
+        if obj.TypeId not in _DIRECT_PART_TYPES:
+            continue
+        if obj.Name in linked_target_names:
+            # This is a source definition for an App::Link — record as part_definition only
+            part_definitions[obj.Name] = _extract_part_definition(obj)
+            continue
+        # Only include objects with actual solid geometry (Volume > 0)
+        shape = getattr(obj, "Shape", None)
+        if shape is None or shape.isNull():
+            continue
+        try:
+            vol = shape.Volume
+        except Exception:
+            vol = 0.0
+        if not vol or vol <= 0:
+            continue
+        # This is a standalone solid — treat as a direct instance
+        has_direct_parts = True
+        rec = _extract_instance(obj)
+        instances.append(rec)
+        _accumulate(rec)
+
+    # Determine model_type label for diagnostics
+    if has_links and has_direct_parts:
+        model_type = "mixed"
+    elif has_links:
+        model_type = "linked_assembly"
+    else:
+        model_type = "direct_parts"
+
+    overall_centroid = None
+    if total_volume > 0:
+        overall_centroid = [
+            round(weighted_cx / total_volume, 6),
+            round(weighted_cy / total_volume, 6),
+            round(weighted_cz / total_volume, 6),
+        ]
+    if overall_bbox:
+        d = overall_bbox
+        d["dimensions"] = [
+            round(d["max"][i] - d["min"][i], 6) for i in range(3)
+        ]
+
+    # Assembly root: prefer an explicit Assembly object; fall back to doc name
+    if assembly_roots:
+        root_name = assembly_roots[0].Name
+        root_label = assembly_roots[0].Label
+        root_type = assembly_roots[0].TypeId
+    else:
+        root_name = doc.Name
+        root_label = doc.Label
+        root_type = "Document"
+
+    return {
+        "metadata": {
+            "source": "FreeCAD",
+            "freecad_version": ".".join(FreeCAD.Version()[:3]),
+            "freecad_revision": FreeCAD.Version()[3],
+            "document_name": doc.Name,
+            "document_label": doc.Label,
+            "file_path": doc.FileName if hasattr(doc, "FileName") else "",
+            "extracted_at_epoch": time.time(),
+            "model_type": model_type,
+            "units": {
+                "length": "millimeter",
+                "volume": "millimeter^3",
+                "area": "millimeter^2",
+                "angle": "degree",
+                "mass": "kilogram (unavailable without assigned density)",
+            },
+        },
+        "assembly": {
+            "root_name": root_name,
+            "root_label": root_label,
+            "root_type": root_type,
+            "overall_geometry": {
+                "total_volume_mm3": round(total_volume, 6),
+                "geometric_center_of_mass_mm": overall_centroid,
+                "bounding_box_mm": overall_bbox,
+                "note_on_mass": (
+                    "Geometric center of mass is the volume-weighted centroid of all "
+                    "solid bodies. Physical center of mass and mass are unavailable "
+                    "because no material density is assigned in FreeCAD."
+                ),
+            },
+            "instance_count": len(instances),
+            "joint_count": len(joints),
+            "instances": instances,
+            "joints": joints,
+            "part_definitions": part_definitions,
+        },
+    }
+
+
+def _write_atomic(data: dict) -> None:
+    """Write JSON atomically so the watcher never reads a partial file."""
+    payload = json.dumps(data, indent=2, sort_keys=True)
+    with open(_WATCH_FILE_TMP, "w", encoding="utf-8") as fh:
+        fh.write(payload)
+    os.replace(_WATCH_FILE_TMP, _WATCH_FILE)
+
+
+# ---------------------------------------------------------------------------
+# Debounced extraction thread
+# ---------------------------------------------------------------------------
+
+class _DebounceExtractor:
+    """Coalesces rapid document events into one extraction call."""
+
+    def __init__(self, doc):
+        self._doc = doc
+        self._timer = None
+        self._lock = threading.Lock()
+
+    def schedule(self):
+        with self._lock:
+            if self._timer is not None:
+                self._timer.cancel()
+            self._timer = threading.Timer(_DEBOUNCE_SECONDS, self._run)
+            self._timer.daemon = True
+            self._timer.start()
+
+    def _run(self):
+        try:
+            FreeCAD.Console.PrintMessage(
+                "[KRAMA Bridge] Change detected — extracting assembly...\n")
+            data = run_extraction(self._doc)
+            _write_atomic(data)
+            inst_count = data["assembly"]["instance_count"]
+            FreeCAD.Console.PrintMessage(
+                f"[KRAMA Bridge] ✓ Snapshot written ({inst_count} instances) → {_WATCH_FILE}\n")
+        except Exception as exc:
+            FreeCAD.Console.PrintError(
+                f"[KRAMA Bridge] Extraction error: {exc}\n")
+
+    def cancel(self):
+        with self._lock:
+            if self._timer is not None:
+                self._timer.cancel()
+                self._timer = None
+
+
+# ---------------------------------------------------------------------------
+# FreeCAD DocumentObserver
+# ---------------------------------------------------------------------------
+
+class KramaDocumentObserver:
+    """Persistent observer registered with FreeCAD.addDocumentObserver()."""
+
+    def __init__(self, doc):
+        self._doc = doc
+        self._extractor = _DebounceExtractor(doc)
+        self._doc_name = doc.Name
+
+    def _should_trigger(self, *args):
+        """Check if event belongs to our watched document."""
+        if not args:
+            return True
+        arg0 = args[0]
+        try:
+            # If argument is a Document (e.g. from slotRecomputedDocument, slotUndoDocument)
+            if hasattr(arg0, "Name") and hasattr(arg0, "Objects"):
+                return arg0.Name == self._doc_name
+            # If argument is a DocumentObject (e.g. from slotCreatedObject, slotChangedObject, slotDeletedObject)
+            doc = getattr(arg0, "Document", None)
+            if doc and hasattr(doc, "Name"):
+                return doc.Name == self._doc_name
+        except Exception:
+            pass
+        return True
+
+    # FreeCAD calls: slotChangedObject(obj, prop_name)
+    def slotChangedObject(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    # FreeCAD calls: slotCreatedObject(obj)
+    def slotCreatedObject(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    # FreeCAD calls: slotDeletedObject(obj)
+    def slotDeletedObject(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    # FreeCAD calls: slotRecomputedDocument(doc)
+    def slotRecomputedDocument(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    # FreeCAD calls: slotUndoDocument(doc)
+    def slotUndoDocument(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    # FreeCAD calls: slotRedoDocument(doc)
+    def slotRedoDocument(self, *args, **kwargs):
+        if self._should_trigger(*args):
+            self._extractor.schedule()
+
+    def stop(self):
+        self._extractor.cancel()
+        FreeCAD.Console.PrintMessage("[KRAMA Bridge] Observer stopped.\n")
+
+
+# ---------------------------------------------------------------------------
+# Macro entry point — toggle on/off
+# ---------------------------------------------------------------------------
+
+doc = FreeCAD.ActiveDocument
+if doc is None:
+    FreeCAD.Console.PrintError(
+        "[KRAMA Bridge] ERROR: No active document. Open AssemblyExample1.FCStd first.\n")
+else:
+    existing = FreeCAD._krama_bridge_observer
+
+    if existing is not None:
+        # Second run → unregister and shut down cleanly
+        FreeCAD.removeDocumentObserver(existing)
+        existing.stop()
+        FreeCAD._krama_bridge_observer = None
+        FreeCAD.Console.PrintMessage(
+            "[KRAMA Bridge] ✗ Observer UNREGISTERED. Bridge is now inactive.\n")
+    else:
+        # First run → register observer + write initial snapshot
+        observer = KramaDocumentObserver(doc)
+        FreeCAD.addDocumentObserver(observer)
+        FreeCAD._krama_bridge_observer = observer
+
+        FreeCAD.Console.PrintMessage(
+            f"[KRAMA Bridge] ✓ Observer REGISTERED on document '{doc.Name}'.\n")
+        FreeCAD.Console.PrintMessage(
+            f"[KRAMA Bridge] Watch file: {_WATCH_FILE}\n")
+        FreeCAD.Console.PrintMessage(
+            "[KRAMA Bridge] Extracting initial snapshot...\n")
+
+        try:
+            initial_data = run_extraction(doc)
+            _write_atomic(initial_data)
+            inst_count = initial_data["assembly"]["instance_count"]
+            FreeCAD.Console.PrintMessage(
+                f"[KRAMA Bridge] ✓ Initial snapshot written ({inst_count} instances).\n")
+            FreeCAD.Console.PrintMessage(
+                "[KRAMA Bridge] Now move a component — changes will be detected automatically.\n")
+        except Exception as exc:
+            FreeCAD.Console.PrintError(
+                f"[KRAMA Bridge] Initial extraction error: {exc}\n")

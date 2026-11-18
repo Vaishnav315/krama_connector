@@ -1,0 +1,4074 @@
+{
+  "assembly": {
+    "instance_count": 13,
+    "instances": [
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BasePin001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              20.0,
+              20.0,
+              100.0
+            ],
+            "max": [
+              -196.517029,
+              109.415699,
+              464.268005
+            ],
+            "min": [
+              -216.517029,
+              89.415699,
+              364.268005
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -206.517029,
+            99.415699,
+            414.268005
+          ],
+          "has_shape": true,
+          "volume_mm3": 31415.926536
+        },
+        "instance_label": "BasePin001",
+        "instance_name": "BasePin",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -206.517029,
+            40.255699,
+            364.268005
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "transform_matrix_4x4": [
+            1.0,
+            0.0,
+            0.0,
+            -206.517029,
+            0.0,
+            1.0,
+            0.0,
+            40.255699,
+            0.0,
+            0.0,
+            1.0,
+            364.268005,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BasePin",
+          "name": "Shape012",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "Base001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              88.277033,
+              119.684715,
+              106.0
+            ],
+            "max": [
+              -162.677254,
+              124.415699,
+              470.268005
+            ],
+            "min": [
+              -250.954286,
+              4.730984,
+              364.268005
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -206.679403,
+            64.368373,
+            405.728565
+          ],
+          "has_shape": true,
+          "volume_mm3": 241280.939512
+        },
+        "instance_label": "Base001",
+        "instance_name": "Base",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -206.517029,
+            99.415699,
+            364.268005
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            0.0,
+            0.0
+          ],
+          "rotation_quaternion": [
+            0.0,
+            0.0,
+            -0.002316,
+            0.999997
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.004633,
+            0.0,
+            -206.517029,
+            -0.004633,
+            0.999989,
+            -0.0,
+            99.415699,
+            -0.0,
+            0.0,
+            1.0,
+            364.268005,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "Base",
+          "name": "Shape001",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "Boom001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              60.941704,
+              203.677019,
+              436.319546
+            ],
+            "max": [
+              -176.820809,
+              34.055391,
+              801.087552
+            ],
+            "min": [
+              -237.762513,
+              -169.621628,
+              364.768005
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -207.23098,
+            -54.685545,
+            577.722432
+          ],
+          "has_shape": true,
+          "volume_mm3": 1204575.248752
+        },
+        "instance_label": "Boom001",
+        "instance_name": "Boom",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -202.931688,
+            230.969516,
+            229.246703
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -25.939127
+          ],
+          "rotation_quaternion": [
+            -0.224433,
+            0.00052,
+            -0.002257,
+            0.974487
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.004166,
+            0.002027,
+            -202.931688,
+            -0.004633,
+            0.89925,
+            0.437411,
+            230.969516,
+            0.0,
+            -0.437416,
+            0.899259,
+            229.246703,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "Boom",
+          "name": "Shape",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "Stick001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              31.758645,
+              379.799374,
+              121.189665
+            ],
+            "max": [
+              -192.36244,
+              -82.956003,
+              879.025203
+            ],
+            "min": [
+              -224.121084,
+              -462.755377,
+              757.835539
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -208.206641,
+            -265.275124,
+            820.74907
+          ],
+          "has_shape": true,
+          "volume_mm3": 333942.178607
+        },
+        "instance_label": "Stick001",
+        "instance_name": "Stick",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -205.468867,
+            390.407572,
+            208.420868
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -23.28115
+          ],
+          "rotation_quaternion": [
+            -0.201771,
+            0.000467,
+            -0.002269,
+            0.97943
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.004256,
+            0.001831,
+            -205.468867,
+            -0.004633,
+            0.918567,
+            0.395239,
+            390.407572,
+            0.0,
+            -0.395243,
+            0.918576,
+            208.420868,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "Stick",
+          "name": "Shape013",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "Bucket001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              103.416978,
+              117.576744,
+              101.491094
+            ],
+            "max": [
+              -157.591368,
+              -433.962502,
+              932.269467
+            ],
+            "min": [
+              -261.008346,
+              -551.539247,
+              830.778373
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -209.287884,
+            -498.653737,
+            893.608974
+          ],
+          "has_shape": true,
+          "volume_mm3": 58312.053574
+        },
+        "instance_label": "Bucket001",
+        "instance_name": "Bucket",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -210.075321,
+            432.194061,
+            196.619554
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -26.737671
+          ],
+          "rotation_quaternion": [
+            -0.231218,
+            0.000536,
+            -0.002254,
+            0.972899
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.004138,
+            0.002084,
+            -210.075321,
+            -0.004633,
+            0.893066,
+            0.449901,
+            432.194061,
+            0.0,
+            -0.449906,
+            0.893076,
+            196.619554,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "Bucket",
+          "name": "Shape015",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BucketLink003",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              48.211565,
+              47.158312,
+              72.976898
+            ],
+            "max": [
+              -184.769817,
+              -385.505685,
+              924.72961
+            ],
+            "min": [
+              -232.981381,
+              -432.663997,
+              851.752712
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -208.844766,
+            -403.009873,
+            890.048962
+          ],
+          "has_shape": true,
+          "volume_mm3": 17079.259884
+        },
+        "instance_label": "BucketLink003",
+        "instance_name": "BucketLink2",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -215.534833,
+            -1246.72964,
+            276.477159
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -132.925071
+          ],
+          "rotation_quaternion": [
+            0.916797,
+            -0.002124,
+            0.000925,
+            -0.399348
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            -0.003155,
+            0.003392,
+            -215.534833,
+            -0.004633,
+            -0.681034,
+            0.732237,
+            -1246.72964,
+            0.0,
+            -0.732245,
+            -0.681041,
+            276.477159,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BucketLink2",
+          "name": "Shape019",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BucketLink004",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              30.290508,
+              62.91247,
+              26.778608
+            ],
+            "max": [
+              -193.76972,
+              -386.707386,
+              924.72961
+            ],
+            "min": [
+              -224.060227,
+              -449.619856,
+              897.951002
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -208.93622,
+            -422.749484,
+            910.283531
+          ],
+          "has_shape": true,
+          "volume_mm3": 12304.424386
+        },
+        "instance_label": "BucketLink004",
+        "instance_name": "BucketLink1",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -212.088944,
+            -2.432104,
+            -20.386286
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -58.354731
+          ],
+          "rotation_quaternion": [
+            -0.487513,
+            0.001129,
+            -0.002023,
+            0.873112
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.002431,
+            0.003944,
+            -212.088944,
+            -0.004633,
+            0.524653,
+            0.851304,
+            -2.432104,
+            0.0,
+            -0.851313,
+            0.524659,
+            -20.386286,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BucketLink1",
+          "name": "Shape014",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BoomCylinderOuter001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              30.138667,
+              87.129969,
+              177.737064
+            ],
+            "max": [
+              -191.623954,
+              76.440999,
+              621.464328
+            ],
+            "min": [
+              -221.76262,
+              -10.68897,
+              443.727264
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -206.796316,
+            39.133539,
+            515.091778
+          ],
+          "has_shape": true,
+          "volume_mm3": 48197.411441
+        },
+        "instance_label": "BoomCylinderOuter001",
+        "instance_name": "BoomCylinderOuter",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -209.106386,
+            136.254194,
+            268.963196
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -23.468514
+          ],
+          "rotation_quaternion": [
+            -0.203372,
+            0.000471,
+            -0.002268,
+            0.979099
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.00425,
+            0.001845,
+            -209.106386,
+            -0.004633,
+            0.917269,
+            0.398241,
+            136.254194,
+            0.0,
+            -0.398245,
+            0.917279,
+            268.963196,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BoomCylinderOuter",
+          "name": "Shape020",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BoomCylinderInner001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              15.11103,
+              81.95252,
+              177.268943
+            ],
+            "max": [
+              -199.494192,
+              54.358853,
+              665.715051
+            ],
+            "min": [
+              -214.605222,
+              -27.593667,
+              488.446108
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -206.921742,
+            12.06087,
+            583.709898
+          ],
+          "has_shape": true,
+          "volume_mm3": 22989.416924
+        },
+        "instance_label": "BoomCylinderInner001",
+        "instance_name": "BoomCylinderInner",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -208.726584,
+            108.582358,
+            238.805298
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -23.468514
+          ],
+          "rotation_quaternion": [
+            -0.203372,
+            0.000471,
+            -0.002268,
+            0.979099
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.00425,
+            0.001845,
+            -208.726584,
+            -0.004633,
+            0.917269,
+            0.398241,
+            108.582358,
+            0.0,
+            -0.398245,
+            0.917279,
+            238.805298,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BoomCylinderInner",
+          "name": "Shape016",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "StickCylinderInner001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              15.11103,
+              56.36913,
+              184.341314
+            ],
+            "max": [
+              -199.866992,
+              -51.690846,
+              782.835539
+            ],
+            "min": [
+              -214.978022,
+              -108.059976,
+              598.494224
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -207.345969,
+            -79.505395,
+            697.414271
+          ],
+          "has_shape": true,
+          "volume_mm3": 22989.416924
+        },
+        "instance_label": "StickCylinderInner001",
+        "instance_name": "StickCylinderInner",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -203.708961,
+            310.952162,
+            236.711256
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -35.319355
+          ],
+          "rotation_quaternion": [
+            -0.303362,
+            0.000703,
+            -0.002207,
+            0.952873
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.00378,
+            0.002678,
+            -203.708961,
+            -0.004633,
+            0.815934,
+            0.578127,
+            310.952162,
+            0.0,
+            -0.578133,
+            0.815942,
+            236.711256,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "StickCylinderInner",
+          "name": "Shape017",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "StickCylinderOuter001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              30.138667,
+              62.362371,
+              184.024263
+            ],
+            "max": [
+              -192.116757,
+              -29.927207,
+              713.06746
+            ],
+            "min": [
+              -222.255424,
+              -92.289577,
+              529.043197
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -207.247715,
+            -58.297558,
+            603.158191
+          ],
+          "has_shape": true,
+          "volume_mm3": 48197.411441
+        },
+        "instance_label": "StickCylinderOuter001",
+        "instance_name": "StickCylinderOuter",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -203.027058,
+            347.623248,
+            221.921805
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -35.319355
+          ],
+          "rotation_quaternion": [
+            -0.303362,
+            0.000703,
+            -0.002207,
+            0.952873
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.00378,
+            0.002678,
+            -203.027058,
+            -0.004633,
+            0.815934,
+            0.578127,
+            347.623248,
+            0.0,
+            -0.578133,
+            0.815942,
+            221.921805,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "StickCylinderOuter",
+          "name": "Shape021",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BucketCylinderInner001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              15.083232,
+              173.194219,
+              77.094351
+            ],
+            "max": [
+              -201.265006,
+              -230.617226,
+              925.72961
+            ],
+            "min": [
+              -216.348239,
+              -403.811445,
+              848.635259
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -208.525957,
+            -334.197238,
+            892.610627
+          ],
+          "has_shape": true,
+          "volume_mm3": 9045.578366
+        },
+        "instance_label": "BucketCylinderInner001",
+        "instance_name": "BucketCylinderInner",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -205.355086,
+            395.972045,
+            110.555053
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -30.709142
+          ],
+          "rotation_quaternion": [
+            -0.264791,
+            0.000613,
+            -0.002234,
+            0.964303
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.003983,
+            0.002366,
+            -205.355086,
+            -0.004633,
+            0.859762,
+            0.510675,
+            395.972045,
+            0.0,
+            -0.51068,
+            0.859771,
+            110.555053,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BucketCylinderInner",
+          "name": "Shape018",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      },
+      {
+        "custom_properties": {
+          "ElementCount": 0,
+          "Label": "BucketCylinderOuter001",
+          "LinkClaimChild": false,
+          "LinkCopyOnChange": "Disabled",
+          "LinkCopyOnChangeTouched": false,
+          "LinkExecute": "",
+          "LinkTransform": false,
+          "Scale": 1.0,
+          "ShowElement": true,
+          "_LinkOwner": 0,
+          "_LinkTouched": false
+        },
+        "geometry": {
+          "bounding_box_mm": {
+            "dimensions": [
+              15.092498,
+              171.124035,
+              78.826487
+            ],
+            "max": [
+              -200.110171,
+              -136.47923,
+              886.713331
+            ],
+            "min": [
+              -215.202669,
+              -307.603265,
+              807.886845
+            ]
+          },
+          "geometric_center_of_mass_mm": [
+            -207.948777,
+            -209.616999,
+            843.010563
+          ],
+          "has_shape": true,
+          "volume_mm3": 16011.734991
+        },
+        "instance_label": "BucketCylinderOuter001",
+        "instance_name": "BucketCylinderOuter",
+        "physical_mass_properties": {
+          "missing_reasons": [
+            "Physical mass is not defined because no material density property was assigned to this object in FreeCAD. Only geometric volume and geometric centroid (geometric center of mass) are available from the CAD B-Rep shape."
+          ],
+          "physical_center_of_mass_mm": null,
+          "physical_mass_kg": null,
+          "status": "unavailable"
+        },
+        "placement": {
+          "position": [
+            -205.403441,
+            417.479906,
+            46.504501
+          ],
+          "rotation_euler_yaw_pitch_roll_deg": [
+            -0.265449,
+            -0.0,
+            -31.709142
+          ],
+          "rotation_quaternion": [
+            -0.273196,
+            0.000633,
+            -0.002228,
+            0.961956
+          ],
+          "transform_matrix_4x4": [
+            0.999989,
+            0.003941,
+            0.002435,
+            -205.403441,
+            -0.004633,
+            0.850718,
+            0.525602,
+            417.479906,
+            0.0,
+            -0.525607,
+            0.850727,
+            46.504501,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "source_object": {
+          "label": "BucketCylinderOuter",
+          "name": "Shape022",
+          "type_id": "Part::Feature"
+        },
+        "type_id": "App::Link"
+      }
+    ],
+    "joint_count": 16,
+    "joints": [
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BasePin001",
+            "object_name": "BasePin",
+            "sub_elements": [
+              "Face1",
+              "Edge2"
+            ]
+          },
+          "part2": {
+            "object_label": "Base001",
+            "object_name": "Base",
+            "sub_elements": [
+              "Edge107",
+              "Edge107"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute",
+        "name": "Revolute",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "Boom001",
+            "object_name": "Boom",
+            "sub_elements": [
+              "Face1",
+              "Edge5"
+            ]
+          },
+          "part2": {
+            "object_label": "Base001",
+            "object_name": "Base",
+            "sub_elements": [
+              "Edge61",
+              "Edge61"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "45.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 45.0
+          },
+          "AngleMin": {
+            "string": "-45.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": -45.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": true,
+          "EnableAngleMin": true,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute001",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": 45.0,
+          "angle_min_deg": -45.0,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute001",
+        "name": "Revolute001",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BoomCylinderOuter001",
+            "object_name": "BoomCylinderOuter",
+            "sub_elements": [
+              "Edge8",
+              "Edge8"
+            ]
+          },
+          "part2": {
+            "object_label": "Base001",
+            "object_name": "Base",
+            "sub_elements": [
+              "Edge34",
+              "Edge34"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute002",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute002",
+        "name": "Revolute002",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BoomCylinderInner001",
+            "object_name": "BoomCylinderInner",
+            "sub_elements": [
+              "Face1",
+              "Face1"
+            ]
+          },
+          "part2": {
+            "object_label": "BoomCylinderOuter001",
+            "object_name": "BoomCylinderOuter",
+            "sub_elements": [
+              "Face1",
+              "Edge3"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": true,
+          "EnableLengthMin": false,
+          "JointType": "Slider",
+          "Label": "Slider",
+          "LengthMax": {
+            "string": "80.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 80.0
+          },
+          "LengthMin": {
+            "string": "52.00859672985323 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 52.008597
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Slider",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": 80.0,
+          "length_min_mm": null
+        },
+        "label": "Slider",
+        "name": "Slider",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BoomCylinderInner001",
+            "object_name": "BoomCylinderInner",
+            "sub_elements": [
+              "Edge7",
+              "Edge7"
+            ]
+          },
+          "part2": {
+            "object_label": "Boom001",
+            "object_name": "Boom",
+            "sub_elements": [
+              "Edge53",
+              "Edge53"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Cylindrical",
+          "Label": "Cylindrical",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Cylindrical",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Cylindrical",
+        "name": "Cylindrical",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "StickCylinderOuter001",
+            "object_name": "StickCylinderOuter",
+            "sub_elements": [
+              "Face2",
+              "Edge3"
+            ]
+          },
+          "part2": {
+            "object_label": "Boom001",
+            "object_name": "Boom",
+            "sub_elements": [
+              "Edge66",
+              "Edge66"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "-23.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": -23.0
+          },
+          "AngleMin": {
+            "string": "-48.00000000000004 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": -48.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": true,
+          "EnableAngleMin": true,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute003",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": -23.0,
+          "angle_min_deg": -48.0,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute003",
+        "name": "Revolute003",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "StickCylinderInner001",
+            "object_name": "StickCylinderInner",
+            "sub_elements": [
+              "Face1",
+              "Face1"
+            ]
+          },
+          "part2": {
+            "object_label": "StickCylinderOuter001",
+            "object_name": "StickCylinderOuter",
+            "sub_elements": [
+              "Face6",
+              "Edge3"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": true,
+          "EnableLengthMin": false,
+          "JointType": "Slider",
+          "Label": "Slider001",
+          "LengthMax": {
+            "string": "80.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 80.0
+          },
+          "LengthMin": {
+            "string": "63.277216230558906 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 63.277216
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Slider",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": 80.0,
+          "length_min_mm": null
+        },
+        "label": "Slider001",
+        "name": "Slider001",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "Stick001",
+            "object_name": "Stick",
+            "sub_elements": [
+              "Edge41",
+              "Edge41"
+            ]
+          },
+          "part2": {
+            "object_label": "Boom001",
+            "object_name": "Boom",
+            "sub_elements": [
+              "Edge51",
+              "Edge51"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute004",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute004",
+        "name": "Revolute004",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "Stick001",
+            "object_name": "Stick",
+            "sub_elements": [
+              "Edge57",
+              "Edge57"
+            ]
+          },
+          "part2": {
+            "object_label": "StickCylinderInner001",
+            "object_name": "StickCylinderInner",
+            "sub_elements": [
+              "Face4",
+              "Face4"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Cylindrical",
+          "Label": "Cylindrical001",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Cylindrical",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Cylindrical001",
+        "name": "Cylindrical001",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketCylinderOuter001",
+            "object_name": "BucketCylinderOuter",
+            "sub_elements": [
+              "Face6",
+              "Face6"
+            ]
+          },
+          "part2": {
+            "object_label": "Stick001",
+            "object_name": "Stick",
+            "sub_elements": [
+              "Edge56",
+              "Edge56"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "-120.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": -120.0
+          },
+          "AngleMin": {
+            "string": "-145.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": -145.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": true,
+          "EnableAngleMin": true,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute005",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": -120.0,
+          "angle_min_deg": -145.0,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute005",
+        "name": "Revolute005",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketCylinderInner001",
+            "object_name": "BucketCylinderInner",
+            "sub_elements": [
+              "Face1",
+              "Face1"
+            ]
+          },
+          "part2": {
+            "object_label": "BucketCylinderOuter001",
+            "object_name": "BucketCylinderOuter",
+            "sub_elements": [
+              "Face1",
+              "Face1"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": true,
+          "EnableLengthMin": false,
+          "JointType": "Slider",
+          "Label": "Slider002",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Slider",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": 0.0,
+          "length_min_mm": null
+        },
+        "label": "Slider002",
+        "name": "Slider002",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketLink003",
+            "object_name": "BucketLink2",
+            "sub_elements": [
+              "Edge49",
+              "Edge49"
+            ]
+          },
+          "part2": {
+            "object_label": "Stick001",
+            "object_name": "Stick",
+            "sub_elements": [
+              "Face20",
+              "Edge10"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute006",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute006",
+        "name": "Revolute006",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "Bucket001",
+            "object_name": "Bucket",
+            "sub_elements": [
+              "Edge139",
+              "Edge139"
+            ]
+          },
+          "part2": {
+            "object_label": "Stick001",
+            "object_name": "Stick",
+            "sub_elements": [
+              "Face20",
+              "Edge6"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute007",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute007",
+        "name": "Revolute007",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketLink004",
+            "object_name": "BucketLink1",
+            "sub_elements": [
+              "Face11",
+              "Face11"
+            ]
+          },
+          "part2": {
+            "object_label": "Bucket001",
+            "object_name": "Bucket",
+            "sub_elements": [
+              "Face65",
+              "Edge2"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Revolute",
+          "Label": "Revolute008",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Revolute",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Revolute008",
+        "name": "Revolute008",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketLink004",
+            "object_name": "BucketLink1",
+            "sub_elements": [
+              "Edge25",
+              "Edge25"
+            ]
+          },
+          "part2": {
+            "object_label": "BucketLink003",
+            "object_name": "BucketLink2",
+            "sub_elements": [
+              "Face13",
+              "Face13"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Cylindrical",
+          "Label": "Cylindrical002",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Cylindrical",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Cylindrical002",
+        "name": "Cylindrical002",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      },
+      {
+        "connected_parts": {
+          "part1": {
+            "object_label": "BucketCylinderInner001",
+            "object_name": "BucketCylinderInner",
+            "sub_elements": [
+              "Face3",
+              "Face3"
+            ]
+          },
+          "part2": {
+            "object_label": "BucketLink003",
+            "object_name": "BucketLink2",
+            "sub_elements": [
+              "Face13",
+              "Face13"
+            ]
+          }
+        },
+        "custom_properties": {
+          "Angle": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMax": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "AngleMin": {
+            "string": "0.0 deg",
+            "unit": "Unit: deg (0,0,0,0,0,0,0,1) [Angle]",
+            "value": 0.0
+          },
+          "Detach1": false,
+          "Detach2": false,
+          "Distance": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Distance2": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "EnableAngleMax": false,
+          "EnableAngleMin": false,
+          "EnableLengthMax": false,
+          "EnableLengthMin": false,
+          "JointType": "Cylindrical",
+          "Label": "Cylindrical003",
+          "LengthMax": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "LengthMin": {
+            "string": "0.0 mm",
+            "unit": "Unit: mm (1,0,0,0,0,0,0,0) [Length]",
+            "value": 0.0
+          },
+          "Suppressed": false
+        },
+        "joint_type": "Cylindrical",
+        "kinematic_limits": {
+          "angle_deg": 0.0,
+          "angle_max_deg": null,
+          "angle_min_deg": null,
+          "distance_mm": 0.0,
+          "length_max_mm": null,
+          "length_min_mm": null
+        },
+        "label": "Cylindrical003",
+        "name": "Cylindrical003",
+        "offsets": {
+          "offset1": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "offset2": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_euler_yaw_pitch_roll_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation_quaternion": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "transform_matrix_4x4": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "type_id": "App::FeaturePython"
+      }
+    ],
+    "overall_geometry": {
+      "bounding_box_mm": {
+        "dimensions": [
+          103.416978,
+          675.954946,
+          568.001462
+        ],
+        "max": [
+          -157.591368,
+          124.415699,
+          932.269467
+        ],
+        "min": [
+          -261.008346,
+          -551.539247,
+          364.268005
+        ]
+      },
+      "geometric_center_of_mass_mm": [
+        -207.394256,
+        -89.927624,
+        611.870652
+      ],
+      "note_on_mass": "Geometric center of mass represents the volumetric centroid of all assembly solid bodies. Physical center of mass and physical mass are unavailable because no density is assigned.",
+      "total_volume_mm3": 2066341.001337
+    },
+    "part_definitions": {
+      "Shape": {
+        "bounding_box_mm": {
+          "dimensions": [
+            60.0,
+            364.0,
+            319.0
+          ],
+          "max": [
+            27.02418,
+            -241.377117,
+            346.864379
+          ],
+          "min": [
+            -32.97582,
+            -605.377117,
+            27.864379
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          -2.97582,
+          -409.321973,
+          188.412573
+        ],
+        "has_geometry": true,
+        "label": "Boom",
+        "name": "Shape",
+        "type_id": "Part::Feature",
+        "volume_mm3": 1204575.248752
+      },
+      "Shape001": {
+        "bounding_box_mm": {
+          "dimensions": [
+            88.0,
+            119.481879,
+            106.0
+          ],
+          "max": [
+            44.0,
+            25.0,
+            106.0
+          ],
+          "min": [
+            -44.0,
+            -94.481879,
+            -0.0
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          -0.0,
+          -35.047703,
+          41.46056
+        ],
+        "has_geometry": true,
+        "label": "Base",
+        "name": "Shape001",
+        "type_id": "Part::Feature",
+        "volume_mm3": 241280.939512
+      },
+      "Shape012": {
+        "bounding_box_mm": {
+          "dimensions": [
+            20.0,
+            20.0,
+            100.0
+          ],
+          "max": [
+            10.0,
+            69.16,
+            100.0
+          ],
+          "min": [
+            -10.0,
+            49.16,
+            0.0
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          0.0,
+          59.16,
+          50.0
+        ],
+        "has_geometry": true,
+        "label": "BasePin",
+        "name": "Shape012",
+        "type_id": "Part::Feature",
+        "volume_mm3": 31415.926536
+      },
+      "Shape013": {
+        "bounding_box_mm": {
+          "dimensions": [
+            30.0,
+            388.396782,
+            109.835547
+          ],
+          "max": [
+            15.3,
+            -656.12,
+            368.394018
+          ],
+          "min": [
+            -14.7,
+            -1044.516782,
+            258.558471
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          0.3,
+          -844.31851,
+          303.313838
+        ],
+        "has_geometry": true,
+        "label": "Stick",
+        "name": "Shape013",
+        "type_id": "Part::Feature",
+        "volume_mm3": 333942.178607
+      },
+      "Shape014": {
+        "bounding_box_mm": {
+          "dimensions": [
+            30.0,
+            31.364501,
+            61.474521
+          ],
+          "max": [
+            20.1,
+            -995.615499,
+            165.674521
+          ],
+          "min": [
+            -9.9,
+            -1026.98,
+            104.2
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          5.1,
+          -1012.804142,
+          130.478769
+        ],
+        "has_geometry": true,
+        "label": "BucketLink1",
+        "name": "Shape014",
+        "type_id": "Part::Feature",
+        "volume_mm3": 12304.424386
+      },
+      "Shape015": {
+        "bounding_box_mm": {
+          "dimensions": [
+            103.0,
+            108.64751,
+            124.026221
+          ],
+          "max": [
+            56.6,
+            -1080.84,
+            247.889983
+          ],
+          "min": [
+            -46.4,
+            -1189.48751,
+            123.863762
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          5.1,
+          -1144.885356,
+          203.676229
+        ],
+        "has_geometry": true,
+        "label": "Bucket",
+        "name": "Shape015",
+        "type_id": "Part::Feature",
+        "volume_mm3": 58312.053574
+      },
+      "Shape016": {
+        "bounding_box_mm": {
+          "dimensions": [
+            15.0,
+            140.198459,
+            140.198459
+          ],
+          "max": [
+            9.752,
+            -150.901258,
+            343.152955
+          ],
+          "min": [
+            -5.248,
+            -291.099718,
+            202.954495
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          2.252001,
+          -225.885067,
+          277.938308
+        ],
+        "has_geometry": true,
+        "label": "BoomCylinderInner",
+        "name": "Shape016",
+        "type_id": "Part::Feature",
+        "volume_mm3": 22989.416924
+      },
+      "Shape017": {
+        "bounding_box_mm": {
+          "dimensions": [
+            15.0,
+            146.288072,
+            133.757464
+          ],
+          "max": [
+            5.672,
+            -506.58762,
+            212.519946
+          ],
+          "min": [
+            -9.328,
+            -652.875691,
+            78.762481
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          -1.827999,
+          -584.94893,
+          150.163267
+        ],
+        "has_geometry": true,
+        "label": "StickCylinderInner",
+        "name": "Shape017",
+        "type_id": "Part::Feature",
+        "volume_mm3": 22989.416924
+      },
+      "Shape018": {
+        "bounding_box_mm": {
+          "dimensions": [
+            15.0,
+            182.689287,
+            39.879871
+          ],
+          "max": [
+            7.712,
+            -917.877236,
+            320.181682
+          ],
+          "min": [
+            -7.288,
+            -1100.566523,
+            280.301811
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          0.212,
+          -1027.164346,
+          299.50212
+        ],
+        "has_geometry": true,
+        "label": "BucketCylinderInner",
+        "name": "Shape018",
+        "type_id": "Part::Feature",
+        "volume_mm3": 9045.578366
+      },
+      "Shape019": {
+        "bounding_box_mm": {
+          "dimensions": [
+            48.0,
+            78.000018,
+            37.565101
+          ],
+          "max": [
+            26.781084,
+            -979.051727,
+            217.38103
+          ],
+          "min": [
+            -21.218916,
+            -1057.051744,
+            179.81593
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          2.781084,
+          -1023.907847,
+          199.957859
+        ],
+        "has_geometry": true,
+        "label": "BucketLink2",
+        "name": "Shape019",
+        "type_id": "Part::Feature",
+        "volume_mm3": 17079.259884
+      },
+      "Shape020": {
+        "bounding_box_mm": {
+          "dimensions": [
+            30.0,
+            142.986327,
+            142.986327
+          ],
+          "max": [
+            17.76,
+            -129.249783,
+            272.236111
+          ],
+          "min": [
+            -12.24,
+            -272.236111,
+            129.249783
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          2.76,
+          -187.095458,
+          187.095454
+        ],
+        "has_geometry": true,
+        "label": "BoomCylinderOuter",
+        "name": "Shape020",
+        "type_id": "Part::Feature",
+        "volume_mm3": 48197.411441
+      },
+      "Shape021": {
+        "bounding_box_mm": {
+          "dimensions": [
+            30.0,
+            148.769071,
+            136.852782
+          ],
+          "max": [
+            12.66,
+            -491.596491,
+            157.689993
+          ],
+          "min": [
+            -17.34,
+            -640.365562,
+            20.837211
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          -2.34,
+          -551.625817,
+          76.381793
+        ],
+        "has_geometry": true,
+        "label": "StickCylinderOuter",
+        "name": "Shape021",
+        "type_id": "Part::Feature",
+        "volume_mm3": 48197.411441
+      },
+      "Shape022": {
+        "bounding_box_mm": {
+          "dimensions": [
+            15.0,
+            179.444015,
+            45.602685
+          ],
+          "max": [
+            7.86,
+            -875.252874,
+            369.79438
+          ],
+          "min": [
+            -7.14,
+            -1054.696889,
+            324.191695
+          ]
+        },
+        "geometric_center_of_mass_mm": [
+          0.36,
+          -952.142214,
+          347.999985
+        ],
+        "has_geometry": true,
+        "label": "BucketCylinderOuter",
+        "name": "Shape022",
+        "type_id": "Part::Feature",
+        "volume_mm3": 16011.734991
+      }
+    },
+    "root_label": "Assembly",
+    "root_name": "Assembly",
+    "root_type": "Assembly::AssemblyObject"
+  },
+  "metadata": {
+    "document_label": "AssemblyExample1",
+    "document_name": "AssemblyExample1",
+    "file_path": "/Users/vaishnav/Desktop/freecad_api_test/AssemblyExample1.FCStd",
+    "freecad_revision": "20260928 (Git shallow)",
+    "freecad_version": "1.1.4",
+    "source": "FreeCAD",
+    "units": {
+      "angle": "degree",
+      "area": "millimeter^2",
+      "length": "millimeter",
+      "mass": "kilogram (unavailable without assigned density)",
+      "volume": "millimeter^3"
+    }
+  }
+}
