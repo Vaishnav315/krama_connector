@@ -14,9 +14,11 @@ from datetime import UTC, datetime
 from sqlalchemy.orm import Session
 
 from app.config import get_settings
+from app.connectors.freecad.adapter import FreeCADConnector
 from app.connectors.onshape.adapter import OnshapeConnector
 from app.connectors.onshape.client import OnshapeClient
 from app.ingestion.intake import intake_files
+from app.models.connection import Connection
 from app.models.document import LinkedDocument
 from app.models.snapshot import SnapshotRecord
 from app.models.sync_run import SyncRun
@@ -29,7 +31,7 @@ logger = logging.getLogger(__name__)
 class SyncService:
     """Coordinates snapshot extraction, persistence, and ingestion dispatch."""
 
-    def __init__(self, db: Session, connector: OnshapeConnector | None = None):
+    def __init__(self, db: Session, connector: OnshapeConnector | FreeCADConnector | None = None):
         self.db = db
         if connector is not None:
             self.connector = connector
@@ -47,6 +49,20 @@ class SyncService:
                 )
                 self.connector = OnshapeConnector(client=live_client, use_fixtures=False)
         self.change_detector = ChangeDetectionService(self.connector)
+
+    def _resolve_connector(self, doc: LinkedDocument) -> OnshapeConnector | FreeCADConnector:
+        """Select the right connector based on the connection provider.
+
+        For FreeCAD connections the base_url column holds the live_state.json watch
+        file path recorded at connection registration time.
+        For Onshape connections the already-constructed self.connector is re-used.
+        """
+        connection: Connection | None = (
+            self.db.query(Connection).filter(Connection.id == doc.connection_id).first()
+        )
+        if connection and connection.provider == "freecad":
+            return FreeCADConnector(watch_file=connection.base_url)
+        return self.connector
 
     def execute_sync(
         self,
@@ -123,14 +139,18 @@ class SyncService:
         self.db.commit()
 
         try:
-            # 1. Extract canonical snapshot via connector adapter
-            snapshot: Snapshot = self.connector.extract_snapshot(
+            # 1. Select the right connector for the linked document's provider
+            #    (FreeCAD connections store the watch_file path in base_url)
+            active_connector = self._resolve_connector(doc)
+
+            # 2. Extract canonical snapshot via connector adapter
+            snapshot: Snapshot = active_connector.extract_snapshot(
                 document_reference=doc.document_id,
                 version_reference=target_version,
                 element_reference=doc.element_id,
             )
 
-            # 2. Persist snapshot record in DB
+            # 3. Persist snapshot record in DB
             snap_record = SnapshotRecord(
                 id=snapshot.snapshot_id,
                 project_id=project_id,
@@ -147,11 +167,12 @@ class SyncService:
             )
             self.db.add(snap_record)
 
-            # 3. Partition snapshot into artifacts and dispatch to KRAMA intake interface
+            # 4. Partition snapshot into artifacts and dispatch to KRAMA intake interface
+            provider = active_connector.__class__.__name__.lower().replace("connector", "")
             files = snapshot.partition_for_intake()
             metadata = {
                 f_name: {
-                    "source": "onshape",
+                    "source": provider,
                     "snapshot_id": snapshot.snapshot_id,
                     "version_id": target_version,
                     "extracted_at": snapshot.extracted_at.isoformat(),
@@ -166,7 +187,7 @@ class SyncService:
                 metadata_by_source_file=metadata,
             )
 
-            # 4. Update linked document sync state
+            # 5. Update linked document sync state
             duration_ms = (time.perf_counter() - start_time) * 1000.0
             doc.last_synced_version_id = snapshot.document.version_id
             doc.last_synced_microversion_id = snapshot.document.microversion_id

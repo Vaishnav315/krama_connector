@@ -2,10 +2,20 @@
 """Verification Test Suite for FreeCAD-to-KRAMA Bridge.
 
 Demonstrates:
-  1. Universal FreeCAD extraction and KRAMA snapshot creation.
+  1. FreeCAD extraction and KRAMA snapshot creation.
   2. B-Rep to canonical units normalization (mm -> m, mm³ -> m³).
   3. KRAMA SnapshotDiffEngine detecting component movements and centroid shifts.
   4. KRAMA intake_files() ingestion of partitioned snapshot artifacts.
+
+Reproducibility:
+  Steps 1-4 run deterministically from the committed live_state.json fixture
+  (53 components from indrbt_home.FCStd, committed to the repository). These
+  are automated fixture-based tests that work without FreeCAD installed.
+
+  The live GUI demo (editing the assembly in the FreeCAD desktop and watching
+  the observer macro capture live changes) was demonstrated by the candidate
+  and evidenced by screenshots in docs/images/. It cannot be automatically
+  reproduced from a clean clone without FreeCAD installed.
 
 Can be run standalone with any standard Python 3.11+:
   python test_bridge.py

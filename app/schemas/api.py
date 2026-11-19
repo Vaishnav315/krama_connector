@@ -18,13 +18,21 @@ class HealthResponse(BaseModel):
 
 
 class ConnectionCreateRequest(BaseModel):
-    """Request payload to connect an Onshape account or credential reference."""
+    """Request payload to connect a CAD account or credential reference."""
 
     name: str = Field(description="Display label for the connection", json_schema_extra={"example": "Engineering Team Onshape"})
-    base_url: str = Field(default="https://cad.onshape.com", description="Onshape instance URL")
+    provider: str = Field(default="onshape", description="CAD provider type ('onshape' or 'freecad')")
+    base_url: str = Field(default="https://cad.onshape.com", description="Onshape instance URL or FreeCAD bridge file path")
     access_key: str | None = Field(default=None, description="Onshape API access key (optional if using .env)")
     secret_key: str | None = Field(default=None, description="Onshape API secret key (optional if using .env)")
     oauth_token: str | None = Field(default=None, description="OAuth2 Bearer token (optional)")
+
+
+class FreeCADConnectionCreateRequest(BaseModel):
+    """Request payload to register a FreeCAD bridge connection."""
+
+    name: str = Field(default="FreeCAD Local Bridge", description="Display label", json_schema_extra={"example": "FreeCAD Desktop Bridge"})
+    watch_file: str | None = Field(default=None, description="Path to live_state.json state file", json_schema_extra={"example": "/path/to/live_state.json"})
 
 
 class ConnectionResponse(BaseModel):

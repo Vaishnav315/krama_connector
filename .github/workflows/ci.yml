@@ -35,3 +35,7 @@ jobs:
       - name: Run Pytest Test Suite
         run: |
           pytest
+
+      - name: Run FreeCAD bridge verification (fixture-based)
+        run: |
+          python freecad_api_test/freecad_krama_bridge/test_bridge.py

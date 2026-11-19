@@ -96,8 +96,8 @@ To satisfy both the take-home specification and real-world developer platform co
 | **4.1** | **Research & Comparison** | Comprehensive analysis of Flow Engineering, CAD/PLM integration patterns, Onshape API constraints, and enterprise systems (Siemens NX / Teamcenter). | Documented in [`docs/design_note.md`](docs/design_note.md). |
 | **4.2** | **Connector Abstraction** | `CADConnector` abstract base class (`app/connectors/base.py`) decoupling KRAMA from any CAD vendor. | Implemented by both `OnshapeConnector` and `FreeCADConnector`. |
 | **4.2** | **KRAMA File Ingestion** | Staging and submitting partitioned JSON files via `intake_files(*, project_id, files, source, metadata_by_source_file)`. | `test_intake_files_success` & `test_intake_files_deduplication` |
-| **4.2** | **FastAPI & SQLAlchemy** | 8 REST API endpoints with Pydantic validation, SQLite/PostgreSQL support, and connection state management. | `tests/integration/test_api_endpoints.py` |
-| **4.3** | **Engineering Hygiene** | Fully automated test suite runnable without credentials, Ruff linting, and CI workflow. | 32 passing tests; `.github/workflows/ci.yml`. |
+| **4.2** | **FastAPI & SQLAlchemy** | 9 REST API endpoints with Pydantic validation, SQLite/PostgreSQL support, connection state management for both Onshape and FreeCAD, and unified `SyncService` connector routing. | `tests/integration/test_api_endpoints.py`, `tests/unit/test_freecad_connector.py` |
+| **4.3** | **Engineering Hygiene** | Fully automated test suite runnable without credentials, Ruff linting, and CI workflow. | 51 passing tests; FreeCAD bridge fixture suite; `.github/workflows/ci.yml`. |
 | **5** | **Read-Only Ingestion Contract** | Zero write operations to CAD sources. Everything enters KRAMA strictly through `intake_files()`. | Enforced by architecture. |
 
 ---
@@ -109,7 +109,7 @@ To satisfy both the take-home specification and real-world developer platform co
 ├── app/
 │   ├── api/
 │   │   ├── routes/
-│   │   │   ├── connections.py          # POST /connections/onshape
+│   │   │   ├── connections.py          # POST /connections/onshape, POST /connections/freecad
 │   │   │   ├── diffs.py                # GET /snapshots/{id}/diff/{other_id}, GET /projects/{id}/changes
 │   │   │   ├── health.py               # GET /health
 │   │   │   ├── projects.py             # POST /projects/{project_id}/documents
@@ -121,6 +121,9 @@ To satisfy both the take-home specification and real-world developer platform co
 │   ├── main.py                         # FastAPI application factory
 │   ├── connectors/
 │   │   ├── base.py                     # Universal CADConnector abstract interface
+│   │   ├── freecad/                    # FreeCAD CADConnector package
+│   │   │   ├── __init__.py
+│   │   │   └── adapter.py              # Canonical FreeCAD adapter (hierarchy, SI units, deterministic revs)
 │   │   └── onshape/
 │   │       ├── adapter.py              # Concrete Onshape CADConnector implementation
 │   │       ├── assemblies.py           # Onshape occurrence tree and transform parser
@@ -140,10 +143,10 @@ To satisfy both the take-home specification and real-world developer platform co
 ├── freecad_api_test/
 │   └── freecad_krama_bridge/           # Universal FreeCAD live bridge implementation
 │       ├── freecad_observer_bridge.FCMacro # FreeCAD GUI macro (DocumentObserver + extraction)
-│       ├── freecad_connector.py        # Implements CADConnector for FreeCAD snapshots
+│       ├── freecad_connector.py        # Bridge re-export shim importing app.connectors.freecad.adapter
 │       ├── krama_watcher.py            # Live file watcher, diff engine, and intake trigger
-│       ├── test_bridge.py              # Standalone verification test suite
-│       └── README.md                   # FreeCAD bridge technical walkthrough
+│       ├── test_bridge.py              # Standalone verification test suite (automated fixture verification)
+│       └── README.md                   # FreeCAD bridge technical walkthrough & headless execution docs
 ├── docs/
 │   ├── design_note.md                  # 3-page engineering design note (Research, Architecture, Risks)
 │   └── implementation_plan.md          # Architecture and milestone tracker
@@ -155,7 +158,7 @@ To satisfy both the take-home specification and real-world developer platform co
 ├── tests/
 │   ├── fixtures/                       # Realistic recorded Onshape assembly fixtures (6-DOF arm)
 │   ├── integration/                    # FastAPI endpoint and database tests
-│   └── unit/                           # Unit tests for client, diffs, hierarchy, schemas, intake
+│   └── unit/                           # Unit tests (Onshape, FreeCAD, change detection, diffs, intake, schemas)
 ├── .github/
 │   └── workflows/
 │       └── ci.yml                      # GitHub Actions: Ruff + Pytest
@@ -379,7 +382,15 @@ curl -X POST "http://localhost:8000/connections/onshape" \
     "secret_key": "YOUR_SECRET_KEY"
   }'
 
-# 3. Trigger project synchronization
+# 3. Register FreeCAD local bridge connection
+curl -X POST "http://localhost:8000/connections/freecad" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "FreeCAD Desktop Bridge",
+    "watch_file": "freecad_api_test/freecad_krama_bridge/live_state.json"
+  }'
+
+# 4. Trigger project synchronization
 curl -X POST "http://localhost:8000/projects/b0e5d8a0-2f3b-4896-857c-2e6f42b8cf1a/sync" \
   -H "Content-Type: application/json" \
   -d '{
@@ -388,7 +399,7 @@ curl -X POST "http://localhost:8000/projects/b0e5d8a0-2f3b-4896-857c-2e6f42b8cf1
     "force": false
   }'
 
-# 4. Compare two snapshot versions
+# 5. Compare two snapshot versions
 curl -X GET "http://localhost:8000/snapshots/<SNAPSHOT_UUID_1>/diff/<SNAPSHOT_UUID_2>"
 ```
 
