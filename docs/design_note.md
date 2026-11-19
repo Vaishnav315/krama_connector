@@ -104,6 +104,20 @@ To operate reliably in high-volume production, the connector exports the followi
   * Onshape connector verified via 26 automated unit, integration, and contract tests in pytest against recorded authentic fixtures (due to Onshape free-tier API key provisioning restrictions).
   * FreeCAD bridge verified both live inside FreeCAD GUI (via `freecad_observer_bridge.FCMacro` and `krama_watcher.py`) and via standalone automated integration test (`test_bridge.py`). All 26 Onshape tests and all FreeCAD bridge verification tests pass.
 
+### FreeCAD Live Bridge Visual Verification
+
+The real-time change detection and snapshot ingestion pipeline was verified with a 54-component robotic arm (`indrbt_home.FCStd`) running live inside the FreeCAD desktop application:
+
+| 1. Observer Registered & Initial Snapshot | 2. Terminal Watcher Baseline Established |
+| :---: | :---: |
+| [![FreeCAD Observer Registered](images/freecad_observer_initial.jpg)](images/freecad_observer_initial.jpg) | [![Terminal Watcher Baseline Established](images/terminal_baseline_established.jpg)](images/terminal_baseline_established.jpg) |
+| *Macro observer registered on 54-part arm; initial state serialized.* | *Baseline established: volume, centroid, and SQLite persistence.* |
+
+| 3. Component Movement (`upper_arm_hollow_link`) | 4. Real-Time Change Report & KRAMA Ingestion |
+| :---: | :---: |
+| [![FreeCAD Component Moved](images/freecad_component_moved.jpg)](images/freecad_component_moved.jpg) | [![Terminal Watcher Diff Report](images/terminal_diff_detected.jpg)](images/terminal_diff_detected.jpg) |
+| *Translation of component along X (+100 mm) detected in real-time.* | *Diff engine detects Δ 100 mm shift and centroid shift; feeds intake.* |
+
 ---
 
 ## F. Extension to Enterprise CAD/PLM Systems

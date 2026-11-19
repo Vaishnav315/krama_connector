@@ -243,21 +243,37 @@ Files ingested    : 4
 
 ## Live FreeCAD Interactive Demo
 
-Experience real-time CAD change detection with the live FreeCAD GUI:
+Experience real-time CAD change detection with the live FreeCAD desktop bridge:
 
-### Step 1: Start the Terminal Watcher
+### Visual Demonstration: Real-Time FreeCAD → KRAMA Change Ingestion
+
+| 1. FreeCAD Observer Hook & 54-Part Robotic Arm | 2. Terminal Watcher Baseline Established |
+| :---: | :---: |
+| [![FreeCAD Observer Registered](docs/images/freecad_observer_initial.jpg)](docs/images/freecad_observer_initial.jpg) | [![Terminal Watcher Baseline Established](docs/images/terminal_baseline_established.jpg)](docs/images/terminal_baseline_established.jpg) |
+| *FreeCAD GUI: `DocumentObserver` registered on 54-component robotic arm (`indrbt_home.FCStd`); initial snapshot serialized.* | *Terminal Watcher: Initial baseline established (54 parts, volume & centroid computed, persisted to SQLite).* |
+
+| 3. Live Component Movement (`upper_arm_hollow_link`) | 4. Real-Time Change Report & KRAMA Intake |
+| :---: | :---: |
+| [![FreeCAD Component Moved](docs/images/freecad_component_moved.jpg)](docs/images/freecad_component_moved.jpg) | [![Terminal Watcher Diff Report](docs/images/terminal_diff_detected.jpg)](docs/images/terminal_diff_detected.jpg) |
+| *FreeCAD GUI: Moving `upper_arm_hollow_link` by +100 mm along X-axis triggers real-time debounce & atomic state write.* | *Terminal Watcher: Instant Δ 100 mm translation detected, 3.688 mm centroid shift calculated, and intake files ingested.* |
+
+---
+
+### Step-by-Step Walkthrough
+
+#### Step 1: Start the Terminal Watcher
 ```bash
 cd freecad_api_test/freecad_krama_bridge
-python krama_watcher.py
+python krama_watcher.py --verbose
 ```
-*(The watcher will print `Waiting for live_state.json...` until FreeCAD writes the first snapshot).*
+*(The watcher will print `Polling started. Press Ctrl+C to stop.` and wait for `live_state.json`)*.
 
-### Step 2: Open FreeCAD and Load Any Model
+#### Step 2: Open FreeCAD and Load Any Model
 Open `/Applications/FreeCAD.app` and open either:
 * `freecad_api_test/AssemblyExample1.FCStd` (13 linked instances)
 * Any imported STEP/IGES model (e.g. `indrbt_home.FCStd` with 54 components)
 
-### Step 3: Run the Observer Macro (Once)
+#### Step 3: Run the Observer Macro (Once)
 In FreeCAD:
 1. Go to **Macro → Macros… → Browse…**
 2. Select `freecad_api_test/freecad_krama_bridge/freecad_observer_bridge.FCMacro`
@@ -266,26 +282,45 @@ In FreeCAD:
 The FreeCAD Report View confirms:
 ```text
 [KRAMA Bridge] ✓ Observer REGISTERED on document 'indrbt_home'.
-[KRAMA Bridge] Watch file: .../live_state.json
+[KRAMA Bridge] Watch file: .../freecad_krama_bridge/live_state.json
+[KRAMA Bridge] Extracting initial snapshot...
 [KRAMA Bridge] ✓ Initial snapshot written (54 instances).
 [KRAMA Bridge] Now move a component — changes will be detected automatically.
 ```
-And your terminal watcher prints the **INITIAL SNAPSHOT BASELINE**.
-
-### Step 4: Move or Edit Any Component in FreeCAD
-1. Select any component in the 3D viewport or tree view.
-2. Right-click → **Transform** (or edit Placement in Property View).
-3. Move the part along any axis (e.g., +10 mm in Z).
-4. The observer immediately detects the change, debounces rapid mouse dragging, and writes an atomic update.
-
-### Step 5: View the Real-Time Change Report
-The terminal instantly prints the diff:
+And your terminal watcher prints the **INITIAL SNAPSHOT BASELINE**:
 ```text
-────────────────────────────────────────────────────────────────────────
-KRAMA CHANGE REPORT  [17:10:27 UTC]
-────────────────────────────────────────────────────────────────────────
-  Base snapshot  : a6af55dd…  (Live – 17:09:50 UTC)
-  New snapshot   : c12d84fe…  (Live – 17:10:26 UTC)
+================================================================================
+INITIAL SNAPSHOT — BASELINE ESTABLISHED  [06:25:29 UTC]
+================================================================================
+  snapshot_id  : 35dc9890…
+  source       : freecad
+  document     : indrbt_home
+  version      : Live — 06:10:12 UTC
+  instances    : 54
+  components   : 54
+  total volume : 5042125.41 mm³  (5.042125e-03 m³)
+  geom. CoM    : [94.82, -10.86, 193.94] mm  (geometric centroid)
+  extents      : [709.7, 264.0, 487.1] mm  (WxDxH)
+  warnings     : 2
+────────────────────────────────────────────────────────────────────────────────
+  KRAMA intake: run_id=5c45aa21…  status=completed  files=4
+  Database: Snapshot persisted to SQLite (krama_connector.db)
+✓ Baseline set. Now move a component in FreeCAD..
+```
+
+#### Step 4: Move or Edit Any Component in FreeCAD
+1. Select any component (e.g. `upper_arm_hollow_link`) in the 3D viewport or tree view.
+2. Edit its **Placement** in Property View (e.g., translate Position X from `0.00 mm` to `100.00 mm`).
+3. The observer immediately detects the change, debounces rapid mouse dragging, and writes an atomic update.
+
+#### Step 5: View the Real-Time Change Report
+The terminal watcher automatically computes the 3D spatial diff and submits partitioned artifacts to KRAMA:
+```text
+================================================================================
+KRAMA CHANGE REPORT  [06:26:56 UTC]
+================================================================================
+  Base snapshot  : 35dc9890…  (Live — 06:10:12 UTC)
+  New snapshot   : bd49593b…  (Live — 06:26:56 UTC)
 
   Summary
     added_instances                    : 0
@@ -296,15 +331,20 @@ KRAMA CHANGE REPORT  [17:10:27 UTC]
     indeterminate_properties           : 0
 
   MOVED COMPONENTS (1)
-    base_mounting_plate  (instance_id: indrbt_home_base_mounting_plate)
-      component_id : freecad_part_base_mounting_plate
-      Δ translation: 10.000 mm  (0.010000 m)
-      Old position : [0.000000, 0.000000, 0.000000] m
-      New position : [0.000000, 0.000000, 0.010000] m
+    upper_arm_hollow_link  (instance_id: indrbt_home_upper_arm_hollow_link)
+      component_id : freecad_part_Component16
+      Δ translation: 100.000 mm  (0.100000 m)
+      Old position : [0.000000, 0.000000, 0.190000] m
+      New position : [0.100000, 0.000000, 0.190000] m
 
-  GEOMETRIC CENTROID SHIFT: 0.184 mm  [snapshot_inferred]
-────────────────────────────────────────────────────────────────────────
-  KRAMA intake: run_id=f828e1b9…  status=completed  files=4
+  COMPONENT DEFINITION CHANGES (1)
+    upper_arm_hollow_link  (freecad_part_Component16)
+      CoM: [0.0778, -0.0000, 0.2827] → [0.1778, -0.0000, 0.2827]  [snapshot_inferred]
+
+  GEOMETRIC CENTROID SHIFT: 3.688 mm  [snapshot_inferred]
+────────────────────────────────────────────────────────────────────────────────
+  KRAMA intake: run_id=00c5ab10…  status=completed  files=4
+  Database: Snapshot persisted to SQLite (krama_connector.db)
 ```
 
 *(To stop the observer, execute `freecad_observer_bridge.FCMacro` a second time; it cleanly unregisters itself).*

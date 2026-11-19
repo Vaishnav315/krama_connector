@@ -30,3 +30,7 @@ htmlcov/
 .vscode/
 .idea/
 .DS_Store
+
+# Personal/local files
+implementation plan.md
+krama_onshape_connector.code-workspace

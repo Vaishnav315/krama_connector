@@ -91,6 +91,20 @@ This is an additive extension; default is unchanged; all 26 existing tests pass.
 
 ## How to Run the Live Demo
 
+### Visual Demonstration: Real-Time FreeCAD → KRAMA Change Ingestion
+
+| 1. FreeCAD Observer Hook & 54-Part Arm | 2. Terminal Watcher Baseline Established |
+| :---: | :---: |
+| [![FreeCAD Observer Registered](../../docs/images/freecad_observer_initial.jpg)](../../docs/images/freecad_observer_initial.jpg) | [![Terminal Watcher Baseline Established](../../docs/images/terminal_baseline_established.jpg)](../../docs/images/terminal_baseline_established.jpg) |
+| *FreeCAD GUI: DocumentObserver registered on 54-part arm (`indrbt_home.FCStd`), initial snapshot written.* | *Terminal Watcher: Baseline established (54 parts, volume & centroid computed, persisted to SQLite).* |
+
+| 3. Live Component Movement (`upper_arm_hollow_link`) | 4. Real-Time Change Report & KRAMA Intake |
+| :---: | :---: |
+| [![FreeCAD Component Moved](../../docs/images/freecad_component_moved.jpg)](../../docs/images/freecad_component_moved.jpg) | [![Terminal Watcher Diff Report](../../docs/images/terminal_diff_detected.jpg)](../../docs/images/terminal_diff_detected.jpg) |
+| *FreeCAD GUI: Moving `upper_arm_hollow_link` by +100 mm along X triggers real-time debounce & atomic write.* | *Terminal Watcher: Instant Δ 100 mm translation detected, 3.688 mm centroid shift calculated, and intake completed.* |
+
+---
+
 ### Step 1 — Start the KRAMA Watcher (normal terminal)
 
 ```bash
