@@ -382,6 +382,17 @@ def run_extraction(doc):
         root_label = doc.Label
         root_type = "Document"
 
+    import hashlib as _hashlib
+    # Content-addressed version identity
+    _file_hash = None
+    try:
+        _doc_path = getattr(doc, 'FileName', '') or ''
+        if _doc_path and os.path.exists(_doc_path):
+            with open(_doc_path, 'rb') as _fh:
+                _file_hash = _hashlib.sha256(_fh.read()).hexdigest()
+    except Exception:
+        pass
+
     return {
         "metadata": {
             "source": "FreeCAD",
@@ -391,6 +402,7 @@ def run_extraction(doc):
             "document_label": doc.Label,
             "file_path": doc.FileName if hasattr(doc, "FileName") else "",
             "extracted_at_epoch": time.time(),
+            "file_hash_sha256": _file_hash,
             "model_type": model_type,
             "units": {
                 "length": "millimeter",

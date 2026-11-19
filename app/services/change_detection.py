@@ -39,8 +39,13 @@ class ChangeDetectionService:
                 "last_synced_version": doc.last_synced_version_id,
             }
 
-        # Most recent version is typically the first or highest version in the list
-        latest_version = versions[0]
+        # Determine latest version: sort by createdAt descending if present, else default to first
+        sorted_versions = (
+            sorted(versions, key=lambda v: v.get("createdAt", ""), reverse=True)
+            if any(v.get("createdAt") for v in versions)
+            else versions
+        )
+        latest_version = sorted_versions[0]
         latest_version_id = latest_version.get("id")
         latest_microversion = latest_version.get("microversion")
 

@@ -95,12 +95,21 @@ def parse_onshape_mass_properties(
     if isinstance(raw_pm, list) and len(raw_pm) >= 3:
         principal_moments = [float(raw_pm[0]), float(raw_pm[1]), float(raw_pm[2])]
 
-    provenance = ProvenanceRecord(
-        source=ProvenanceSource.COMPUTED_FROM_GEOMETRY,
-        description="Computed from Onshape solid geometry and assigned material density",
-        confidence=1.0,
-        raw_source_field="massproperties",
-    )
+    # Respect Onshape's isMassOverridden flag — when true, mass was manually entered
+    if raw_mass_data.get("isMassOverridden", False):
+        provenance = ProvenanceRecord(
+            source=ProvenanceSource.ENTERED_MANUALLY,
+            description="Mass manually overridden by user in Onshape Part Studio; not computed from geometry",
+            confidence=1.0,
+            raw_source_field="massproperties.isMassOverridden",
+        )
+    else:
+        provenance = ProvenanceRecord(
+            source=ProvenanceSource.COMPUTED_FROM_GEOMETRY,
+            description="Computed from Onshape solid geometry and assigned material density",
+            confidence=1.0,
+            raw_source_field="massproperties",
+        )
 
     return MassProperties(
         mass=mass_val,

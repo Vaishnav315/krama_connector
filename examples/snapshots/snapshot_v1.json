@@ -1,6 +1,6 @@
 {
   "assembly": {
-    "assembly_id": "elem-asm-top-001",
+    "assembly_id": "43210fedcba9876543210fed",
     "instance_counts": {
       "part_part_base_pedestal": 1,
       "part_part_bicep_tube": 1,
@@ -70,7 +70,7 @@
         ]
       },
       {
-        "component_id": "asm_elem-subasm-arm-002",
+        "component_id": "asm_b1c2d3e4f567890123456789",
         "instance_id": "inst_arm_module_subasm_1",
         "is_subassembly": true,
         "name": "Articulated Arm Module <1>",
@@ -174,7 +174,7 @@
         ]
       },
       {
-        "component_id": "asm_elem-subasm-wrist-003",
+        "component_id": "asm_c2d3e4f567890123456789ab",
         "instance_id": "inst_arm_module_subasm_1/inst_wrist_effector_subasm_1",
         "is_subassembly": true,
         "name": "Wrist & End Effector Subassembly <1>",
@@ -590,7 +590,7 @@
         ]
       }
     ],
-    "name": "Assembly elem-asm-top-001 (Doc: doc-robot-arm-001)",
+    "name": "Assembly 43210fedcba9876543210fed (Doc: 65a1f2b3c4d5e6f7a8b9c0d1)",
     "overall_extents": {
       "coordinate_system": "world_space",
       "dimensions": [
@@ -645,14 +645,14 @@
       "confidence": 1.0,
       "description": "Computed from Onshape solid geometry and assigned material density",
       "raw_source_field": "massproperties",
-      "recorded_at": "2026-11-17T12:23:40.564229Z",
+      "recorded_at": "2026-11-19T14:44:13.188226Z",
       "source": "computed_from_geometry"
     },
     "surface_area": 0.452,
     "volume": 0.00285
   },
   "assembly_properties": {
-    "assembly_element_id": "elem-asm-top-001"
+    "assembly_element_id": "43210fedcba9876543210fed"
   },
   "components": [
     {
@@ -680,7 +680,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564043Z",
+          "recorded_at": "2026-11-19T14:44:13.188057Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -691,7 +691,7 @@
       "name": "Base Pedestal Cast",
       "part_number": "ARM-001-BASE",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_base_pedestal",
       "world_bounding_box": null
     },
@@ -720,7 +720,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564080Z",
+          "recorded_at": "2026-11-19T14:44:13.188088Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -731,7 +731,7 @@
       "name": "Turntable Bearing Plate",
       "part_number": "ARM-002-TTB",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_turntable_plate",
       "world_bounding_box": null
     },
@@ -760,7 +760,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564094Z",
+          "recorded_at": "2026-11-19T14:44:13.188103Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -771,7 +771,7 @@
       "name": "Steel Counterweight",
       "part_number": "ARM-003-CW",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_counterweight",
       "world_bounding_box": null
     },
@@ -800,7 +800,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564105Z",
+          "recorded_at": "2026-11-19T14:44:13.188113Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -811,7 +811,7 @@
       "name": "Shoulder Pivot Bracket",
       "part_number": "ARM-004-SHB",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_shoulder_bracket",
       "world_bounding_box": null
     },
@@ -840,7 +840,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564116Z",
+          "recorded_at": "2026-11-19T14:44:13.188122Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -851,7 +851,7 @@
       "name": "Carbon Bicep Tube",
       "part_number": "ARM-005-BCT",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_bicep_tube",
       "world_bounding_box": null
     },
@@ -880,7 +880,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564130Z",
+          "recorded_at": "2026-11-19T14:44:13.188133Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -891,7 +891,7 @@
       "name": "Elbow Joint Housing",
       "part_number": "ARM-006-ELB",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_elbow_joint",
       "world_bounding_box": null
     },
@@ -920,7 +920,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564139Z",
+          "recorded_at": "2026-11-19T14:44:13.188142Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -931,7 +931,7 @@
       "name": "Wrist Mounting Flange",
       "part_number": "ARM-007-WFL",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_wrist_flange",
       "world_bounding_box": null
     },
@@ -949,7 +949,7 @@
           "confidence": 1.0,
           "description": "Mass properties unavailable for part part_part_gripper_servo in source CAD system",
           "raw_source_field": null,
-          "recorded_at": "2026-11-17T12:23:40.564155Z",
+          "recorded_at": "2026-11-19T14:44:13.188156Z",
           "source": "source_unavailable"
         },
         "surface_area": null,
@@ -960,7 +960,7 @@
       "name": "Dynamixel Servo Actuator",
       "part_number": "COTS-SERVO-XM430",
       "revision": null,
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_gripper_servo",
       "world_bounding_box": null
     },
@@ -989,7 +989,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564170Z",
+          "recorded_at": "2026-11-19T14:44:13.188173Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -1000,7 +1000,7 @@
       "name": "Gripper Finger",
       "part_number": "ARM-008-FNG",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_gripper_finger",
       "world_bounding_box": null
     },
@@ -1029,7 +1029,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564181Z",
+          "recorded_at": "2026-11-19T14:44:13.188183Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -1040,7 +1040,7 @@
       "name": "Silicone Finger Pad",
       "part_number": "ARM-009-RPD",
       "revision": "A",
-      "source_element_id": "elem-parts-001",
+      "source_element_id": "d3e4f56789012345678901bc",
       "source_part_id": "part_rubber_pad",
       "world_bounding_box": null
     },
@@ -1069,7 +1069,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564191Z",
+          "recorded_at": "2026-11-19T14:44:13.188193Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -1080,7 +1080,7 @@
       "name": "Hex Cap Screw M8x25",
       "part_number": "ISO-4017-M8x25-8.8",
       "revision": null,
-      "source_element_id": "elem-hardware-001",
+      "source_element_id": "e4f5678901234567890123cd",
       "source_part_id": "part_m8_screw",
       "world_bounding_box": null
     },
@@ -1109,7 +1109,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564204Z",
+          "recorded_at": "2026-11-19T14:44:13.188205Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -1120,7 +1120,7 @@
       "name": "Button Head M4x10",
       "part_number": "ISO-7380-M4x10-A2",
       "revision": null,
-      "source_element_id": "elem-hardware-001",
+      "source_element_id": "e4f5678901234567890123cd",
       "source_part_id": "part_m4_screw",
       "world_bounding_box": null
     },
@@ -1149,7 +1149,7 @@
           "confidence": 1.0,
           "description": "Computed from Onshape solid geometry and assigned material density",
           "raw_source_field": "massproperties",
-          "recorded_at": "2026-11-17T12:23:40.564214Z",
+          "recorded_at": "2026-11-19T14:44:13.188216Z",
           "source": "computed_from_geometry"
         },
         "surface_area": null,
@@ -1160,64 +1160,64 @@
       "name": "Dowel Pin 12x40",
       "part_number": "DIN-6325-12x40-m6",
       "revision": null,
-      "source_element_id": "elem-hardware-001",
+      "source_element_id": "e4f5678901234567890123cd",
       "source_part_id": "part_dowel_pin",
       "world_bounding_box": null
     }
   ],
   "document": {
-    "document_id": "doc-robot-arm-001",
-    "document_name": "Document doc-robot-arm-001",
-    "element_id": "elem-asm-top-001",
-    "element_name": "Assembly elem-asm-top-001 (Doc: doc-robot-arm-001)",
-    "microversion_id": "mver-001",
-    "version_id": "ver-release-1.0",
+    "document_id": "65a1f2b3c4d5e6f7a8b9c0d1",
+    "document_name": "Document 65a1f2b3c4d5e6f7a8b9c0d1",
+    "element_id": "43210fedcba9876543210fed",
+    "element_name": "Assembly 43210fedcba9876543210fed (Doc: 65a1f2b3c4d5e6f7a8b9c0d1)",
+    "microversion_id": "8b3f5c9e12d4a6f8b0c2e4a6",
+    "version_id": "7a2e4b8f01c3d5e7a9b0c1d2",
     "version_name": "Release v1.0",
     "workspace_id": null
   },
-  "extracted_at": "2026-11-17T12:23:40.564358Z",
+  "extracted_at": "2026-11-19T14:44:13.188356Z",
   "missing_values": [
     {
       "entity_id": "part_part_gripper_servo",
       "entity_type": "part",
       "property_name": "revision",
       "reason": "Revision not released or tracked in Onshape release management",
-      "recorded_at": "2026-11-17T12:23:40.564149Z"
+      "recorded_at": "2026-11-19T14:44:13.188150Z"
     },
     {
       "entity_id": "part_part_gripper_servo",
       "entity_type": "part",
       "property_name": "material",
       "reason": "No material assigned to part definition in Onshape Part Studio",
-      "recorded_at": "2026-11-17T12:23:40.564152Z"
+      "recorded_at": "2026-11-19T14:44:13.188153Z"
     },
     {
       "entity_id": "part_part_gripper_servo",
       "entity_type": "part",
       "property_name": "mass",
       "reason": "Mass calculation unavailable because part definition lacks density or volume",
-      "recorded_at": "2026-11-17T12:23:40.564160Z"
+      "recorded_at": "2026-11-19T14:44:13.188161Z"
     },
     {
       "entity_id": "part_part_m8_screw",
       "entity_type": "part",
       "property_name": "revision",
       "reason": "Revision not released or tracked in Onshape release management",
-      "recorded_at": "2026-11-17T12:23:40.564187Z"
+      "recorded_at": "2026-11-19T14:44:13.188189Z"
     },
     {
       "entity_id": "part_part_m4_screw",
       "entity_type": "part",
       "property_name": "revision",
       "reason": "Revision not released or tracked in Onshape release management",
-      "recorded_at": "2026-11-17T12:23:40.564200Z"
+      "recorded_at": "2026-11-19T14:44:13.188200Z"
     },
     {
       "entity_id": "part_part_dowel_pin",
       "entity_type": "part",
       "property_name": "revision",
       "reason": "Revision not released or tracked in Onshape release management",
-      "recorded_at": "2026-11-17T12:23:40.564210Z"
+      "recorded_at": "2026-11-19T14:44:13.188211Z"
     }
   ],
   "provenance": {
@@ -1225,7 +1225,7 @@
     "extracted_from": "Onshape REST API",
     "uses_fixtures": true
   },
-  "snapshot_id": "ea3c810b-485c-4a48-9cd3-0e89cee42e39",
+  "snapshot_id": "3456c615-3d9f-4bf2-8506-7313f832e238",
   "source": "onshape",
   "units": {
     "angle": "radian",

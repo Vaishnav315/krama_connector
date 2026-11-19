@@ -10,8 +10,8 @@ from app.services.diff_service import SnapshotDiffEngine
 def test_diff_v1_and_v2_real_design_changes():
     """Verify that diffing v1 and v2 detects added/removed instances, quantity deltas, and physical property changes."""
     connector = OnshapeConnector(use_fixtures=True)
-    snap_v1 = connector.extract_snapshot("doc-robot-arm-001", "ver-release-1.0")
-    snap_v2 = connector.extract_snapshot("doc-robot-arm-001", "ver-release-2.0")
+    snap_v1 = connector.extract_snapshot("65a1f2b3c4d5e6f7a8b9c0d1", "7a2e4b8f01c3d5e7a9b0c1d2")
+    snap_v2 = connector.extract_snapshot("65a1f2b3c4d5e6f7a8b9c0d1", "9c4d6e8a23f5b7a9c1d3f5b7")
 
     diff_engine = SnapshotDiffEngine()
     diff = diff_engine.compare(snap_v1, snap_v2)
@@ -59,7 +59,7 @@ def test_diff_v1_and_v2_real_design_changes():
 def test_diff_identical_snapshots():
     """Verify that comparing identical snapshots produces no additions, removals, or deltas."""
     connector = OnshapeConnector(use_fixtures=True)
-    snap_v1 = connector.extract_snapshot("doc-robot-arm-001", "ver-release-1.0")
+    snap_v1 = connector.extract_snapshot("65a1f2b3c4d5e6f7a8b9c0d1", "7a2e4b8f01c3d5e7a9b0c1d2")
 
     diff_engine = SnapshotDiffEngine()
     diff = diff_engine.compare(snap_v1, snap_v1)
@@ -75,8 +75,8 @@ def test_diff_identical_snapshots():
 def test_diff_missing_mass_is_indeterminate_not_zero():
     """Verify that an unavailable mass property in comparison is marked INDETERMINATE rather than generating a false delta."""
     connector = OnshapeConnector(use_fixtures=True)
-    snap_a = connector.extract_snapshot("doc-robot-arm-001", "ver-release-1.0")
-    snap_b = connector.extract_snapshot("doc-robot-arm-001", "ver-release-1.0")
+    snap_a = connector.extract_snapshot("65a1f2b3c4d5e6f7a8b9c0d1", "7a2e4b8f01c3d5e7a9b0c1d2")
+    snap_b = connector.extract_snapshot("65a1f2b3c4d5e6f7a8b9c0d1", "7a2e4b8f01c3d5e7a9b0c1d2")
 
     # Simulate missing assembly mass in snapshot B
     snap_b.assembly_mass_properties = MassProperties(

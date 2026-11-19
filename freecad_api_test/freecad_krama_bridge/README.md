@@ -255,3 +255,23 @@ All callback methods use safe variable arguments (`*args, **kwargs`) and verify 
 | FreeCAD Report View shows "No active document" | Open AssemblyExample1.FCStd before running the macro |
 | Diff shows no moved_instances after moving a part | The part may need a **Recompute** (`Edit → Refresh`) to trigger a placement change event |
 | `ModuleNotFoundError: No module named 'app'` | Run `krama_watcher.py` from the bridge directory; it sets `sys.path` automatically |
+
+---
+
+## Headless Production Execution (FreeCADCmd)
+
+For production multi-tenant deployments, FreeCAD can run without a GUI using `FreeCADCmd`:
+
+```bash
+# Run extraction macro headlessly on macOS
+/Applications/FreeCAD.app/Contents/Resources/bin/FreeCADCmd extract_assembly.FCMacro
+
+# Or via the installed binary on Linux
+freecadcmd /path/to/model.FCStd /path/to/extract_assembly.FCMacro
+```
+
+**Important limitations**:
+- `DocumentObserver` and GUI event hooks are not available in headless mode.
+- For headless extraction, use the `extract_assembly.FCMacro` script directly (it does not require an observer).
+- The `krama_watcher.py` file-system watcher still functions headlessly — point it at a directory where FreeCADCmd writes `live_state.json` outputs.
+- Each execution is a one-shot extraction; real-time change detection requires the GUI observer or an external scheduler (cron, systemd timer, Kubernetes CronJob).

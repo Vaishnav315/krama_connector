@@ -96,8 +96,8 @@ def test_full_project_sync_lifecycle(client: TestClient):
         f"/projects/{project_id}/documents",
         json={
             "connection_id": conn_id,
-            "document_id": "doc-robot-arm-001",
-            "element_id": "elem-asm-top-001",
+            "document_id": "65a1f2b3c4d5e6f7a8b9c0d1",
+            "element_id": "43210fedcba9876543210fed",
         },
     )
     assert link_res.status_code == 201
@@ -108,13 +108,13 @@ def test_full_project_sync_lifecycle(client: TestClient):
         f"/projects/{project_id}/sync",
         json={
             "document_id": doc_id,
-            "version_id": "ver-release-1.0",
+            "version_id": "7a2e4b8f01c3d5e7a9b0c1d2",
         },
     )
     assert sync1_res.status_code == 200
     sync1_data = sync1_res.json()
     assert sync1_data["status"] == "completed"
-    assert sync1_data["version_id"] == "ver-release-1.0"
+    assert sync1_data["version_id"] == "7a2e4b8f01c3d5e7a9b0c1d2"
     snap1_id = sync1_data["snapshot_id"]
     assert snap1_id is not None
 
@@ -123,7 +123,7 @@ def test_full_project_sync_lifecycle(client: TestClient):
         f"/projects/{project_id}/sync",
         json={
             "document_id": doc_id,
-            "version_id": "ver-release-1.0",
+            "version_id": "7a2e4b8f01c3d5e7a9b0c1d2",
             "force": False,
         },
     )
@@ -135,13 +135,13 @@ def test_full_project_sync_lifecycle(client: TestClient):
         f"/projects/{project_id}/sync",
         json={
             "document_id": doc_id,
-            "version_id": "ver-release-2.0",
+            "version_id": "9c4d6e8a23f5b7a9c1d3f5b7",
         },
     )
     assert sync2_res.status_code == 200
     sync2_data = sync2_res.json()
     assert sync2_data["status"] == "completed"
-    assert sync2_data["version_id"] == "ver-release-2.0"
+    assert sync2_data["version_id"] == "9c4d6e8a23f5b7a9c1d3f5b7"
     snap2_id = sync2_data["snapshot_id"]
     assert snap2_id is not None
     assert snap2_id != snap1_id
@@ -157,7 +157,7 @@ def test_full_project_sync_lifecycle(client: TestClient):
     assert get_res.status_code == 200
     snapshot_doc = get_res.json()
     assert snapshot_doc["snapshot_id"] == snap1_id
-    assert snapshot_doc["document"]["version_id"] == "ver-release-1.0"
+    assert snapshot_doc["document"]["version_id"] == "7a2e4b8f01c3d5e7a9b0c1d2"
     assert len(snapshot_doc["assembly"]["instances"]) == 22
 
     # 8. Compare snapshots via GET /snapshots/{id}/diff/{other_id}

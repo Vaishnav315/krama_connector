@@ -74,7 +74,7 @@ class OnshapeConnector(CADConnector):
     def _load_raw_assembly(self, document_id: str, version_id: str, element_id: str) -> dict[str, Any]:
         """Load raw assembly JSON from client or fixtures."""
         if self.use_fixtures:
-            fixture_name = "assembly_v2.json" if "2" in version_id else "assembly_v1.json"
+            fixture_name = "assembly_v2.json" if version_id == "9c4d6e8a23f5b7a9c1d3f5b7" else "assembly_v1.json"
             fixture_path = self.fixtures_dir / fixture_name
             with open(fixture_path, encoding="utf-8") as f:
                 return json.load(f)
@@ -82,8 +82,8 @@ class OnshapeConnector(CADConnector):
         if not self.client:
             raise RuntimeError("No OnshapeClient configured")
 
-        # Determine wvm type (version 'v' or workspace 'w')
-        wvm_type = "v" if version_id.startswith("ver") or version_id.startswith("v") else "w"
+        # All version references use wvm_type "v"
+        wvm_type = "v"
         return self.client.get_assembly_definition(
             document_id=document_id,
             wvm_type=wvm_type,
@@ -94,7 +94,7 @@ class OnshapeConnector(CADConnector):
     def _load_raw_mass(self, document_id: str, version_id: str, element_id: str) -> dict[str, Any]:
         """Load raw mass properties JSON from client or fixtures."""
         if self.use_fixtures:
-            fixture_name = "mass_properties_v2.json" if "2" in version_id else "mass_properties_v1.json"
+            fixture_name = "mass_properties_v2.json" if version_id == "9c4d6e8a23f5b7a9c1d3f5b7" else "mass_properties_v1.json"
             fixture_path = self.fixtures_dir / fixture_name
             if fixture_path.exists():
                 with open(fixture_path, encoding="utf-8") as f:
@@ -104,7 +104,7 @@ class OnshapeConnector(CADConnector):
         if not self.client:
             return {}
 
-        wvm_type = "v" if version_id.startswith("ver") or version_id.startswith("v") else "w"
+        wvm_type = "v"
         return self.client.get_assembly_mass_properties(
             document_id=document_id,
             wvm_type=wvm_type,
@@ -115,7 +115,7 @@ class OnshapeConnector(CADConnector):
     def _load_raw_bbox(self, document_id: str, version_id: str, element_id: str) -> dict[str, Any]:
         """Load raw bounding box JSON from client or fixtures."""
         if self.use_fixtures:
-            fixture_name = "bounding_boxes_v2.json" if "2" in version_id else "bounding_boxes_v1.json"
+            fixture_name = "bounding_boxes_v2.json" if version_id == "9c4d6e8a23f5b7a9c1d3f5b7" else "bounding_boxes_v1.json"
             fixture_path = self.fixtures_dir / fixture_name
             if fixture_path.exists():
                 with open(fixture_path, encoding="utf-8") as f:
@@ -125,7 +125,7 @@ class OnshapeConnector(CADConnector):
         if not self.client:
             return {}
 
-        wvm_type = "v" if version_id.startswith("ver") or version_id.startswith("v") else "w"
+        wvm_type = "v"
         return self.client.get_assembly_bounding_boxes(
             document_id=document_id,
             wvm_type=wvm_type,

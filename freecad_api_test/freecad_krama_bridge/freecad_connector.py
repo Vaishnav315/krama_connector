@@ -302,10 +302,33 @@ def _make_assembly_mass(asm_data: dict) -> MassProperties:
     )
 
 
-def _version_id_from_data(meta: dict) -> str:
-    """Derive a stable version identifier from the extraction timestamp."""
+def _version_id_from_data(meta: dict, asm_data: dict | None = None) -> str:
+    """Derive a stable, content-addressed version identifier.
+
+    Uses the SHA-256 hash of the .FCStd file content when available
+    (written by the observer macro as 'file_hash_sha256'). This guarantees
+    that an unchanged file always produces an identical version ID, enabling
+    correct deduplication in KRAMA's intake pipeline.
+
+    If file_hash_sha256 is unavailable (e.g. unsaved in-memory document),
+    it computes a content hash of the assembly hierarchy and instances.
+    Falls back to a rounded epoch bucket only as an absolute last resort.
+    """
+    file_hash = meta.get("file_hash_sha256")
+    if file_hash:
+        return f"freecad_sha256_{file_hash[:16]}"
+
+    # Content-based hash of the assembly tree and instances
+    if asm_data and "instances" in asm_data:
+        try:
+            asm_repr = json.dumps(asm_data["instances"], sort_keys=True)
+            content_hash = hashlib.sha256(asm_repr.encode("utf-8")).hexdigest()
+            return f"freecad_content_{content_hash[:16]}"
+        except Exception:
+            pass
+
+    # Legacy fallback: epoch-based ID (1-second resolution)
     epoch = meta.get("extracted_at_epoch", 0)
-    # Round to 1-second buckets so tiny polling jitter doesn't create ghost versions
     return f"freecad_live_{int(epoch)}"
 
 
@@ -371,9 +394,9 @@ class FreeCADConnector(CADConnector):
         epoch = meta.get("extracted_at_epoch", 0)
         return [
             {
-                "id": _version_id_from_data(meta),
-                "name": f"Live – {datetime.fromtimestamp(epoch, tz=UTC).isoformat()}",
-                "microversion": str(int(epoch)),
+                "id": _version_id_from_data(meta, self._asm(data)),
+                "name": f"Rev {_version_id_from_data(meta, self._asm(data))[-8:]} ({datetime.fromtimestamp(epoch, tz=UTC).strftime('%H:%M:%S UTC')})",
+                "microversion": _version_id_from_data(meta, self._asm(data))[-16:],
             }
         ]
 
@@ -418,8 +441,8 @@ class FreeCADConnector(CADConnector):
         file_path = meta.get("file_path", document_reference)
         doc_id = _stable_doc_id(file_path)
         epoch = meta.get("extracted_at_epoch", 0)
-        version_id = _version_id_from_data(meta)
-        version_name = f"Live – {datetime.fromtimestamp(epoch, tz=UTC).strftime('%H:%M:%S UTC')}"
+        version_id = _version_id_from_data(meta, asm_data)
+        version_name = f"Rev {version_id[-8:]} ({datetime.fromtimestamp(epoch, tz=UTC).strftime('%H:%M:%S UTC')})"
 
         assembly = _make_assembly_hierarchy(asm_data, doc_name)
         components, missing_values = _make_components(asm_data)

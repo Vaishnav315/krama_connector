@@ -1,6 +1,6 @@
-# KRAMA Universal CAD/PLM Connector
+# KRAMA Modular CAD/PLM Connector
 
-A production-grade, read-only CAD/PLM engineering connector architecture built for **KRAMA's engineering knowledge graph ingestion pipeline**.
+A read-only production-ready CAD/PLM engineering connector architecture built for **KRAMA's engineering knowledge graph ingestion pipeline**.
 
 Designed around an extensible, vendor-agnostic abstraction (`CADConnector`), this project connects KRAMA to mechanical CAD systems to extract multi-level assembly hierarchies, part identities, mass properties (with explicit units and provenance tracking), 3D spatial extents, and custom properties. It computes deterministic snapshot diffs across design revisions and submits structured, partitioned file artifacts to KRAMA's `intake_files` ingestion interface.
 
@@ -28,7 +28,7 @@ Engineering teams maintain design data across multiple CAD systems (Onshape, Fre
     │  - REST Client (HMAC/OAuth) │                             │  - Persistent DocumentObs.  │
     │  - 429 Rate Limit Backoff   │                             │  - Real-time Edit Detection │
     │  - Occurrence Tree Resolver │                             │  - Universal B-Rep Extractor│
-    │  - 26 Automated Test Cases  │                             │  - 54-part Robotic Arm & Asm│
+    │  - 32 Automated Test Cases  │                             │  - 53-part Robotic Arm & Asm│
     └──────────────┬──────────────┘                             └──────────────┬──────────────┘
                    │                                                           │
                    └─────────────────────────────┬─────────────────────────────┘
@@ -47,7 +47,7 @@ Engineering teams maintain design data across multiple CAD systems (Onshape, Fre
                                   │ - properties.json           │
                                   │ - provenance.json           │
                                   └──────────────┬──────────────┘
-                                                 │ intake_files(*, project_id, files, source)
+                                                 │ intake_files(*, project_id, files, source, metadata_by_source_file)
                                   ┌──────────────▼──────────────┐
                                   │    KRAMA Ingestion Stub     │
                                   │    (Immutable & Versioned)  │
@@ -64,8 +64,8 @@ To satisfy both the take-home specification and real-world developer platform co
 * **Protocol**: Cloud REST API.
 * **Authentication**: Authentic HMAC-SHA256 request signing (`On {access_key}:HmacSHA256:{signature}`) with deterministic query sorting, nonce generation, and OAuth2 bearer token support.
 * **Resilience**: Exponential backoff retry handler honoring HTTP 429 `Retry-After` headers.
-* **Tested Assembly**: 6-DOF modular robotic arm (`doc-robot-arm-001`, `elem-asm-top-001`) with 2 nested subassembly levels and 22 part instances.
-* **Test Suite**: 26 unit and integration tests running against recorded authentic fixtures in `tests/fixtures/`.
+* **Tested Assembly**: 6-DOF modular robotic arm (`65a1f2b3c4d5e6f7a8b9c0d1`, `43210fedcba9876543210fed`) with 2 nested subassembly levels and 22 part instances.
+* **Test Suite**: 32 unit and integration tests running against schema-compliant synthetic fixtures modeled on Onshape API v10 response schemas in `tests/fixtures/`.
 * *Note on API Keys*: Onshape Free/Student accounts currently restrict developer API key generation ("account not currently available to create API keys"). The client implementation is fully authentic and passes all HMAC/OAuth tests.
 
 ### 2. FreeCAD Live Bridge (`freecad_api_test/freecad_krama_bridge/`)
@@ -73,7 +73,7 @@ To satisfy both the take-home specification and real-world developer platform co
 * **Live Change Detection**: Operates inside the running FreeCAD desktop application. Automatically detects property changes, component translations/rotations, object creation, deletion, undo, and redo without requiring manual re-runs or polling fake REST APIs.
 * **Universal Model Extraction**: Extracts both:
   * **Linked assemblies** (`App::Link` objects in FreeCAD Assembly workbench, e.g. `AssemblyExample1.FCStd` — 13 instances).
-  * **Direct solid assemblies** (`Part::Feature` / STEP / IGES imports, e.g. `indrbt_home.FCStd` — 54 solid parts).
+  * **Direct solid assemblies** (`Part::Feature` / STEP / IGES imports, e.g. `indrbt_home.FCStd` — 53 solid parts).
 * **Deterministic Boundary**: Debounced (350 ms) atomic file serialization (`live_state.json.tmp` → `os.replace()`) preventing partial reads.
 * **Live Ingestion**: `krama_watcher.py` converts B-Rep units (mm → m, mm³ → m³), maps to canonical KRAMA `Snapshot`, calls `SnapshotDiffEngine`, and feeds partitioned files to `intake_files()`.
 
@@ -84,7 +84,7 @@ To satisfy both the take-home specification and real-world developer platform co
 | Section | Requirement | Implementation in KRAMA Connector | Verification |
 | :--- | :--- | :--- | :--- |
 | **3** | **Assembly Structure & Hierarchy** | Multi-level tree resolution via `AssemblyHierarchy` and `InstanceNode`. Preserves occurrence paths and 4x4 spatial transformation matrices. | `test_assembly_hierarchy_and_repeated_instances` & `test_freecad_connector_live_state` |
-| **3** | **Instance Counts & Repeated Parts** | Aggregated `instance_counts` dictionary alongside individual instance nodes with unique occurrence IDs. | Verified on 22-part Onshape arm and 54-part FreeCAD robot. |
+| **3** | **Instance Counts & Repeated Parts** | Aggregated `instance_counts` dictionary alongside individual instance nodes with unique occurrence IDs. | Verified on 22-part Onshape arm and 53-part FreeCAD robot. |
 | **3** | **Part Identity** | Name, part number, revision, and material stored on `ComponentDefinition`. | Extracted from CAD attributes and metadata. |
 | **3** | **Mass Properties with Units** | Mass, volume, centroid $[x, y, z]$, and 6-component inertia tensor stored in SI units (m, kg). Explicit `UnitsSchema`. | `test_mass_properties_valid_calculation` |
 | **3** | **Provenance Tracking** | Explicit tagging whether mass properties are `COMPUTED_FROM_GEOMETRY` or `USER_DEFINED`. | Verified in `MassProperties.provenance`. |
@@ -95,9 +95,9 @@ To satisfy both the take-home specification and real-world developer platform co
 | **3** | **Design Diff Engine** | `SnapshotDiffEngine` detects added/removed parts, moved instances (with translation distance $\Delta$), definition shifts, and assembly centroid displacement. | `test_diff_v1_and_v2_real_design_changes` & `test_krama_diff_engine` |
 | **4.1** | **Research & Comparison** | Comprehensive analysis of Flow Engineering, CAD/PLM integration patterns, Onshape API constraints, and enterprise systems (Siemens NX / Teamcenter). | Documented in [`docs/design_note.md`](docs/design_note.md). |
 | **4.2** | **Connector Abstraction** | `CADConnector` abstract base class (`app/connectors/base.py`) decoupling KRAMA from any CAD vendor. | Implemented by both `OnshapeConnector` and `FreeCADConnector`. |
-| **4.2** | **KRAMA File Ingestion** | Staging and submitting partitioned JSON files via `intake_files(*, project_id, files, source)`. | `test_intake_files_success` & `test_intake_files_deduplication` |
+| **4.2** | **KRAMA File Ingestion** | Staging and submitting partitioned JSON files via `intake_files(*, project_id, files, source, metadata_by_source_file)`. | `test_intake_files_success` & `test_intake_files_deduplication` |
 | **4.2** | **FastAPI & SQLAlchemy** | 8 REST API endpoints with Pydantic validation, SQLite/PostgreSQL support, and connection state management. | `tests/integration/test_api_endpoints.py` |
-| **4.3** | **Engineering Hygiene** | Fully automated test suite runnable without credentials, Ruff linting, and CI workflow. | 26 passing tests; `.github/workflows/ci.yml`. |
+| **4.3** | **Engineering Hygiene** | Fully automated test suite runnable without credentials, Ruff linting, and CI workflow. | 32 passing tests; `.github/workflows/ci.yml`. |
 | **5** | **Read-Only Ingestion Contract** | Zero write operations to CAD sources. Everything enters KRAMA strictly through `intake_files()`. | Enforced by architecture. |
 
 ---
@@ -185,7 +185,7 @@ pip install -r requirements.txt
 
 ### 2. Run the Test Suite (Zero-Credentials Verification)
 
-Execute all 26 automated unit, integration, and contract tests:
+Execute all 32 automated unit, integration, and contract tests:
 
 ```bash
 pytest
@@ -247,10 +247,10 @@ Experience real-time CAD change detection with the live FreeCAD desktop bridge:
 
 ### Visual Demonstration: Real-Time FreeCAD → KRAMA Change Ingestion
 
-| 1. FreeCAD Observer Hook & 54-Part Robotic Arm | 2. Terminal Watcher Baseline Established |
+| 1. FreeCAD Observer Hook & 53-Part Robotic Arm | 2. Terminal Watcher Baseline Established |
 | :---: | :---: |
 | [![FreeCAD Observer Registered](docs/images/freecad_observer_initial.jpg)](docs/images/freecad_observer_initial.jpg) | [![Terminal Watcher Baseline Established](docs/images/terminal_baseline_established.jpg)](docs/images/terminal_baseline_established.jpg) |
-| *FreeCAD GUI: `DocumentObserver` registered on 54-component robotic arm (`indrbt_home.FCStd`); initial snapshot serialized.* | *Terminal Watcher: Initial baseline established (54 parts, volume & centroid computed, persisted to SQLite).* |
+| *FreeCAD GUI: `DocumentObserver` registered on 53-component robotic arm (`indrbt_home.FCStd`); initial snapshot serialized.* | *Terminal Watcher: Initial baseline established (53 parts, volume & centroid computed, persisted to SQLite).* |
 
 | 3. Live Component Movement (`upper_arm_hollow_link`) | 4. Real-Time Change Report & KRAMA Intake |
 | :---: | :---: |
@@ -271,7 +271,7 @@ python krama_watcher.py --verbose
 #### Step 2: Open FreeCAD and Load Any Model
 Open `/Applications/FreeCAD.app` and open either:
 * `freecad_api_test/AssemblyExample1.FCStd` (13 linked instances)
-* Any imported STEP/IGES model (e.g. `indrbt_home.FCStd` with 54 components)
+* Any imported STEP/IGES model (e.g. `indrbt_home.FCStd` with 53 components)
 
 #### Step 3: Run the Observer Macro (Once)
 In FreeCAD:
@@ -284,7 +284,7 @@ The FreeCAD Report View confirms:
 [KRAMA Bridge] ✓ Observer REGISTERED on document 'indrbt_home'.
 [KRAMA Bridge] Watch file: .../freecad_krama_bridge/live_state.json
 [KRAMA Bridge] Extracting initial snapshot...
-[KRAMA Bridge] ✓ Initial snapshot written (54 instances).
+[KRAMA Bridge] ✓ Initial snapshot written (53 instances).
 [KRAMA Bridge] Now move a component — changes will be detected automatically.
 ```
 And your terminal watcher prints the **INITIAL SNAPSHOT BASELINE**:
@@ -296,8 +296,8 @@ INITIAL SNAPSHOT — BASELINE ESTABLISHED  [06:25:29 UTC]
   source       : freecad
   document     : indrbt_home
   version      : Live — 06:10:12 UTC
-  instances    : 54
-  components   : 54
+  instances    : 53
+  components   : 53
   total volume : 5042125.41 mm³  (5.042125e-03 m³)
   geom. CoM    : [94.82, -10.86, 193.94] mm  (geometric centroid)
   extents      : [709.7, 264.0, 487.1] mm  (WxDxH)
@@ -383,8 +383,8 @@ curl -X POST "http://localhost:8000/connections/onshape" \
 curl -X POST "http://localhost:8000/projects/b0e5d8a0-2f3b-4896-857c-2e6f42b8cf1a/sync" \
   -H "Content-Type: application/json" \
   -d '{
-    "document_id": "doc-robot-arm-001",
-    "version_id": "ver-release-1.0",
+    "document_id": "65a1f2b3c4d5e6f7a8b9c0d1",
+    "version_id": "7a2e4b8f01c3d5e7a9b0c1d2",
     "force": false
   }'
 
@@ -398,13 +398,14 @@ curl -X GET "http://localhost:8000/snapshots/<SNAPSHOT_UUID_1>/diff/<SNAPSHOT_UU
 
 CAD packages operate in diverse internal unit systems. All adapters normalize data to SI units at the connector boundary:
 
-| Measurement | FreeCAD / Onshape Internal | KRAMA Canonical | Normalization Boundary |
+| Measurement | Source Internal | KRAMA Canonical | Normalization Boundary |
 | :--- | :--- | :--- | :--- |
-| **Length / Translations** | Millimeter (mm) | **Meter (m)** | Divide by $10^3$ |
-| **Volume** | Millimeter³ ($\text{mm}^3$) | **Meter³ ($\text{m}^3$)** | Divide by $10^9$ |
-| **Transform Matrices** | 4×4 row-major ($t_x, t_y, t_z$ in mm) | **4×4 row-major ($t_x, t_y, t_z$ in m)** | Columns 3, 7, 11 scaled to meters |
+| **Length / Translations (FreeCAD)** | Millimeter (mm) | **Meter (m)** | Divide by $10^3$ |
+| **Length / Translations (Onshape)** | Meter (m) — SI native | **Meter (m)** | No conversion needed |
+| **Volume** | Millimeter³ ($\text{mm}^3$) — FreeCAD | **Meter³ ($\text{m}^3$)** | Divide by $10^9$ |
+| **Transform Matrices** | 4×4 row-major ($t_x, t_y, t_z$ in mm — FreeCAD; m — Onshape) | **4×4 row-major ($t_x, t_y, t_z$ in m)** | Columns 3, 7, 11 scaled to meters (FreeCAD only) |
 | **Mass** | Gram / Kilogram | **Kilogram (kg)** | Scaled to kg |
-| **Centroid / CoM** | B-Rep origin (mm) | **Assembly origin (m)** | Scaled to meters |
+| **Centroid / CoM** | B-Rep origin (mm — FreeCAD; m — Onshape) | **Assembly origin (m)** | Scaled to meters (FreeCAD only) |
 
 > [!NOTE]
 > **Geometric Centroid vs. Physical Center of Mass**: When CAD geometry lacks assigned material densities (standard for imported neutral formats), mass and physical CoM are marked `unavailable` with provenance `MISSING`. The geometric centroid (volume-weighted B-Rep center of gravity) is preserved and explicitly distinguished from physical center of mass.

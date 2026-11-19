@@ -43,8 +43,8 @@ class LinkDocumentRequest(BaseModel):
     """Request payload to link an Onshape assembly document to a KRAMA project."""
 
     connection_id: str = Field(description="UUID of the connected Onshape account")
-    document_id: str = Field(description="Onshape document ID", json_schema_extra={"example": "doc-robot-arm-001"})
-    element_id: str = Field(description="Onshape assembly element ID", json_schema_extra={"example": "elem-asm-top-001"})
+    document_id: str = Field(description="Onshape document ID", json_schema_extra={"example": "65a1f2b3c4d5e6f7a8b9c0d1"})
+    element_id: str = Field(description="Onshape assembly element ID", json_schema_extra={"example": "43210fedcba9876543210fed"})
     workspace_id: str | None = Field(default=None, description="Optional workspace ID")
 
 

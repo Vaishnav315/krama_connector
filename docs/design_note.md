@@ -4,7 +4,7 @@
 
 ### 1. State of the Art: Flow Engineering Integrations
 Flow Engineering ([flowengineering.com/integrations](https://www.flowengineering.com/integrations)) connects systems engineering requirements and models to external CAD, PLM, and simulation tools (such as Onshape, SolidWorks, Catia, and Jira). Key observations from their architecture:
-* **Connection Mechanism**: Integrations operate via webhook event listeners and REST polling services, communicating with CAD cloud APIs through secured service accounts or OAuth2 delegations.
+* **Connection Mechanism**: Integrations operate via webhook event listeners and REST polling services, communicating with CAD cloud APIs through secured service accounts or OAuth2 delegations. [Flow Engineering integrations: https://www.flowengineering.com/integrations — accessed November 2026]
 * **Data Extracted**: Extracted data focuses on parameters, dimensional constraints, component hierarchies, mass properties, and bill-of-materials (BOM) quantities rather than raw geometric mesh/B-Rep solids.
 * **Traceability Imperative**: Engineering designs evolve continuously. When a parameter (e.g., motor torque or bracket thickness) changes in CAD, systems engineers must trace which system requirements or downstream calculations are violated. Without immutable version identity and provenance tracking, engineers cannot distinguish whether a weight increase was caused by a material change, geometry thickening, or added fasteners.
 * **Adopted Principles**:
@@ -52,7 +52,7 @@ Flow Engineering ([flowengineering.com/integrations](https://www.flowengineering
 ```
 
 1. **Connector Abstraction (`CADConnector`)**: KRAMA ingests engineering data from multiple CAD/PLM platforms. Encapsulating CAD engines behind an abstract base class (`CADConnector`) isolates vendor-specific response payloads and ensures upstream ingestion logic is CAD-agnostic. We demonstrated this directly by implementing both the cloud REST-based `OnshapeConnector` and the desktop-based `FreeCADConnector` behind this identical interface.
-2. **Canonical Versioned Snapshots**: Rather than streaming live delta mutations, the connector extracts complete point-in-time snapshots bound to immutable version IDs (`ver-release-1.0`) and microversion IDs (`mver-001`). This ensures complete determinism and idempotent downstream graph ingestion.
+2. **Canonical Versioned Snapshots**: Rather than streaming live delta mutations, the connector extracts complete point-in-time snapshots bound to immutable version IDs (`7a2e4b8f01c3d5e7a9b0c1d2`) and microversion IDs (`8b3f5c9e12d4a6f8b0c2e4a6`). This ensures complete determinism and idempotent downstream graph ingestion.
 3. **File-Based Ingestion Interface (`intake_files`)**: Passing partitioned byte artifacts (`assembly_snapshot.json`, `components.json`, `properties.json`, `provenance.json`) to `intake_files` preserves KRAMA's architectural boundary. The ingestion pipeline can stage, hash-deduplicate, and review snapshot files before committing graph transactions.
 4. **FastAPI & SQLAlchemy**: FastAPI provides OpenAPI documentation, type validation, and asynchronous execution. SQLAlchemy manages connection audit records and snapshot caching, using SQLite for lightweight automated tests and PostgreSQL in production.
 5. **Change Detection via Polling & Webhook Structure**: Webhooks require publicly accessible endpoints and live developer registration (unavailable on restricted accounts). Polling `/versions` with cached microversion IDs provides reliable change detection, while the webhook signature validator (`verify_webhook_signature`) enables real-time event triggers when deployed.
@@ -72,9 +72,9 @@ Flow Engineering ([flowengineering.com/integrations](https://www.flowengineering
 
 ---
 
-## D. Production Monitoring, Metrics & Alerting
+## D. Production Telemetry Specification (Design Intent)
 
-To operate reliably in high-volume production, the connector exports the following telemetry metrics:
+To operate reliably in high-volume production, the connector exports the following telemetry metrics: (The metric names below represent the production deployment design specification. The take-home server does not run a live Prometheus exporter; these would be wired in production via the `prometheus_client` library.)
 
 * **Operational Metrics**:
   * `cad_sync_duration_seconds`: Histogram of sync execution times.
@@ -95,23 +95,30 @@ To operate reliably in high-volume production, the connector exports the followi
 ## E. Verified Claims & Implementation Fidelity
 
 * **Assemblies Tested**:
-  * **Onshape**: Realistic 6-DOF modular robotic arm (`doc-robot-arm-001`, `elem-asm-top-001`) with 2 levels of nested subassemblies (`Articulated Arm Module` -> `Wrist & End Effector Subassembly`) containing 22 part instances (exceeding the 15-part requirement).
+  * **Onshape**: Realistic 6-DOF modular robotic arm (`65a1f2b3c4d5e6f7a8b9c0d1`, `43210fedcba9876543210fed`) with 2 levels of nested subassemblies (`Articulated Arm Module` -> `Wrist & End Effector Subassembly`) containing 22 part instances (exceeding the 15-part requirement).
   * **FreeCAD Linked Assembly**: `AssemblyExample1.FCStd` containing 13 linked part instances (`App::Link`) and assembly joints.
-  * **FreeCAD Direct Solid Import**: `indrbt_home.FCStd` containing 54 solid component bodies (`Part::Feature`), verified end-to-end under live user editing and translation change detection.
+  * **FreeCAD Direct Solid Import**: `indrbt_home.FCStd` containing 53 solid component bodies (`Part::Feature`), verified end-to-end under live user editing and translation change detection.
 * **Properties Extracted**: Part names, part numbers (`ARM-001-BASE`), revisions (`A`, `B`), materials (`Cast Iron Class 30`, `Aluminum 6061-T6`, `Titanium Ti-6Al-4V`), densities, 3D bounding extents, mass, centroid, and 6-component inertia tensors.
 * **Missing Value Auditing**: Verified that COTS components (`Dynamixel Servo Actuator`) with no assigned material or density remain `None`, with missing-value records generated and provenance marked as `SOURCE_UNAVAILABLE`.
 * **Verification Status**:
-  * Onshape connector verified via 26 automated unit, integration, and contract tests in pytest against recorded authentic fixtures (due to Onshape free-tier API key provisioning restrictions).
-  * FreeCAD bridge verified both live inside FreeCAD GUI (via `freecad_observer_bridge.FCMacro` and `krama_watcher.py`) and via standalone automated integration test (`test_bridge.py`). All 26 Onshape tests and all FreeCAD bridge verification tests pass.
+  * Onshape connector verified via 32 automated unit, integration, and contract tests in pytest against schema-compliant synthetic fixtures (due to Onshape free-tier API key provisioning restrictions).
+  * FreeCAD bridge verified both live inside FreeCAD GUI (via `freecad_observer_bridge.FCMacro` and `krama_watcher.py`) and via standalone automated integration test (`test_bridge.py`). All 32 Onshape tests and all FreeCAD bridge verification tests pass.
+
+### What This Connector Cannot Claim
+
+* **No live Onshape API verification**: Free/Student account tiers restrict developer API key and OAuth application provisioning. All Onshape tests run against schema-compliant synthetic fixtures modeled on the Onshape REST API v10 response schema; they have not been executed against a live `cad.onshape.com` endpoint.
+* **Physical mass requires material density**: FreeCAD documents without assigned material cards report `mass: null` with `provenance: SOURCE_UNAVAILABLE`. The connector correctly preserves this — it does not invent mass values. Any mass-related diff results for such documents are classified `INDETERMINATE`.
+* **Webhook live-testing requires a public HTTPS endpoint**: Onshape webhooks (`POST` callbacks) cannot be received on `localhost`. The `verify_webhook_signature` validator is implemented and unit-tested; end-to-end webhook delivery requires a public tunnel (e.g., ngrok) or cloud deployment.
+* **FreeCAD connector is not multi-tenant headless**: The `DocumentObserver` requires the FreeCAD desktop GUI. For production multi-tenant use, run `FreeCADCmd` in headless mode — see `freecad_api_test/freecad_krama_bridge/README.md` for the headless invocation pattern.
 
 ### FreeCAD Live Bridge Visual Verification
 
-The real-time change detection and snapshot ingestion pipeline was verified with a 54-component robotic arm (`indrbt_home.FCStd`) running live inside the FreeCAD desktop application:
+The real-time change detection and snapshot ingestion pipeline was verified with a 53-component robotic arm (`indrbt_home.FCStd`) running live inside the FreeCAD desktop application:
 
 | 1. Observer Registered & Initial Snapshot | 2. Terminal Watcher Baseline Established |
 | :---: | :---: |
 | [![FreeCAD Observer Registered](images/freecad_observer_initial.jpg)](images/freecad_observer_initial.jpg) | [![Terminal Watcher Baseline Established](images/terminal_baseline_established.jpg)](images/terminal_baseline_established.jpg) |
-| *Macro observer registered on 54-part arm; initial state serialized.* | *Baseline established: volume, centroid, and SQLite persistence.* |
+| *Macro observer registered on 53-part arm; initial state serialized.* | *Baseline established: volume, centroid, and SQLite persistence.* |
 
 | 3. Component Movement (`upper_arm_hollow_link`) | 4. Real-Time Change Report & KRAMA Ingestion |
 | :---: | :---: |
@@ -136,4 +143,4 @@ Integrating KRAMA with on-premise enterprise CAD/PLM systems (e.g., Siemens NX w
 * **AI Delegations**: AI tooling was utilized for rapid schema generation, mechanical domain model definition (fixtures for 6-DOF robot arm), test structure setup, and OpenAPI schema validation.
 * **Review & Verification**: All code and schemas were reviewed against official Onshape API documentation, formatted via Ruff, and validated using Pytest under Python 3.14.
 * **Real AI Mistake Encountered & Corrected**:
-  * *Pydantic Deprecation & HMAC Header Formatting*: During schema generation, the AI generated `Field(..., example="...")` which triggered deprecation warnings in Pydantic v2.6+ (`use json_schema_extra instead`). Furthermore, in initial HMAC signing, the query string was unencoded and path casing was lowercase while query keys were not canonically sorted. This was identified during unit testing (`test_hmac_header_generation`) and corrected by implementing deterministic query sorting and RFC 1123 date formatting.
+  * *Test Isolation Network Failure (`httpx.ConnectError`)*: During initial test suite construction, the AI generated `SyncService` initialization code that read live credentials from `.env` and instantiated a real `OnshapeClient` unconditionally, even during pytest runs. When a local `.env` file contained any Onshape keys, `pytest` would attempt DNS resolution to `cad.onshape.com` inside unit tests, failing with `httpx.ConnectError: [Errno 8] nodename nor servname provided`. The fix applied dependency injection: `SyncService.__init__` now checks `settings.ENVIRONMENT == "test"` or `settings.USE_MOCK_ONSHAPE` before instantiating the live HTTP client, ensuring all 26 tests pass in a fully offline environment regardless of local credential files.

@@ -1,10 +1,10 @@
 {
-  "documentId": "doc-robot-arm-001",
-  "elementId": "elem-asm-top-001",
-  "documentVersion": "ver-release-1.0",
+  "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
+  "elementId": "43210fedcba9876543210fed",
+  "documentVersion": "7a2e4b8f01c3d5e7a9b0c1d2",
   "rootAssembly": {
-    "documentId": "doc-robot-arm-001",
-    "elementId": "elem-asm-top-001",
+    "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
+    "elementId": "43210fedcba9876543210fed",
     "fullConfiguration": "default",
     "instances": [
       {
@@ -12,8 +12,8 @@
         "name": "Base Pedestal Cast <1>",
         "type": "Part",
         "partId": "part_base_pedestal",
-        "elementId": "elem-parts-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "d3e4f56789012345678901bc",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "suppressed": false
       },
       {
@@ -21,16 +21,16 @@
         "name": "Turntable Bearing Plate <1>",
         "type": "Part",
         "partId": "part_turntable_plate",
-        "elementId": "elem-parts-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "d3e4f56789012345678901bc",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "suppressed": false
       },
       {
         "id": "inst_arm_module_subasm_1",
         "name": "Articulated Arm Module <1>",
         "type": "Assembly",
-        "elementId": "elem-subasm-arm-002",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "b1c2d3e4f567890123456789",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "suppressed": false
       },
       {
@@ -38,8 +38,8 @@
         "name": "Steel Counterweight <1>",
         "type": "Part",
         "partId": "part_counterweight",
-        "elementId": "elem-parts-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "d3e4f56789012345678901bc",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "suppressed": false
       },
       {
@@ -47,8 +47,8 @@
         "name": "Hex Cap Screw M8x25 <1>",
         "type": "Part",
         "partId": "part_m8_screw",
-        "elementId": "elem-hardware-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "e4f5678901234567890123cd",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "isStandardContent": true,
         "suppressed": false
       },
@@ -57,8 +57,8 @@
         "name": "Hex Cap Screw M8x25 <2>",
         "type": "Part",
         "partId": "part_m8_screw",
-        "elementId": "elem-hardware-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "e4f5678901234567890123cd",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "isStandardContent": true,
         "suppressed": false
       },
@@ -67,8 +67,8 @@
         "name": "Hex Cap Screw M8x25 <3>",
         "type": "Part",
         "partId": "part_m8_screw",
-        "elementId": "elem-hardware-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "e4f5678901234567890123cd",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "isStandardContent": true,
         "suppressed": false
       },
@@ -77,24 +77,24 @@
         "name": "Hex Cap Screw M8x25 <4>",
         "type": "Part",
         "partId": "part_m8_screw",
-        "elementId": "elem-hardware-001",
-        "documentId": "doc-robot-arm-001",
+        "elementId": "e4f5678901234567890123cd",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
         "isStandardContent": true,
         "suppressed": false
       }
     ],
     "subAssemblies": [
       {
-        "documentId": "doc-robot-arm-001",
-        "elementId": "elem-subasm-arm-002",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
+        "elementId": "b1c2d3e4f567890123456789",
         "instances": [
           {
             "id": "inst_shoulder_bracket_1",
             "name": "Shoulder Pivot Bracket <1>",
             "type": "Part",
             "partId": "part_shoulder_bracket",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -102,8 +102,8 @@
             "name": "Carbon Bicep Tube <1>",
             "type": "Part",
             "partId": "part_bicep_tube",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -111,16 +111,16 @@
             "name": "Elbow Joint Housing <1>",
             "type": "Part",
             "partId": "part_elbow_joint",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
             "id": "inst_wrist_effector_subasm_1",
             "name": "Wrist & End Effector Subassembly <1>",
             "type": "Assembly",
-            "elementId": "elem-subasm-wrist-003",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "c2d3e4f567890123456789ab",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -128,8 +128,8 @@
             "name": "Dowel Pin 12x40 <1>",
             "type": "Part",
             "partId": "part_dowel_pin",
-            "elementId": "elem-hardware-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "e4f5678901234567890123cd",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -137,23 +137,23 @@
             "name": "Dowel Pin 12x40 <2>",
             "type": "Part",
             "partId": "part_dowel_pin",
-            "elementId": "elem-hardware-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "e4f5678901234567890123cd",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           }
         ]
       },
       {
-        "documentId": "doc-robot-arm-001",
-        "elementId": "elem-subasm-wrist-003",
+        "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
+        "elementId": "c2d3e4f567890123456789ab",
         "instances": [
           {
             "id": "inst_wrist_flange_1",
             "name": "Wrist Mounting Flange <1>",
             "type": "Part",
             "partId": "part_wrist_flange",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -161,8 +161,8 @@
             "name": "Dynamixel Servo Actuator <1>",
             "type": "Part",
             "partId": "part_gripper_servo",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -170,8 +170,8 @@
             "name": "Gripper Finger Left <1>",
             "type": "Part",
             "partId": "part_gripper_finger",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -179,8 +179,8 @@
             "name": "Gripper Finger Right <1>",
             "type": "Part",
             "partId": "part_gripper_finger",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -188,8 +188,8 @@
             "name": "Silicone Finger Pad <1>",
             "type": "Part",
             "partId": "part_rubber_pad",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -197,8 +197,8 @@
             "name": "Silicone Finger Pad <2>",
             "type": "Part",
             "partId": "part_rubber_pad",
-            "elementId": "elem-parts-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "d3e4f56789012345678901bc",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "suppressed": false
           },
           {
@@ -206,8 +206,8 @@
             "name": "Button Head M4x10 <1>",
             "type": "Part",
             "partId": "part_m4_screw",
-            "elementId": "elem-hardware-001",
-            "documentId": "doc-robot-arm-001",
+            "elementId": "e4f5678901234567890123cd",
+            "documentId": "65a1f2b3c4d5e6f7a8b9c0d1",
             "isStandardContent": true,
             "suppressed": false
           },
@@ -216,7 +216,7 @@
             "name": "Button Head M4x10 <2>",
             "type": "Part",
             "partId": "part_m4_screw",
-            "elementId": "elem-hardware-001",
+            "elementId": "e4f5678901234567890123cd",
             "isStandardContent": true,
             "suppressed": false
           }
@@ -362,7 +362,7 @@
     {
       "partId": "part_base_pedestal",
       "name": "Base Pedestal Cast",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-001-BASE",
       "revision": "A",
       "material": "Cast Iron Class 30",
@@ -371,7 +371,7 @@
     {
       "partId": "part_turntable_plate",
       "name": "Turntable Bearing Plate",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-002-TTB",
       "revision": "A",
       "material": "Aluminum 6061-T6",
@@ -380,7 +380,7 @@
     {
       "partId": "part_counterweight",
       "name": "Steel Counterweight",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-003-CW",
       "revision": "A",
       "material": "Structural Steel A36",
@@ -389,7 +389,7 @@
     {
       "partId": "part_shoulder_bracket",
       "name": "Shoulder Pivot Bracket",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-004-SHB",
       "revision": "A",
       "material": "Aluminum 6061-T6",
@@ -398,7 +398,7 @@
     {
       "partId": "part_bicep_tube",
       "name": "Carbon Bicep Tube",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-005-BCT",
       "revision": "A",
       "material": "Carbon Fiber Composite",
@@ -407,7 +407,7 @@
     {
       "partId": "part_elbow_joint",
       "name": "Elbow Joint Housing",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-006-ELB",
       "revision": "A",
       "material": "Aluminum 7075-T6",
@@ -416,7 +416,7 @@
     {
       "partId": "part_wrist_flange",
       "name": "Wrist Mounting Flange",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-007-WFL",
       "revision": "A",
       "material": "Aluminum 6061-T6",
@@ -425,7 +425,7 @@
     {
       "partId": "part_gripper_servo",
       "name": "Dynamixel Servo Actuator",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "COTS-SERVO-XM430",
       "revision": null,
       "material": null,
@@ -434,7 +434,7 @@
     {
       "partId": "part_gripper_finger",
       "name": "Gripper Finger",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-008-FNG",
       "revision": "A",
       "material": "POM / Acetal (Delrin)",
@@ -443,7 +443,7 @@
     {
       "partId": "part_rubber_pad",
       "name": "Silicone Finger Pad",
-      "elementId": "elem-parts-001",
+      "elementId": "d3e4f56789012345678901bc",
       "partNumber": "ARM-009-RPD",
       "revision": "A",
       "material": "Silicone Rubber (Shore 50A)",
@@ -452,7 +452,7 @@
     {
       "partId": "part_m8_screw",
       "name": "Hex Cap Screw M8x25",
-      "elementId": "elem-hardware-001",
+      "elementId": "e4f5678901234567890123cd",
       "partNumber": "ISO-4017-M8x25-8.8",
       "revision": null,
       "material": "Steel Grade 8.8 Galvanized",
@@ -461,7 +461,7 @@
     {
       "partId": "part_m4_screw",
       "name": "Button Head M4x10",
-      "elementId": "elem-hardware-001",
+      "elementId": "e4f5678901234567890123cd",
       "partNumber": "ISO-7380-M4x10-A2",
       "revision": null,
       "material": "Stainless Steel A2-70",
@@ -470,7 +470,7 @@
     {
       "partId": "part_dowel_pin",
       "name": "Dowel Pin 12x40",
-      "elementId": "elem-hardware-001",
+      "elementId": "e4f5678901234567890123cd",
       "partNumber": "DIN-6325-12x40-m6",
       "revision": null,
       "material": "Hardened Tool Steel",
