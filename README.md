@@ -172,8 +172,8 @@ To satisfy both the take-home specification and real-world developer platform co
 
 ```bash
 # Clone the repository
-git clone https://github.com/Vaishnav315/krama_onshape_connector.git
-cd krama_onshape_connector
+git clone https://github.com/Vaishnav315/krama_connector.git
+cd krama_connector
 
 # Create and activate virtual environment
 python3 -m venv .venv

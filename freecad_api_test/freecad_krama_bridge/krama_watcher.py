@@ -46,6 +46,7 @@ _BRIDGE_DIR = os.path.dirname(os.path.abspath(__file__))
 _KRAMA_ROOT = None
 for candidate in [
     os.path.normpath(os.path.join(_BRIDGE_DIR, "..", "..")),
+    os.path.normpath(os.path.join(_BRIDGE_DIR, "..", "..", "krama_connector")),
     os.path.normpath(os.path.join(_BRIDGE_DIR, "..", "..", "krama_onshape_connector")),
 ]:
     if os.path.exists(os.path.join(candidate, "app", "schemas")):
